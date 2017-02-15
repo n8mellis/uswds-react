@@ -1,0 +1,23 @@
+
+// Vendor
+$output-bourbon-deprecation-warnings: false;
+@import "../node_modules/bourbon/app/assets/stylesheets/bourbon";
+@import "../node_modules/bourbon-neat/app/assets/stylesheets/neat";
+@import "../node_modules/normalize.css/normalize";
+
+// Core
+@import "core/variables";
+@import "core/fonts";
+@import "core/base";
+@import "core/grid";
+@import "core/utilities";
+@import "core/typography";
+
+// To replace...
+@import "elements/buttons";
+@import "elements/inputs";
+
+// Components
+@import "components/Accordion";
+@import "components/OfficialSiteBanner";
+@import "components/SearchField";
