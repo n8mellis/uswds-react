@@ -1,6 +1,6 @@
 import React from "react";
 
-import SearchField from "../components/fields/SearchField";
+import SearchField from "../../lib/components/SearchField";
 
 export default class SearchBarContainer extends React.Component
 {

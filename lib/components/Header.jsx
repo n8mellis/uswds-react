@@ -2,7 +2,7 @@ import React from "react";
 
 import OfficialSiteBanner from "./OfficialSiteBanner";
 import NavigationBar from "./NavigationBar";
-import SearchField from "./fields/SearchField";
+import SearchField from "./SearchField";
 
 export default class Header extends React.Component
 {

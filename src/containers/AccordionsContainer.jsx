@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Accordion, AccordionItem } from "../components/Accordion";
+import { Accordion, AccordionItem } from "../../lib/components/Accordion";
 
 export default class AccordionsContainer extends React.Component
 {

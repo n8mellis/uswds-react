@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 
-import OfficialSiteBanner from "../components/OfficialSiteBanner";
-import Header from "../components/Header";
-import { Sidebar, SidebarLink } from "../components/Sidebar";
+import OfficialSiteBanner from "../../lib/components/OfficialSiteBanner";
+import Header from "../../lib/components/Header";
+import { Sidebar, SidebarLink } from "../../lib/components/Sidebar";
 
 class App extends React.Component 
 {
