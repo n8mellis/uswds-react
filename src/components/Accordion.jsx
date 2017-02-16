@@ -1,41 +1,145 @@
 import React from "react";
 
-export default class Accordion extends React.Component
+import utilities from "../helpers/utilities";
+
+export class Accordion extends React.Component
 {
   constructor(props)
   {
     super(props);
     this.state = {
-      contentVisible: false
-    };
+      activeIndex: 0
+    }
   }
   
-  toggle()
+  setActiveItem(index)
   {
-    this.setState({ contentVisible: !this.state.contentVisible });
+    this.setState({ activeIndex: index });
+  }
+  
+  render()
+  {
+    var index = 0;
+    let children = React.Children.map(this.props.children, (child) => {
+      let i = index++;
+      return React.cloneElement(child, { 
+        accordionIndex: i, 
+        action: this.setActiveItem.bind(this),
+        contentVisible: (i == this.state.activeIndex)
+      });
+    });
+    return (
+      <ul className={this.props.type}>
+        {children}
+      </ul>
+    )
+  }
+}
+
+Accordion.TYPE_BORDERLESS = "usa-accordion";
+Accordion.TYPE_BORDERED   = "usa-accordion-bordered";
+
+Accordion.propTypes = {
+  type: React.PropTypes.oneOf([ Accordion.TYPE_BORDERLESS, Accordion.TYPE_BORDERED ])
+}
+
+Accordion.defaultProps = {
+  type: Accordion.TYPE_BORDERLESS
+}
+
+// =============================================================================
+
+/**
+ * 
+ *
+ * Usage:
+ *
+ *   <AccordionItem title="First Amendment">
+ *     <p>Congress shall make no law respecting an establishment of ...</p>
+ *   </AccordionItem>
+ *
+ *   <AccordionItem>
+ *     <span>First Amendment</span>
+ *     <p>Congress shall make no law respecting an establishment of ...</p>
+ *   </AccordionItem>
+ */
+export class AccordionItem extends React.Component
+{
+  constructor(props)
+  {
+    super(props);
+    this.state = {
+      uuid: ""
+    }
+  }
+  
+  componentDidMount()
+  {
+    let id = utilities.uniqueIdForComponent(this);
+    this.setState({ uuid: id });
+  }
+  
+  makeActive()
+  {
+    this.props.action(this.props.accordionIndex);
+  }
+  
+  renderTitleElement()
+  {
+    let element;
+    if (React.Children.count(this.props.children) == 2) {
+      let children = React.Children.toArray(this.props.children);
+      element = children[0];
+    }
+    else {
+      element = (<span>{this.props.title}</span>);
+    }
+    return (
+      <button className="usa-accordion-button" 
+              aria-expanded={this.props.contentVisible}
+              aria-controls={`${this.state.uuid}-content`}
+              onClick={this.makeActive.bind(this)}>
+        {element}
+      </button>
+    )
+  }
+  
+  renderContentElement()
+  {
+    // If `this.state.contentVisible` is set to false then don't render the 
+    // content element.
+    if (!this.props.contentVisible) {
+      return "";
+    }
+    let children = React.Children.toArray(this.props.children);
+    let element = (children.length == 2) ? children[1] : children[0];
+    return (
+      <div id={`${this.state.uuid}-content`} className="usa-accordion-content">
+        {element}
+      </div>
+    )
   }
   
   render()
   {
     // Ensure there are only 2 children.
-    if (React.Children.count(this.props.children) != 2) {
-      throw "Accordion elements must have exactly 2 children."
-    }
-    
-    // Convert the opaque `children` prop into an array so we can inject behavior
-    // for automatically toggling the visibility of the second element.
-    let children = React.Children.toArray(this.props.children);
-    
-    // If `this.state.contentVisible` is set to false, remove the 2nd element 
-    // from the array so that it does not display.
-    if (!this.state.contentVisible) {
-      children.pop();
+    if (React.Children.count(this.props.children) > 2) {
+      throw "AccordionItem elements must have no more than 2 children."
     }
     
     return (
-      <div className="usa-accordion">
-        {children}
-      </div>
+      <li className="usa-accordion-item">
+        {this.renderTitleElement()}
+        {this.renderContentElement()}
+      </li>
     )
   }
 }
+
+AccordionItem.propTypes = {
+  title: React.PropTypes.string
+};
+
+AccordionItem.defaultProps = {
+  title: ""
+};
