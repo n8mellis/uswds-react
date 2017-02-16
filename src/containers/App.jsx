@@ -3,54 +3,47 @@ import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 
 import OfficialSiteBanner from "../components/OfficialSiteBanner";
-import SearchField from "../components/fields/SearchField";
-import { Accordion, AccordionItem } from "../components/Accordion";
+import Header from "../components/Header";
+import { Sidebar, SidebarLink } from "../components/Sidebar";
 
-class App extends React.Component {
-  render() {
+class App extends React.Component 
+{
+  render() 
+  {
     return (
       <div>
-        <Helmet
-          defaultTitle="react-test"
-          titleTemplate="%s - asdf"
-          meta={[
-            {"name": "description", "content": "A boilerplate doing universal/isomorphic rendering with Redux + React-router + Express"},
-          ]}
-          htmlAttributes={{"lang": "en"}}
-        />
+        <Helmet defaultTitle="react-test"
+                titleTemplate="%s - asdf"
+                meta={[{ "name": "description", "content": "A boilerplate doing universal/isomorphic rendering with Redux + React-router + Express" }]}
+                htmlAttributes={{"lang": "en"}} />
+        
         <OfficialSiteBanner />
-        <h1>This is a test</h1>
-        <div className="usa-grid">
-          <div className="usa-width-one-half">
-            <SearchField size={SearchField.SIZE_BIG} />
-            {/* <SearchField /> */}
-            <SearchField size={SearchField.SIZE_MEDIUM} />
-            <SearchField size={SearchField.SIZE_SMALL} />
-          </div>
+        
+        <aside className="sidenav">
+          <Sidebar>
+            <SidebarLink label="Overview" to="/" onlyActiveOnIndex={true} />
+            <SidebarLink label="Typography" to="/typography" />
+            <SidebarLink label="Colors" to="/colors" />
+            <SidebarLink label="Accessibility" to="/accessibility" />
+            <SidebarLink label="Grid" to="/grid" />
+            <SidebarLink label="Buttons" to="/buttons" />
+            <SidebarLink label="Labels" to="/labels" />
+            <SidebarLink label="Tables" to="/tables" />
+            <SidebarLink label="Alerts" to="/alerts" />
+            <SidebarLink label="Accordions" to="/accordions" />
+            <SidebarLink label="Form Controls" to="/form-controls" />
+            <SidebarLink label="Form Templates" to="/form-templates" />
+            <SidebarLink label="Search Bar" to="/search-bar" />
+            <SidebarLink label="Side Navigation" to="/sidebar" />
+            <SidebarLink label="Headers" to="/headers" />
+            <SidebarLink label="Footers" to="/footers" />
+          </Sidebar>
+        </aside>
+        
+        <div className="main-content">
+          {this.props.children}
         </div>
         
-        <hr />
-        
-        <div className="usa-grid">
-          <Accordion type={Accordion.TYPE_BORDERED}>
-            <AccordionItem title="First Amendment">
-              <p>
-                Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging the freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.
-              </p>
-            </AccordionItem>
-            <AccordionItem title="Second Amendment">
-              <p>
-                A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.
-              </p>
-            </AccordionItem>
-            <AccordionItem>
-              <span>Third Amendment</span>
-              <p>
-                No Soldier shall, in time of peace be quartered in any house, without the consent of the Owner, nor in time of war, but in a manner to be prescribed by law.
-              </p>
-            </AccordionItem>
-          </Accordion>
-        </div>
       </div>
     )
   }

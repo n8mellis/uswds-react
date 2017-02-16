@@ -23,3 +23,21 @@ $output-bourbon-deprecation-warnings: false;
 @import "components/Header";
 @import "components/SearchField";
 @import "components/Sidebar";
+
+
+// -----------------------------------------------------------------------------
+
+
+.sidenav {
+  bottom: 0;
+  display: block;
+  float: left;
+  overflow: auto;
+  padding: 1rem 1rem 3rem 3rem;
+  width: 250px;
+}
+
+.main-content {
+  margin-left: 251px;
+  padding: 3rem;
+}
