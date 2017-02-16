@@ -61,7 +61,12 @@ function getReduxPromise(props, store, history)
 {
 	let { query, params } = props;
 	// Obtain a reference to the Component being rendered.
-	let component = props.components[props.components.length - 1].WrappedComponent;
+	let component = props.components[props.components.length - 1];
+	// If this is a wrapped component (such as one bound to Redux state), then 
+	// select the underlying component.
+	if (component.WrappedComponent) {
+		component = component.WrappedComponent;
+	}
 	// If the component has a `fetchData` static attribute, then it means that it 
 	// requires data to be loaded before it can be rendered.  In this case, invoke 
 	// `fetchData` and return the Promise that it returns.
