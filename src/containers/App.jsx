@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 
-import OfficialSiteBanner from "../../lib/components/OfficialSiteBanner";
 import Header from "../../lib/components/Header";
 import { Sidebar, SidebarLink } from "../../lib/components/Sidebar";
 
@@ -18,7 +17,7 @@ class App extends React.Component
                 htmlAttributes={{"lang": "en"}} />
         
         {/* <OfficialSiteBanner /> */}
-        <Header />
+        <Header title="Draft U.S. Web Design Standards" />
         
         <div className="sub-header">
           <aside className="sidenav">

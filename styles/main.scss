@@ -3,22 +3,14 @@
 
 // -----------------------------------------------------------------------------
 
+.usa-header {
+  background-color: #112e51;
+  
+  .usa-logo a {
+    color: white;
+  }
+}
+
 .sub-header {
   position: relative;
-}
-
-.sidenav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 250px;
-  display: block;
-  overflow: auto;
-  padding: 1rem 1rem 3rem 3rem;
-}
-
-.main-content {
-  margin-left: 251px;
-  padding: 3rem;
-  padding-top: 0;
 }

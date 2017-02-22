@@ -24,9 +24,7 @@ export default class Header extends React.Component
               <div className="usa-logo" id="logo">
                 <em className="usa-logo-text">
                   <a href="#" accessKey="1" title="Home" aria-label="Home">
-                    Department of
-                    <br/>
-                    Web Standards
+                    {this.props.title}
                   </a>
                 </em>
               </div>
