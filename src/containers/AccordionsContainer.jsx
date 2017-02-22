@@ -7,11 +7,15 @@ export default class AccordionsContainer extends React.Component
   render()
   {
     return (
-      <div>
-        Accordions
-        <br/>
-        <hr/>
-        <br/>
+      <div className="styleguide-content usa-content">
+        <header>
+          <p className="site-subheading">UI components</p>
+          <h1>Accordions</h1>
+        </header>
+        <p className="usa-font-lead">
+          Accordions are a list of headers that can be clicked to hide or reveal 
+          additional content.
+        </p>
         <div className="usa-grid">
           <Accordion type={Accordion.TYPE_BORDERED}>
             <AccordionItem title="First Amendment">

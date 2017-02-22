@@ -24,20 +24,26 @@ $output-bourbon-deprecation-warnings: false;
 @import "components/SearchField";
 @import "components/Sidebar";
 
+@import "styleguide";
 
 // -----------------------------------------------------------------------------
 
+.sub-header {
+  position: relative;
+}
 
 .sidenav {
-  bottom: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
   display: block;
-  float: left;
   overflow: auto;
   padding: 1rem 1rem 3rem 3rem;
-  width: 250px;
 }
 
 .main-content {
   margin-left: 251px;
   padding: 3rem;
+  padding-top: 0;
 }

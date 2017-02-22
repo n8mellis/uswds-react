@@ -17,31 +17,34 @@ class App extends React.Component
                 meta={[{ "name": "description", "content": "A boilerplate doing universal/isomorphic rendering with Redux + React-router + Express" }]}
                 htmlAttributes={{"lang": "en"}} />
         
-        <OfficialSiteBanner />
+        {/* <OfficialSiteBanner /> */}
+        <Header />
         
-        <aside className="sidenav">
-          <Sidebar>
-            <SidebarLink label="Overview" to="/" onlyActiveOnIndex={true} />
-            <SidebarLink label="Typography" to="/typography" />
-            <SidebarLink label="Colors" to="/colors" />
-            <SidebarLink label="Accessibility" to="/accessibility" />
-            <SidebarLink label="Grid" to="/grid" />
-            <SidebarLink label="Buttons" to="/buttons" />
-            <SidebarLink label="Labels" to="/labels" />
-            <SidebarLink label="Tables" to="/tables" />
-            <SidebarLink label="Alerts" to="/alerts" />
-            <SidebarLink label="Accordions" to="/accordions" />
-            <SidebarLink label="Form Controls" to="/form-controls" />
-            <SidebarLink label="Form Templates" to="/form-templates" />
-            <SidebarLink label="Search Bar" to="/search-bar" />
-            <SidebarLink label="Side Navigation" to="/sidebar" />
-            <SidebarLink label="Headers" to="/headers" />
-            <SidebarLink label="Footers" to="/footers" />
-          </Sidebar>
-        </aside>
-        
-        <div className="main-content">
-          {this.props.children}
+        <div className="sub-header">
+          <aside className="sidenav">
+            <Sidebar>
+              <SidebarLink label="Overview" to="/" onlyActiveOnIndex={true} />
+              <SidebarLink label="Typography" to="/typography" />
+              <SidebarLink label="Colors" to="/colors" />
+              <SidebarLink label="Accessibility" to="/accessibility" />
+              <SidebarLink label="Grid" to="/grid" />
+              <SidebarLink label="Buttons" to="/buttons" />
+              <SidebarLink label="Labels" to="/labels" />
+              <SidebarLink label="Tables" to="/tables" />
+              <SidebarLink label="Alerts" to="/alerts" />
+              <SidebarLink label="Accordions" to="/accordions" />
+              <SidebarLink label="Form Controls" to="/form-controls" />
+              <SidebarLink label="Form Templates" to="/form-templates" />
+              <SidebarLink label="Search Bar" to="/search-bar" />
+              <SidebarLink label="Side Navigation" to="/sidebar" />
+              <SidebarLink label="Headers" to="/headers" />
+              <SidebarLink label="Footers" to="/footers" />
+            </Sidebar>
+          </aside>
+          
+          <div className="main-content">
+            {this.props.children}
+          </div>
         </div>
         
       </div>
