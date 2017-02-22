@@ -11,7 +11,7 @@ if (DEBUG) {
 var config = {
   devtool: DEBUG ? 'cheap-module-eval-source-map' : false,
   entry: {
-    app: './src/app',
+    app: './styleguide/app',
     vendor: [
       'react',
       'react-router',
@@ -24,7 +24,7 @@ var config = {
     ]
   },
   resolve: {
-    modules: [ path.join(__dirname, '..', 'src'), 'node_modules' ],
+    modules: [ path.join(__dirname, '..', 'styleguide'), 'node_modules' ],
     extensions: [ ".js", ".jsx" ]
   },
   output: {
