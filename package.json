@@ -1,7 +1,7 @@
 {
-  "name": "react-test",
-  "version": "0.0.0",
-  "description": "React Test",
+  "name": "uswds-react",
+  "version": "0.0.1",
+  "description": "U.S. Web Design Standard components written in React.",
   "scripts": {
     "start": "cross-env NODE_PATH=./styleguide concurrently --kill-others \"nodemon --watch . --ext js,jsx server\" \"node support/webpack.server.js\" \"gulp css:watch\"",
     "test": "cross-env NODE_ENV=test cross-env NODE_PATH=./styleguide mocha --compilers js:babel-register -r app/spec/support/setup.mocha.js --recursive 'app/spec/**/*.test.js' -w",
