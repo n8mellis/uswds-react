@@ -6,11 +6,21 @@ import OfficialSiteBanner from "./OfficialSiteBanner";
 
 export default class Header extends React.Component
 {
+  /**
+   * Constructor.
+   *
+   * @param {Object} props The props that will be applied to this component.
+   */
   constructor(props)
   {
     super(props);
   }
   
+  /**
+   * Renders the component.
+   *
+   * @returns {Node|null} The rendered DOM node.
+   */
   render()
   {
     return (
