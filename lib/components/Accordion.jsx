@@ -144,10 +144,12 @@ AccordionItem.propTypes = {
   title: React.PropTypes.string,
   children: React.PropTypes.node,
   accordionIndex: React.PropTypes.number,
-  contentVisible: React.PropTypes.boolean,
-  action: React.PropTypes.function
+  contentVisible: React.PropTypes.bool,
+  action: React.PropTypes.func
 };
 
 AccordionItem.defaultProps = {
-  title: ""
+  title: "",
+  contentVisible: false,
+  action: function() {}
 };
