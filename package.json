@@ -4,6 +4,7 @@
   "description": "U.S. Web Design Standard components written in React.",
   "scripts": {
     "start": "cross-env NODE_PATH=./styleguide concurrently --kill-others \"nodemon --watch . --ext js,jsx server\" \"node support/webpack.server.js\" \"gulp css:watch\"",
+    "lint": "eslint . --ext .jsx --ext .js",
     "test": "cross-env NODE_ENV=test cross-env NODE_PATH=./styleguide mocha --compilers js:babel-register -r app/spec/support/setup.mocha.js --recursive 'app/spec/**/*.test.js' -w",
     "test:ci": "cross-env NODE_ENV=test cross-env NODE_PATH=./styleguide mocha --compilers js:babel-register -r app/spec/support/setup.mocha.js --recursive 'app/spec/**/*.test.js'",
     "webpack": "webpack --config support/webpack.config.js",
