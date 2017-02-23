@@ -38,7 +38,20 @@ var config = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        loaders: [ 'babel-loader' ],
+        loaders: [
+          {
+            loader: "babel-loader"
+          },
+          {
+            loader: "eslint-loader",
+            options: {
+              emitError: true,
+              emitWarning: true,
+              failOnWarning: false,
+              failOnError: false
+            }
+          }
+        ],
         exclude: /node_modules/
       }
     ]

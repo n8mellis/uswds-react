@@ -3,6 +3,8 @@ var WebpackDevServer = require('webpack-dev-server');
 var config = require('./webpack.config');
 var port = 3001;
 
+/* eslint-disable no-console */
+
 new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
   hot: true,
