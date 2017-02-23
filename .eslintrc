@@ -17,7 +17,25 @@
     "node": true,
     "mocha": true
   },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
   "rules": {
-   
+    "semi": [ "error" ],
+    "comma-dangle": [ "error", "never" ],
+    "comma-style": [ "error", "last" ],
+    "func-call-spacing": [ "error", "never" ],
+    "indent": [ "error", 2 ],
+    "linebreak-style": [ "error", "unix" ],
+    "spaced-comment": [ "error", "always" ],
+    "require-jsdoc": [ "warn", {
+      "require": {
+        "FunctionDeclaration": true,
+        "MethodDefinition": true,
+        "ClassDeclaration": true,
+        "ArrowFunctionExpression": false
+      }
+    }]
   }
 }
