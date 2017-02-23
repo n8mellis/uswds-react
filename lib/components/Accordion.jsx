@@ -40,7 +40,8 @@ Accordion.TYPE_BORDERLESS = "usa-accordion";
 Accordion.TYPE_BORDERED   = "usa-accordion-bordered";
 
 Accordion.propTypes = {
-  type: React.PropTypes.oneOf([ Accordion.TYPE_BORDERLESS, Accordion.TYPE_BORDERED ])
+  type: React.PropTypes.oneOf([ Accordion.TYPE_BORDERLESS, Accordion.TYPE_BORDERED ]),
+  children: React.PropTypes.node
 }
 
 Accordion.defaultProps = {
@@ -137,7 +138,11 @@ export class AccordionItem extends React.Component
 }
 
 AccordionItem.propTypes = {
-  title: React.PropTypes.string
+  title: React.PropTypes.string,
+  children: React.PropTypes.node,
+  accordionIndex: React.PropTypes.number,
+  contentVisible: React.PropTypes.boolean,
+  action: React.PropTypes.function
 };
 
 AccordionItem.defaultProps = {

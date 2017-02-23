@@ -19,6 +19,10 @@ export class Sidebar extends React.Component
   }
 }
 
+Sidebar.propTypes = {
+  children: React.PropTypes.node
+}
+
 
 // =============================================================================
 
@@ -50,5 +54,6 @@ export class SidebarLink extends React.Component
 }
 
 SidebarLink.propTypes = {
-  label: React.PropTypes.string.isRequired
+  label: React.PropTypes.string.isRequired, 
+  children: React.PropTypes.node
 };

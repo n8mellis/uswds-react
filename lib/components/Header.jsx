@@ -1,8 +1,8 @@
 import React from "react";
 
 import OfficialSiteBanner from "./OfficialSiteBanner";
-import NavigationBar from "./NavigationBar";
-import SearchField from "./SearchField";
+// import NavigationBar from "./NavigationBar";
+// import SearchField from "./SearchField";
 
 export default class Header extends React.Component
 {
@@ -38,4 +38,8 @@ export default class Header extends React.Component
       </div>
     )
   }
+}
+
+Header.propTypes = {
+  title: React.PropTypes.string.isRequired
 }

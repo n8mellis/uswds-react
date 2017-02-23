@@ -40,7 +40,8 @@ NavigationBar.LAYOUT_EXTENDED = "usa-search-medium";
 NavigationBar.propTypes = {
   layout: React.PropTypes.oneOf([ 
     NavigationBar.LAYOUT_BASIC, 
-    NavigationBar.LAYOUT_EXTENDED ])
+    NavigationBar.LAYOUT_EXTENDED ]),
+  children: React.PropTypes.node
 }
 
 NavigationBar.defaultProps = {
