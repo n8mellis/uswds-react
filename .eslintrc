@@ -15,7 +15,8 @@
     "amd": true,
     "es6": true,
     "node": true,
-    "mocha": true
+    "mocha": true,
+    "commonjs": true
   },
   "extends": [
     "eslint:recommended",
@@ -29,6 +30,11 @@
     "indent": [ "error", 2 ],
     "linebreak-style": [ "error", "unix" ],
     "spaced-comment": [ "error", "always" ],
+    "valid-jsdoc": [ "error" , {
+      "prefer": { "return": "returns" },
+      "requireReturn": false,
+      "requireReturnDescription": false
+    }],
     "require-jsdoc": [ "warn", {
       "require": {
         "FunctionDeclaration": true,

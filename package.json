@@ -74,6 +74,7 @@
     "chai-as-promised": "^5.1.0",
     "enzyme": "^2.3.0",
     "eslint": "^3.16.1",
+    "eslint-loader": "^1.6.3",
     "eslint-plugin-react": "^6.10.0",
     "jsdom": "^7.0.1",
     "mocha": "^2.4.5",
