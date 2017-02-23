@@ -88,12 +88,15 @@ export class AccordionItem extends React.Component
   renderTitleElement()
   {
     let element;
-    if (React.Children.count(this.props.children) == 2) {
-      let children = React.Children.toArray(this.props.children);
-      element = children[0];
+    if (this.props.title.length > 0) {
+      element = (<span>{this.props.title}</span>);
     }
     else {
-      element = (<span>{this.props.title}</span>);
+      if (React.Children.count(this.props.children) !== 2) {
+        throw "Either a title or 2 child elements must be supplied.";
+      }
+      let children = React.Children.toArray(this.props.children);
+      element = children[0];
     }
     return (
       <button className="usa-accordion-button" 
