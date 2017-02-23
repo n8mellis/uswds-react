@@ -28,11 +28,11 @@ export default class AccordionsContainer extends React.Component
           </AccordionItem>
         </Accordion>
       </BaseContainer>
-    )
+    );
   }
 }
 
 AccordionsContainer.defaultProps = {
   title: "Accordions",
   summary: "Accordions are a list of headers that can be clicked to hide or reveal additional content."
-}
+};

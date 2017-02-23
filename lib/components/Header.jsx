@@ -36,10 +36,10 @@ export default class Header extends React.Component
           </div>
         </header>
       </div>
-    )
+    );
   }
 }
 
 Header.propTypes = {
   title: React.PropTypes.string.isRequired
-}
+};

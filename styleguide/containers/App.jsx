@@ -47,12 +47,16 @@ class App extends React.Component
         </div>
         
       </div>
-    )
+    );
   }
 }
 
-function mapStateToProps(state) {
-  return {}
+App.propTypes = {
+  children: React.PropTypes.node
+};
+
+function mapStateToProps(state) { // eslint-disable-line no-unused-vars
+  return {};
 }
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps)(App);

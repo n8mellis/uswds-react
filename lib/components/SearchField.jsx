@@ -42,7 +42,7 @@ export default class SearchField extends React.Component
           </button>
         </div>
       </form>
-    )
+    );
   }
 }
 
@@ -55,8 +55,8 @@ SearchField.propTypes = {
     SearchField.SIZE_BIG, 
     SearchField.SIZE_MEDIUM, 
     SearchField.SIZE_SMALL ])
-}
+};
 
 SearchField.defaultProps = {
   size: SearchField.SIZE_MEDIUM
-}
+};

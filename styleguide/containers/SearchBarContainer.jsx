@@ -19,11 +19,11 @@ export default class SearchBarContainer extends React.Component
           <SearchField size={SearchField.SIZE_SMALL} />
         </div>
       </BaseContainer>
-    )
+    );
   }
 }
 
 SearchBarContainer.defaultProps = {
   title: "Search Bar",
   summary: "A block that allows users to search for specific content if they know what search terms to use or can’t find desired content in the main navigation."
-}
+};

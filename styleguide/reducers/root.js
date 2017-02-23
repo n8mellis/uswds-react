@@ -1,11 +1,10 @@
-import { combineReducers } from 'redux'
-// import questions from 'reducers/questions'
-// import questionDetail from 'reducers/questionDetail'
+import { combineReducers } from 'redux';
 
-let tmpReducer = function(state={}, action) { return state };
+// eslint-disable-next-line no-unused-vars
+let tmpReducer = function(state={}, action) { return state; };
 
 const rootReducer = combineReducers({
   tmpReducer
-})
+});
 
-export default rootReducer
+export default rootReducer;

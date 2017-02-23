@@ -17,6 +17,6 @@ export default class BaseContainer extends React.Component
           {this.props.children}
         </div>
       </div>
-    )
+    );
   }
 }

@@ -7,7 +7,7 @@ export default class OfficialSiteBanner extends React.Component
     super(props);
     this.state = {
       contentVisible: false
-    }
+    };
   }
   
   toggleDetails()
@@ -70,6 +70,6 @@ export default class OfficialSiteBanner extends React.Component
           {this.renderContent()}
         </div>
       </div>
-    )
+    );
   }
 }

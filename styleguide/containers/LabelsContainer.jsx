@@ -10,11 +10,11 @@ export default class LabelsContainer extends React.Component
       <BaseContainer {...this.props}>
         TODO
       </BaseContainer>
-    )
+    );
   }
 }
 
 LabelsContainer.defaultProps = {
   title: "Labels",
   summary: "Labels draw attention to new or important content."
-}
+};

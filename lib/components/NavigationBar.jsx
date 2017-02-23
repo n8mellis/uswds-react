@@ -30,7 +30,7 @@ export default class NavigationBar extends React.Component
           {this.props.children}
         </div>
       </nav>
-    )
+    );
   }
 }
 
@@ -42,8 +42,8 @@ NavigationBar.propTypes = {
     NavigationBar.LAYOUT_BASIC, 
     NavigationBar.LAYOUT_EXTENDED ]),
   children: React.PropTypes.node
-}
+};
 
 NavigationBar.defaultProps = {
   layout: NavigationBar.LAYOUT_BASIC
-}
+};

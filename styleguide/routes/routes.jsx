@@ -1,9 +1,9 @@
-import React from 'react'
-import { Provider } from 'react-redux'
-import { Router, Route, IndexRoute } from 'react-router'
-import configureStore from 'store/configureStore'
+import React from 'react';
+// import { Provider } from 'react-redux';
+import { Router, Route, IndexRoute } from 'react-router';
+// import configureStore from 'store/configureStore';
 
-import App from 'containers/App'
+import App from 'containers/App';
 import OverviewContainer from "containers/OverviewContainer";
 import TypographyContainer from "containers/TypographyContainer";
 import ColorsContainer from "containers/ColorsContainer";
@@ -21,7 +21,7 @@ import SidebarContainer from "containers/SidebarContainer";
 import HeadersContainer from "containers/HeadersContainer";
 import FootersContainer from "containers/FootersContainer";
 
-export default function(history) {
+export default function AppRouter(history) {
   return (
     <Router history={history}>
       <Route path="/" component={App}>
@@ -43,5 +43,5 @@ export default function(history) {
         <IndexRoute component={OverviewContainer} />
       </Route>
     </Router>
-  )
+  );
 }

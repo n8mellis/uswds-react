@@ -11,6 +11,6 @@ export default class Link extends React.Component
     }
     return (
       <RRLink {...props} />
-    )
+    );
   }
 }

@@ -15,13 +15,13 @@ export class Sidebar extends React.Component
       <ul className="usa-sidenav-list">
         {this.props.children}
       </ul>
-    )
+    );
   }
 }
 
 Sidebar.propTypes = {
   children: React.PropTypes.node
-}
+};
 
 
 // =============================================================================
@@ -37,7 +37,7 @@ export class SidebarLink extends React.Component
         <ul className="usa-sidenav-sub_list">
           {this.props.children}
         </ul>
-      )
+      );
     }
     return children;
   }
@@ -49,7 +49,7 @@ export class SidebarLink extends React.Component
         <Link {...this.props}>{this.props.label}</Link>
         {this.renderChildren()}
       </li>
-    )
+    );
   }
 }
 

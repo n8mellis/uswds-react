@@ -10,11 +10,11 @@ export default class ButtonsContainer extends React.Component
       <BaseContainer {...this.props}>
         TODO
       </BaseContainer>
-    )
+    );
   }
 }
 
 ButtonsContainer.defaultProps = {
   title: "Buttons",
   summary: "Use buttons to signal actions."
-}
+};

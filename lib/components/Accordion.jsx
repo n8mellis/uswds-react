@@ -9,7 +9,7 @@ export class Accordion extends React.Component
     super(props);
     this.state = {
       activeIndex: 0
-    }
+    };
   }
   
   setActiveItem(index)
@@ -32,7 +32,7 @@ export class Accordion extends React.Component
       <ul className={this.props.type}>
         {children}
       </ul>
-    )
+    );
   }
 }
 
@@ -42,11 +42,11 @@ Accordion.TYPE_BORDERED   = "usa-accordion-bordered";
 Accordion.propTypes = {
   type: React.PropTypes.oneOf([ Accordion.TYPE_BORDERLESS, Accordion.TYPE_BORDERED ]),
   children: React.PropTypes.node
-}
+};
 
 Accordion.defaultProps = {
   type: Accordion.TYPE_BORDERLESS
-}
+};
 
 // =============================================================================
 
@@ -71,7 +71,7 @@ export class AccordionItem extends React.Component
     super(props);
     this.state = {
       uuid: ""
-    }
+    };
   }
   
   componentDidMount()
@@ -102,7 +102,7 @@ export class AccordionItem extends React.Component
               onClick={this.makeActive.bind(this)}>
         {element}
       </button>
-    )
+    );
   }
   
   renderContentElement()
@@ -118,14 +118,14 @@ export class AccordionItem extends React.Component
       <div id={`${this.state.uuid}-content`} className="usa-accordion-content">
         {element}
       </div>
-    )
+    );
   }
   
   render()
   {
     // Ensure there are only 2 children.
     if (React.Children.count(this.props.children) > 2) {
-      throw "AccordionItem elements must have no more than 2 children."
+      throw "AccordionItem elements must have no more than 2 children.";
     }
     
     return (
@@ -133,7 +133,7 @@ export class AccordionItem extends React.Component
         {this.renderTitleElement()}
         {this.renderContentElement()}
       </li>
-    )
+    );
   }
 }
 

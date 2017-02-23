@@ -8,6 +8,6 @@ export default class OverviewContainer extends React.Component
       <div>
         Overview
       </div>
-    )
+    );
   }
 }

@@ -10,11 +10,11 @@ export default class GridContainer extends React.Component
       <BaseContainer {...this.props}>
         TODO
       </BaseContainer>
-    )
+    );
   }
 }
 
 GridContainer.defaultProps = {
   title: "Grids",
   summary: "This 12-column, responsive grid provides structure for website content."
-}
+};
