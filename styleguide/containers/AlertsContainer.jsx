@@ -34,11 +34,7 @@ export default class AlertsContainer extends React.Component {
         <div>
           <h5>Example usage</h5>
           <pre><code>
-            &lt;Alert
-              type="error"
-              role="alert"
-              title="An error has occured"
-              body="Could not load file from the server"/>
+            {`<Alert type="error" role="alert" title="An error has occured" body="Could not load file from the server"/>`}
           </code></pre>
           <h5>Required props</h5>
           <ul>
