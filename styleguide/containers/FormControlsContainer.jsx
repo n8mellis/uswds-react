@@ -1,5 +1,6 @@
 import React from 'react';
 import TextInput from '../../lib/components/TextInput';
+import TextArea from '../../lib/components/TextArea';
 import validators from '../../lib/utils/validators';
 import BaseContainer from "./BaseContainer";
 
@@ -74,6 +75,44 @@ export default class FormControlsContainer extends React.Component {
               </li>
               <li>
                 <code>spellCheck</code> <em>bool</em> — defaults to false. If true, enables browser autocorrection while typing
+              </li>
+            </ul>
+          </div>
+          
+          <h2 className="usa-heading heading-margin-alt" id="text-input">Text area</h2>
+          <div className="preview">
+            <TextArea
+              label="How did you hear about us?"
+              id="textareaOne"
+              required />
+            <TextArea
+              label="How did you hear about us?"
+              id="textareaOne"
+              errorMessage="Computer says no"
+              value="I googled and actually clicked next page several times until I found you" />
+          </div>
+          
+          <div>
+            <h5>Example usage</h5>
+            <pre><code>
+              {`<TextArea label="How did you hear about us?" required />`}
+            </code></pre>
+            <h5>Required props</h5>
+            <ul>
+              <li><code>lable</code> <em>string</em> — Text for the label</li>
+              <li><code>id</code> <em>string</em> — sets the textarea's <code>id</code> attribute the label's <code>for</code> attribute. Required for 508 compliance.</li>
+            </ul>
+            
+            <h5>Optional props</h5>
+            <ul>
+              <li>
+                <code>value</code> <em>string</em> — If present pre-populates the input with the given string
+              </li>
+              <li>
+                <code>required</code> <em>bool</em> — defaults to false. Adds required label, required attribute and aria-required='true'
+              </li>
+              <li>
+                <code>errorMessage</code> <em>string</em> — If present, triggers the error state and displays the error message
               </li>
             </ul>
           </div>
