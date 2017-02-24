@@ -1,6 +1,7 @@
 import React from 'react';
 import TextInput from '../../lib/components/TextInput';
 import TextArea from '../../lib/components/TextArea';
+import Dropdown from '../../lib/components/Dropdown';
 import validators from '../../lib/utils/validators';
 import BaseContainer from "./BaseContainer";
 
@@ -8,7 +9,7 @@ export default class FormControlsContainer extends React.Component {
   render() {
     return (
       <BaseContainer {...this.props}>
-        <div id="01-text-input">
+        <section id="01-text-input">
           <h2 className="usa-heading heading-margin-alt" id="text-input">Text input</h2>
           <p className="usa-font-lead">Text inputs allow people to enter any combination of letters, numbers, or symbols of their choosing (unless otherwise restricted). Text input boxes can span single or multiple lines.</p>
           <div className="preview">
@@ -116,7 +117,62 @@ export default class FormControlsContainer extends React.Component {
               </li>
             </ul>
           </div>
-        </div>
+        </section>
+        
+        <section id="02-dropdown">
+          <h2 className="usa-heading heading-margin-alt" id="dropdown">Dropdown</h2>
+          <p className="usa-font-lead">A dropdown allows users to select one option from a list.</p>
+          
+          <div className="preview">
+            <Dropdown label="Dropdown label" id="dropdownOne" >
+              <option value="value1">Option A</option>
+              <option value="value2">Option B</option>
+              <option value="value3">Option C</option>
+            </Dropdown>
+            
+            <Dropdown label="Dropdown label" id="dropdownTwo" required value={''}>
+              <option value="value1">Option A</option>
+              <option value="value2">Option B</option>
+              <option value="value3">Option C</option>
+            </Dropdown>
+            
+            <Dropdown label="Dropdown label" id="dropdownThree" errorMessage="Wrong choice!" value={'value3'}>
+              <option value="value1">Option A</option>
+              <option value="value2">Option B</option>
+              <option value="value3">Option C</option>
+            </Dropdown>
+          </div>
+          
+          <div>
+            <h5>Example usage</h5>
+            <pre><code>
+              {`<Dropdown label="Type of puppy" id="select-puppy">
+  <option value="value1">Option A</option>
+  <option value="value2">Option B</option>
+  <option value="value3">Option C</option>
+</Dropdown>`}
+            </code></pre>
+            <h5>Required props</h5>
+            <ul>
+              <li><code>lable</code> <em>string</em> — text for the label</li>
+              <li><code>id</code> <em>string</em> — sets the select's <code>id</code> attribute the label's <code>for</code> attribute. Required for 508 compliance.</li>
+              <li><code>children</code> <em>node</em> — series of <code>option</code> elements</li>
+            </ul>
+            
+            <h5>Optional props</h5>
+            <ul>
+              <li>
+                <code>value</code> <em>string</em> — if this value matches the value of one of the option elements, that becomes the default choice. If you set it to an empty string, a blank disabled option is added so that there is no default choice. 
+              </li>
+              <li>
+                <code>required</code> <em>bool</em> — defaults to false. Adds required label, required attribute and aria-required='true'
+              </li>
+              <li>
+                <code>errorMessage</code> <em>string</em> — If present, triggers the error state and displays the error message
+              </li>
+            </ul>
+          </div>
+        </section>
       </BaseContainer>
     );
   }
