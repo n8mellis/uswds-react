@@ -14,7 +14,7 @@ import React, { PropTypes } from 'react';
  *
  * @param {string} type  Sets the alert type
  * @param {string, required} title Text for the headline
- * @param {string, required} body  Text for the description
+ * @param {ndoe, required} body  Text for the description
  * @param {string} role  ARIA role type
  */
 export default function Alert ({type, title, body, role}) {
@@ -26,7 +26,7 @@ export default function Alert ({type, title, body, role}) {
     <div className={`usa-alert usa-alert-${type}`} role={role}>
       <div className="usa-alert-body">
         <h3 className="usa-alert-heading">{title}</h3>
-        <p className="usa-alert-text">{body}</p>
+        <div className="usa-alert-text">{body}</div>
       </div>
     </div>
   );
@@ -45,7 +45,7 @@ Alert.propTypes = {
     TYPE_WARNING
   ]),
   title: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired,
+  body: PropTypes.node.isRequired,
   role: PropTypes.string
 };
 
