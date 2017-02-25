@@ -38,17 +38,17 @@ export default class AlertsContainer extends React.Component {
           </code></pre>
           <h5>Required props</h5>
           <ul>
-            <li><code>title</code> <em>string</em> — Text for the title</li>
-            <li><code>body</code> <em>string</em> — Text for the body/description</li>
+            <li><code>title</code> <em>string</em> — the text for the title.</li>
+            <li><code>body</code> <em>string</em> — the text for the body/description.</li>
           </ul>
           
           <h5>Optional props</h5>
           <ul>
             <li>
-              <code>type</code> <em>string</em> — Sets background color and icon. Must be <code>"success"</code>, <code>"warning"</code>, <code>"error"</code>, or <code>"info"</code>. Defaults to <code>"info"</code>.
+              <code>type</code> <em>string, defaults to 'info'</em> — sets the background color and icon. Must be <code>"success"</code>, <code>"warning"</code>, <code>"error"</code>, or <code>"info"</code>.
             </li>
             <li>
-              <code>role</code> <em>string</em> — Sets the ARIA <code>role</code> property. If the alert's type is <code>"error"</code> and no role is specified, <code>role="alert"</code> is automatically added. Use <code>"alert"</code>to inform of a time-sensitive and important message that is not interactive. If the message is interactive, use <code>"alertdialog"</code> instead. 
+              <code>role</code> <em>string</em> — Sets the ARIA <code>role</code> property. If the alert has <code>type="error"</code> and no role is specified, <code>role="alert"</code> is automatically added. Use <code>"alert"</code>to inform of a time-sensitive and important message that is not interactive. If the message is interactive, use <code>"alertdialog"</code> instead. 
             </li>
           </ul>
         </div>

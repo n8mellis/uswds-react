@@ -60,25 +60,25 @@ export default class FormControlsContainer extends React.Component {
             <h5>Optional props</h5>
             <ul>
               <li>
-                <code>value</code> <em>string</em> — If present pre-populates the input with the given string
+                <code>value</code> <em>string</em> — if present, pre-populates the input with the given string.
               </li>
               <li>
-                <code>required</code> <em>bool</em> — defaults to false. Adds required label, required attribute and aria-required='true'
+                <code>required</code> <em>bool, defaults to false</em> — adds required label, required attribute, and aria-required='true'.
               </li>
               <li>
-                <code>errorMessage</code> <em>string</em> — If present, triggers the error state and displays the error message
+                <code>errorMessage</code> <em>string</em> — If present, triggers the error state and displays the error message.
               </li>
               <li>
-                <code>isValid</code> <em>bool</em> — If true, sets the valid state (green border)
+                <code>isValid</code> <em>bool, defaults to false</em> — if true, sets the valid state (green border).
               </li>
               <li>
-                <code>allowedChars</code> <em>Validator object</em> — If present, user can only type characters that match the given test
+                <code>allowedChars</code> <em>Validator object</em> — if present, user can only type characters that match the given test.
               </li>
               <li>
-                <code>validators</code> <em>array of Validator objects</em> — If present, field get error state onBlur if the value does not match the given test
+                <code>validators</code> <em>array of Validator objects</em> — if present, field gets error state onBlur if the value does not match the given test(s).
               </li>
               <li>
-                <code>spellCheck</code> <em>bool</em> — defaults to false. If true, enables browser autocorrection while typing
+                <code>spellCheck</code> <em>bool, defaults to false</em> — if true, enables browser autocorrection while typing.
               </li>
             </ul>
           </div>
@@ -86,7 +86,7 @@ export default class FormControlsContainer extends React.Component {
         
         <section id="text-area">
           <h2 className="usa-heading heading-margin-alt" id="text-input">Text area</h2>
-          <p className="usa-font-lead">Text area is a multi-line plain-text editing control</p>
+          <p className="usa-font-lead">Text area is a multi-line, plain-text editing control</p>
           
           <div className="preview">
             <TextArea
@@ -107,20 +107,20 @@ export default class FormControlsContainer extends React.Component {
             </code></pre>
             <h5>Required props</h5>
             <ul>
-              <li><code>lable</code> <em>string</em> — Text for the label</li>
+              <li><code>lable</code> <em>string</em> — the text for the label.</li>
               <li><code>id</code> <em>string</em> — sets the textarea's <code>id</code> attribute the label's <code>for</code> attribute. Required for 508 compliance.</li>
             </ul>
             
             <h5>Optional props</h5>
             <ul>
               <li>
-                <code>value</code> <em>string</em> — If present pre-populates the input with the given string
+                <code>value</code> <em>string</em> — if present, pre-populates the input with the given string.
               </li>
               <li>
-                <code>required</code> <em>bool</em> — defaults to false. Adds required label, required attribute and aria-required='true'
+                <code>required</code> <em>bool, defaults to false</em> — adds required label, required attribute, and aria-required='true'.
               </li>
               <li>
-                <code>errorMessage</code> <em>string</em> — If present, triggers the error state and displays the error message
+                <code>errorMessage</code> <em>string</em> — if present, triggers the error state and displays the error message.
               </li>
             </ul>
           </div>
@@ -161,21 +161,21 @@ export default class FormControlsContainer extends React.Component {
             </code></pre>
             <h5>Required props</h5>
             <ul>
-              <li><code>lable</code> <em>string</em> — text for the label</li>
+              <li><code>lable</code> <em>string</em> — the text for the label.</li>
               <li><code>id</code> <em>string</em> — sets the select's <code>id</code> attribute the label's <code>for</code> attribute. Required for 508 compliance.</li>
-              <li><code>children</code> <em>node</em> — series of <code>option</code> elements</li>
+              <li><code>children</code> <em>node</em> — expects a series of <code>option</code> elements.</li>
             </ul>
             
             <h5>Optional props</h5>
             <ul>
               <li>
-                <code>value</code> <em>string</em> — if this value matches the value of one of the option elements, that becomes the default choice. If you set it to an empty string, a blank disabled option is added so that there is no default choice. 
+                <code>value</code> <em>string</em> — if this matches the <code>value</code> of one of the option elements, that becomes the default choice. If you set it to an empty string, a blank disabled option is added so that there is no default choice. 
               </li>
               <li>
-                <code>required</code> <em>bool</em> — defaults to false. Adds required label, required attribute and aria-required='true'
+                <code>required</code> <em>bool, defaults to false</em> — adds required label, required attribute, and aria-required='true'.
               </li>
               <li>
-                <code>errorMessage</code> <em>string</em> — If present, triggers the error state and displays the error message
+                <code>errorMessage</code> <em>string</em> — if present, triggers the error state and displays the error message.
               </li>
             </ul>
           </div>
@@ -197,11 +197,11 @@ export default class FormControlsContainer extends React.Component {
           <div>
             <h5>Example usage</h5>
             <pre><code>
-              {`<Checkbox id="truth" label="Sojourner Truth" checked></Checkbox>`}
+              {`<Checkbox id="truth" label="Sojourner Truth" checked />`}
             </code></pre>
             <h5>Required props</h5>
             <ul>
-              <li><code>lable</code> <em>string</em> — Text for the label</li>
+              <li><code>lable</code> <em>string</em> — the text for the label.</li>
               <li><code>id</code> <em>string</em> — sets the textarea's <code>id</code> attribute the label's <code>for</code> attribute. Required for 508 compliance.</li>
             </ul>
             
@@ -211,13 +211,13 @@ export default class FormControlsContainer extends React.Component {
                 <code>value</code> <em>string</em> — sets the value attribute. If not provided the id is used instead. 
               </li>
               <li>
-                <code>name</code> <em>string</em> — defaults to 'checkboxs'. Sets the name attribute. Each item in a fieldset should have the same name.
+                <code>name</code> <em>string, defaults to 'checkboxs'</em> — sets the name attribute. Each item in a fieldset should have the same name.
               </li>
               <li>
-                <code>checked</code> <em>bool</em> — If true, the control is selected (checked) by default.
+                <code>checked</code> <em>bool</em> — if true, the control is selected (checked) by default.
               </li>
               <li>
-                <code>disabled</code> <em>bool</em> — If true, disables the control so it can not be toggled.
+                <code>disabled</code> <em>bool</em> — if true, disables the control so it can not be toggled.
               </li>
             </ul>
           </div>
@@ -242,23 +242,23 @@ export default class FormControlsContainer extends React.Component {
             </code></pre>
             <h5>Required props</h5>
             <ul>
-              <li><code>lable</code> <em>string</em> — Text for the label</li>
+              <li><code>lable</code> <em>string</em> — the text for the label.</li>
               <li><code>id</code> <em>string</em> — sets the textarea's <code>id</code> attribute the label's <code>for</code> attribute. Required for 508 compliance.</li>
             </ul>
             
             <h5>Optional props</h5>
             <ul>
               <li>
-                <code>value</code> <em>string</em> — sets the value attribute. If not provided the id is used instead. 
+                <code>value</code> <em>string</em> — sets the value attribute. If not provided the <code>id</code> is used instead. 
               </li>
               <li>
-                <code>name</code> <em>string</em> — defaults to 'checkboxs'. Sets the name attribute. Each item in a fieldset should have the same name.
+                <code>name</code> <em>string, defaults to 'radios'</em> — sets the name attribute. Each item in a fieldset should have the same name.
               </li>
               <li>
-                <code>checked</code> <em>bool</em> — If true, the control is selected (checked) by default.
+                <code>checked</code> <em>bool</em> — if true, the control is selected (checked) by default.
               </li>
               <li>
-                <code>disabled</code> <em>bool</em> — If true, disables the control so it can not be toggled.
+                <code>disabled</code> <em>bool</em> — if true, disables the control so it can not be toggled.
               </li>
             </ul>
           </div>
@@ -279,7 +279,8 @@ export default class FormControlsContainer extends React.Component {
             </code></pre>
             <h5>Required props</h5>
             <ul>
-              <li><code>legend</code> <em>string</em> — screen-reader only label of what the radio group represents. Required for 508 compliance.</li>
+              <li><code>legend</code> <em>string</em> — screen-reader only label of what the radio or checkbox group represents. Many screen readers will read the legend for each control, so it shoud be 
+              brief and descriptive. Required for 508 compliance. </li>
               <li>
                 <code>children</code> <em>node</em> — expects two or more checkboxes or radio buttons.
               </li>
