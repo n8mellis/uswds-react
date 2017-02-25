@@ -12,7 +12,7 @@ export default class FormControlsContainer extends React.Component {
   render() {
     return (
       <BaseContainer {...this.props}>
-        <section id="01-text-input">
+        <section id="text-input">
           <h2 className="usa-heading heading-margin-alt" id="text-input">Text input</h2>
           <p className="usa-font-lead">Text inputs allow people to enter any combination of letters, numbers, or symbols of their choosing (unless otherwise restricted). Text input boxes can span single or multiple lines.</p>
           <div className="preview">
@@ -126,7 +126,7 @@ export default class FormControlsContainer extends React.Component {
           </div>
         </section>
         
-        <section id="02-dropdown">
+        <section id="dropdown">
           <h2 className="usa-heading heading-margin-alt" id="dropdown">Dropdown</h2>
           <p className="usa-font-lead">A dropdown allows users to select one option from a list.</p>
           
@@ -181,7 +181,7 @@ export default class FormControlsContainer extends React.Component {
           </div>
         </section>
         
-        <section id="03-checkboxes">
+        <section id="checkboxes">
           <h2 className="usa-heading heading-margin-alt" id="checkboxes">Checkboxes</h2>
           <p className="usa-font-lead">Checkboxes allow users to select one or more options from a visible list.</p>
           
