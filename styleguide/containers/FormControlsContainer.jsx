@@ -187,10 +187,10 @@ export default class FormControlsContainer extends React.Component {
           
           <div className="preview">
             <FieldSet name="historical-figures-1" legend="Historial figures">
-              <Checkbox id="truth" label="Sojourner Truth" checked></Checkbox>
-              <Checkbox id="douglass" label="Frederick Douglass" checked></Checkbox>
-              <Checkbox id="washington" label="Booker T. Washington" disabled></Checkbox>
-              <Checkbox id="carver" label="George Washington Carver"></Checkbox>
+              <Checkbox id="truth" label="Sojourner Truth" checked />
+              <Checkbox id="douglass" label="Frederick Douglass" checked />
+              <Checkbox id="washington" label="Booker T. Washington" disabled />
+              <Checkbox id="carver" label="George Washington Carver" />
             </FieldSet>
           </div>
           
@@ -228,17 +228,17 @@ export default class FormControlsContainer extends React.Component {
           
           <div className="preview">
             <FieldSet name="historical-figures-2" legend="Historial figures">
-              <Radio id="stanton" label="Sojourner Truth"></Radio>
-              <Radio id="douglass" label="Frederick Douglass" checked></Radio>
-              <Radio id="washington" label="Booker T. Washington" disabled></Radio>
-              <Radio id="carver" label="George Washington Carver"></Radio>
+              <Radio id="stanton" label="Sojourner Truth" />
+              <Radio id="douglass" label="Frederick Douglass" checked />
+              <Radio id="washington" label="Booker T. Washington" disabled />
+              <Radio id="carver" label="George Washington Carver" />
             </FieldSet>
           </div>
           
           <div>
             <h5>Example usage</h5>
             <pre><code>
-              {`<Radio id="truth" label="Sojourner Truth" checked></Radio>`}
+              {`<Radio id="truth" label="Sojourner Truth" checked />`}
             </code></pre>
             <h5>Required props</h5>
             <ul>
@@ -260,6 +260,37 @@ export default class FormControlsContainer extends React.Component {
               <li>
                 <code>disabled</code> <em>bool</em> — If true, disables the control so it can not be toggled.
               </li>
+            </ul>
+          </div>
+        </section>
+        
+        <section id="field-set">
+          <h2 className="usa-heading heading-margin-alt" id="checkboxes">Field set</h2>
+          <p className="usa-font-lead">The Field set is used to group two or more checkboxes or radio buttons together.</p>
+          
+          <div>
+            <h5>Example usage</h5>
+            <pre><code>
+              {`<FieldSet name="choices" legend="Best choices">
+  <Checkbox id="value1" label="Option A" />
+  <Checkbox id="value2" label="Option B" />
+  <Checkbox id="value3" label="Option C" />
+</FieldSet>`}
+            </code></pre>
+            <h5>Required props</h5>
+            <ul>
+              <li><code>legend</code> <em>string</em> — screen-reader only label of what the radio group represents. Required for 508 compliance.</li>
+              <li>
+                <code>children</code> <em>node</em> — expects two or more checkboxes or radio buttons.
+              </li>
+            </ul>
+            
+            <h5>Optional props</h5>
+            <ul>
+              <li>
+                <code>name</code> <em>string</em> — applies this name to all the children rather than having to set the name of each child individually.
+              </li>
+              
             </ul>
           </div>
         </section>

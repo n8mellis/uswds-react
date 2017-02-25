@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 /**
- * The FieldSet is used to group two or more checkboxes or radio buttons together.
+ * The Field set is used to group two or more checkboxes or radio buttons together.
  * 
  * This component returns a <fieldset> with a legend, which is necessary for screen readers. 
  * Many screen readers will read the legend for each control, so it shoud be 
@@ -11,8 +11,8 @@ import React, { PropTypes } from 'react';
  * Checkbox or radio button child so they will all be the same. 
  * 
  * @param {string, required} legend  Screen-reader only label of what the radio group represents
+ * @param {node, required} children Expected to be Checkbox components
  * @param {string} name Applies this name to all the children
- * @param {node} children Expected to be Checkbox components
  * 
  */
 export default function FieldSet({name, children, legend}) {
@@ -39,6 +39,6 @@ export default function FieldSet({name, children, legend}) {
 
 FieldSet.propTypes = {
   legend: PropTypes.string.isRequired,
-  name: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node.isRequired,
+  name: PropTypes.string
 };
