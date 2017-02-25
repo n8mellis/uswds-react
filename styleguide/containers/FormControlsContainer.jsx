@@ -60,22 +60,22 @@ export default class FormControlsContainer extends React.Component {
             <h5>Optional props</h5>
             <ul>
               <li>
-                <code>value</code> <em>string</em> — if present, pre-populates the input with the given string.
+                <code>value</code> <em>string</em> — if provided, pre-populates the input with the given string.
               </li>
               <li>
                 <code>required</code> <em>bool, defaults to false</em> — adds required label, required attribute, and aria-required='true'.
               </li>
               <li>
-                <code>errorMessage</code> <em>string</em> — If present, triggers the error state and displays the error message.
+                <code>errorMessage</code> <em>string</em> — If provided, triggers the error state and displays the error message.
               </li>
               <li>
                 <code>isValid</code> <em>bool, defaults to false</em> — if true, sets the valid state (green border).
               </li>
               <li>
-                <code>allowedChars</code> <em>Validator object</em> — if present, user can only type characters that match the given test.
+                <code>allowedChars</code> <em>Validator object</em> — if provided, user can only type characters that match the given test.
               </li>
               <li>
-                <code>validators</code> <em>array of Validator objects</em> — if present, field gets error state onBlur if the value does not match the given test(s).
+                <code>validators</code> <em>array of Validator objects</em> — if provided, field gets error state onBlur if the value does not match the given test(s).
               </li>
               <li>
                 <code>spellCheck</code> <em>bool, defaults to false</em> — if true, enables browser autocorrection while typing.
@@ -114,13 +114,13 @@ export default class FormControlsContainer extends React.Component {
             <h5>Optional props</h5>
             <ul>
               <li>
-                <code>value</code> <em>string</em> — if present, pre-populates the input with the given string.
+                <code>value</code> <em>string</em> — if provided, pre-populates the input with the given string.
               </li>
               <li>
                 <code>required</code> <em>bool, defaults to false</em> — adds required label, required attribute, and aria-required='true'.
               </li>
               <li>
-                <code>errorMessage</code> <em>string</em> — if present, triggers the error state and displays the error message.
+                <code>errorMessage</code> <em>string</em> — if provided, triggers the error state and displays the error message.
               </li>
             </ul>
           </div>
@@ -175,7 +175,7 @@ export default class FormControlsContainer extends React.Component {
                 <code>required</code> <em>bool, defaults to false</em> — adds required label, required attribute, and aria-required='true'.
               </li>
               <li>
-                <code>errorMessage</code> <em>string</em> — if present, triggers the error state and displays the error message.
+                <code>errorMessage</code> <em>string</em> — if provided, triggers the error state and displays the error message.
               </li>
             </ul>
           </div>
@@ -208,7 +208,7 @@ export default class FormControlsContainer extends React.Component {
             <h5>Optional props</h5>
             <ul>
               <li>
-                <code>value</code> <em>string</em> — sets the value attribute. If not provided the id is used instead. 
+                <code>value</code> <em>string</em> — sets the value attribute. If not provided, the id is used instead. 
               </li>
               <li>
                 <code>name</code> <em>string, defaults to 'checkboxs'</em> — sets the name attribute. Each item in a fieldset should have the same name.
@@ -249,7 +249,7 @@ export default class FormControlsContainer extends React.Component {
             <h5>Optional props</h5>
             <ul>
               <li>
-                <code>value</code> <em>string</em> — sets the value attribute. If not provided the <code>id</code> is used instead. 
+                <code>value</code> <em>string</em> — sets the value attribute. If not provided, the <code>id</code> is used instead. 
               </li>
               <li>
                 <code>name</code> <em>string, defaults to 'radios'</em> — sets the name attribute. Each item in a fieldset should have the same name.
