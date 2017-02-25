@@ -23,4 +23,7 @@ $output-bourbon-deprecation-warnings: false;
 @import "components/Header";
 @import "components/SearchField";
 @import "components/Sidebar";
-@import "components/Alerts"
+@import "components/Alerts";
+
+//Fixes
+@import "fixes/fixes";

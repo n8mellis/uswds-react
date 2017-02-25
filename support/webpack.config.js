@@ -45,15 +45,19 @@ var config = {
           {
             loader: "eslint-loader",
             options: {
-              emitError: true,
-              emitWarning: true,
-              failOnWarning: false,
-              failOnError: false
+              // emitError: true,
+              // emitWarning: true,
+              // failOnWarning: false,
+              // failOnError: false
             }
           }
         ],
         exclude: /node_modules/
-      }
+      },
+      // {
+      //   test: /\.css$/,
+      //   use: [ 'style-loader', 'css-loader' ]
+      // }
     ]
   }
 };
