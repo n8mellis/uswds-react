@@ -214,7 +214,7 @@ export default class FormControlsContainer extends React.Component {
                 <code>name</code> <em>string</em> — defaults to 'checkboxs'. Sets the name attribute. Each item in a fieldset should have the same name.
               </li>
               <li>
-                <code>checked</code> <em>bool</em> — If true, the control us selected (checked) by default.
+                <code>checked</code> <em>bool</em> — If true, the control is selected (checked) by default.
               </li>
               <li>
                 <code>disabled</code> <em>bool</em> — If true, disables the control so it can not be toggled.
@@ -255,7 +255,7 @@ export default class FormControlsContainer extends React.Component {
                 <code>name</code> <em>string</em> — defaults to 'checkboxs'. Sets the name attribute. Each item in a fieldset should have the same name.
               </li>
               <li>
-                <code>checked</code> <em>bool</em> — If true, the control us selected (checked) by default.
+                <code>checked</code> <em>bool</em> — If true, the control is selected (checked) by default.
               </li>
               <li>
                 <code>disabled</code> <em>bool</em> — If true, disables the control so it can not be toggled.
