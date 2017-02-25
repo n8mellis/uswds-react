@@ -3,6 +3,7 @@ import TextInput from '../../lib/components/TextInput';
 import TextArea from '../../lib/components/TextArea';
 import Dropdown from '../../lib/components/Dropdown';
 import Checkbox from '../../lib/components/Checkbox';
+import Radio from '../../lib/components/Radio';
 import FieldSet from '../../lib/components/FieldSet';
 import validators from '../../lib/utils/validators';
 import BaseContainer from "./BaseContainer";
@@ -197,6 +198,47 @@ export default class FormControlsContainer extends React.Component {
             <h5>Example usage</h5>
             <pre><code>
               {`<Checkbox id="truth" label="Sojourner Truth" checked></Checkbox>`}
+            </code></pre>
+            <h5>Required props</h5>
+            <ul>
+              <li><code>lable</code> <em>string</em> — Text for the label</li>
+              <li><code>id</code> <em>string</em> — sets the textarea's <code>id</code> attribute the label's <code>for</code> attribute. Required for 508 compliance.</li>
+            </ul>
+            
+            <h5>Optional props</h5>
+            <ul>
+              <li>
+                <code>value</code> <em>string</em> — sets the value attribute. If not provided the id is used instead. 
+              </li>
+              <li>
+                <code>name</code> <em>string</em> — defaults to 'checkboxs'. Sets the name attribute. Each item in a fieldset should have the same name.
+              </li>
+              <li>
+                <code>checked</code> <em>bool</em> — If true, the control us selected (checked) by default.
+              </li>
+              <li>
+                <code>disabled</code> <em>bool</em> — If true, disables the control so it can not be toggled.
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section id="radio-buttons">
+          <h2 className="usa-heading heading-margin-alt" id="checkboxes">Radio buttons</h2>
+          <p className="usa-font-lead">Radio buttons allow users to see all available choices at once and select exactly one option.</p>
+          
+          <div className="preview">
+            <FieldSet name="historical-figures-2" legend="Historial figures">
+              <Radio id="stanton" label="Sojourner Truth"></Radio>
+              <Radio id="douglass" label="Frederick Douglass" checked></Radio>
+              <Radio id="washington" label="Booker T. Washington" disabled></Radio>
+              <Radio id="carver" label="George Washington Carver"></Radio>
+            </FieldSet>
+          </div>
+          
+          <div>
+            <h5>Example usage</h5>
+            <pre><code>
+              {`<Radio id="truth" label="Sojourner Truth" checked></Radio>`}
             </code></pre>
             <h5>Required props</h5>
             <ul>
