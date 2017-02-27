@@ -1,9 +1,15 @@
 import React from "react";
 
 import BaseContainer from "./BaseContainer";
-
+/**
+ * Class for content for the typography tab
+ */
 export default class TypographyContainer extends React.Component
 {
+  /**
+   * Renders the node
+   * @returns {node} the rendered DOM node
+   */
   render()
   {
     return (

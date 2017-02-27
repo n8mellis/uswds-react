@@ -4,6 +4,9 @@ import OfficialSiteBanner from "./OfficialSiteBanner";
 // import NavigationBar from "./NavigationBar";
 // import SearchField from "./SearchField";
 
+/**
+ * The site header containing the official site banner, logo and nav 
+ */
 export default class Header extends React.Component
 {
   /**

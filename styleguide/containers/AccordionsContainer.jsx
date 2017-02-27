@@ -3,8 +3,15 @@ import React from "react";
 import BaseContainer from "./BaseContainer";
 import { Accordion, AccordionItem } from "../../lib/components/Accordion";
 
+/**
+ * Accordions content
+ */
 export default class AccordionsContainer extends React.Component
 {
+  /**
+   * Renders the node
+   * @returns {node} the rendered DOM node
+   */
   render()
   {
     return (

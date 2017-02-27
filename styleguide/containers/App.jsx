@@ -5,8 +5,15 @@ import Helmet from 'react-helmet';
 import Header from "../../lib/components/Header";
 import { Sidebar, SidebarLink } from "../../lib/components/Sidebar";
 
+/**
+ * Class for the App
+ */
 class App extends React.Component 
 {
+  /**
+   * Renders the node
+   * @returns {node} the rendered DOM node
+   */
   render() 
   {
     return (
@@ -62,6 +69,11 @@ App.propTypes = {
   children: React.PropTypes.node
 };
 
+/**
+ * [mapStateToProps description]
+ * @param  {object} state [description]
+ * @returns {object}       [description]
+ */
 function mapStateToProps(state) { // eslint-disable-line no-unused-vars
   return {};
 }

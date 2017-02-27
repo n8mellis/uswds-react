@@ -2,7 +2,14 @@ import React from 'react';
 import Alert from '../../lib/components/Alert';
 import BaseContainer from './BaseContainer';
 
+/**
+ * Alerts content
+ */
 export default class AlertsContainer extends React.Component {
+  /**
+   * Renders the node
+   * @returns {node} the rendered DOM node
+   */
   render() {
     const message = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.';
     const longMessage = (<div><p>Multi line. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p><p>Not what you expected? <a href="#">Go back.</a></p></div>);

@@ -1,7 +1,14 @@
 import React from "react";
 
+/**
+ * content skeleton
+ */
 export default class BaseContainer extends React.Component
 {
+  /**
+   * Renders the node
+   * @returns {node} the rendered DOM node
+   */
   render()
   {
     return (

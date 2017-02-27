@@ -3,8 +3,15 @@ import React from "react";
 import BaseContainer from "./BaseContainer";
 import SearchField from "../../lib/components/SearchField";
 
+/**
+ * Search bar content
+ */
 export default class SearchBarContainer extends React.Component
 {
+  /**
+   * Renders the node
+   * @returns {node} the rendered DOM node
+   */
   render()
   {
     return (
