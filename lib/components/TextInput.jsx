@@ -9,6 +9,7 @@ import InputLabel from './InputLabel';
  * - id: sets the id attribute for the input and the <label for... attribute
  *
  * Optional props:
+ * - type: string, defaults to 'text'. Sets the input type
  * - value: string. If present pre-populates the input with the given string.
  * - required: bool, defaults to false. Adds required label, required attribute and aria-required='true'
  * - validators: array of Validator objects. If present, field get error state onBlur if the value does not match the given test
@@ -87,7 +88,7 @@ export default class TextInput extends Component {
         <input
           id={this.props.id}
           name={this.props.id}
-          type="text"
+          type={this.props.type}
           value={this.state.value}
           className={this.state.isValid ? 'usa-input-success' : null}
           required={this.props.required}
@@ -191,6 +192,18 @@ export default class TextInput extends Component {
 TextInput.propTypes = {
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
+  type: PropTypes.oneOf([
+    'text',
+    'email',
+    'password',
+    'search',
+    'url',
+    'date',
+    'month',
+    'tel',
+    'week',
+    'number'
+  ]),
   required: PropTypes.bool,
   spellCheck: PropTypes.bool,
   errorMessage: PropTypes.string,
@@ -201,6 +214,7 @@ TextInput.propTypes = {
 };
 
 TextInput.defaultProps = {
+  type: 'text',
   spellCheck: false,
   required: false
 };

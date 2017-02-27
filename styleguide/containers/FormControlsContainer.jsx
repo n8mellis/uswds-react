@@ -67,6 +67,9 @@ export default class FormControlsContainer extends React.Component {
             <h5>Optional props</h5>
             <ul>
               <li>
+                <code>type</code> <em>string, defaults to 'text'</em> — Must be one of these: <code>"text"</code>, <code>"email"</code>, <code>"password"</code>, <code>"search"</code>, <code>"url"</code>, <code>"date"</code>, <code>"month"</code>, <code>"tel"</code>, <code>"week"</code>, <code>"number"</code>
+              </li>
+              <li>
                 <code>value</code> <em>string</em> — if provided, pre-populates the input with the given string.
               </li>
               <li>
