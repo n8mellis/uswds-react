@@ -51,5 +51,5 @@ Alert.propTypes = {
 };
 
 Alert.defaultProps = {
-  type: 'info'
+  type: TYPE_INFO
 };
