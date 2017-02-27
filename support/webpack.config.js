@@ -42,19 +42,19 @@ var config = {
           {
             loader: "babel-loader"
           },
-          {
-            loader: "eslint-loader",
-            options: {
-              // emitError: true,
-              // emitWarning: true,
-              // failOnWarning: false,
-              // failOnError: false
-            }
-          }
+          // {
+          //   loader: "eslint-loader",
+          //   options: {
+          //     emitError: true,
+          //     emitWarning: true,
+          //     failOnWarning: false,
+          //     failOnError: false
+          //   }
+          // }
         ],
         exclude: /node_modules/
-      },
-      // {
+      }
+      // ,{
       //   test: /\.css$/,
       //   use: [ 'style-loader', 'css-loader' ]
       // }
