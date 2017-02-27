@@ -12,10 +12,11 @@ import React, { PropTypes } from 'react';
  *
  * If the type is 'error' and no role is specified, role defaults to 'alert'
  *
+ * @returns {node} 
  * @param {string} type  Sets the alert type
- * @param {string, required} title Text for the headline
- * @param {ndoe, required} body  Text for the description
- * @param {string} role  ARIA role type
+ * @param {string} title Text for the headline
+ * @param {node} body  Text for the description
+ * @param {string} role  ARIA role type 
  */
 export default function Alert ({type, title, body, role}) {
   if ( type === 'error' && !role) {
