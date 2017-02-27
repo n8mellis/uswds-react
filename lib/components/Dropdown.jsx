@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import InputLabel from './InputLabel';
+import Utilities from '../helpers/utilities';
 
 /**
  * Class representing a dropdown
@@ -8,10 +9,10 @@ import InputLabel from './InputLabel';
  *
  * Required props:
  * - label: string. Sets the text for the input's label
- * - id: string. Sets the select's id attribute nd the label's for attribute
  * - children: node. Series of <option> elements
  *
  * Optional props:
+ * - id: string. Sets the select's id attribute nd the label's for attribute
  * - value: string. Sets default select choice. Must match the value of one of the <option> elements. Or if an empty string, a blank placeholder is added.
  * - required: bool. Adds required label, required attribute and aria-required='true'
  * - errorMessage: string. If present triggers the error state and displays the error message
@@ -33,6 +34,13 @@ export default class Dropdown extends Component {
       hasError: this.props.errorMessage ? true : false,
       errorMessageBody: this.props.errorMessage ? this.props.errorMessage : null
     };
+  }
+  
+  /**
+   * check to see if an Id was passed in, if not generate one.
+   */
+  componentWillMount() {
+    this.id = this.props.id ? this.props.id : Utilities.uniqueIdForComponent(this);
   }
   
   /**
@@ -79,13 +87,13 @@ export default class Dropdown extends Component {
 
     return (
       <div className={this.state.hasError ? 'usa-input-error' : 'usa-input'}>
-        <InputLabel htmlFor={this.props.id} required={this.props.required} label={this.props.label} />
+        <InputLabel htmlFor={this.id} required={this.props.required} label={this.props.label} />
 
         {errorMessage}
 
         <select
           name={this.props.id}
-          id={this.props.id}
+          id={this.id}
           value={this.state.value}
           onChange={this._handleChange.bind(this)} >
             {emptyPlaceholder}
@@ -97,7 +105,7 @@ export default class Dropdown extends Component {
 }
 
 Dropdown.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   label: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   required: PropTypes.bool,

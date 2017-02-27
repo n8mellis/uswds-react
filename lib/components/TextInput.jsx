@@ -1,14 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 import InputLabel from './InputLabel';
+import Utilities from '../helpers/utilities';
 
 /**
  * Class representing a label and a input of type="text"
  *
  * Required props:
  * - label: Sets the text for the input's label
- * - id: sets the id attribute for the input and the <label for... attribute
- *
+ * 
  * Optional props:
+ * - id: sets the id attribute for the input and the <label for... attribute
  * - type: string, defaults to 'text'. Sets the input type
  * - value: string. If present pre-populates the input with the given string.
  * - required: bool, defaults to false. Adds required label, required attribute and aria-required='true'
@@ -45,6 +46,13 @@ export default class TextInput extends Component {
       errorMessage : this.props.errorMessage
     };
   }
+  
+  /**
+   * check to see if an Id was passed in, if not generate one.
+   */
+  componentWillMount() {
+    this.id = this.props.id ? this.props.id : Utilities.uniqueIdForComponent(this);
+  }
 
   /**
    * If errorMessage is updated after initial render, adjust the state accordingly
@@ -75,12 +83,12 @@ export default class TextInput extends Component {
 
     return (
       <div className={this.state.hasError ? 'usa-input-error' : 'usa-input'}>
-        <InputLabel htmlFor={this.props.id} required={this.props.required} label={this.props.label} />
+        <InputLabel htmlFor={this.id} required={this.props.required} label={this.props.label} />
 
         {error}
 
         <input
-          id={this.props.id}
+          id={this.id}
           name={this.props.id}
           type={this.props.type}
           value={this.state.value}
@@ -184,7 +192,7 @@ export default class TextInput extends Component {
 }
 
 TextInput.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   label: PropTypes.string.isRequired,
   type: PropTypes.oneOf([
     'text',

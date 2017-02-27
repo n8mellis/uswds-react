@@ -1,14 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 import InputLabel from './InputLabel';
+import Utilities from '../helpers/utilities';
 
 /**
  * A radio button and a label 
  *
  * Required props
- * - id, string -- input's id and label's for attributes
  * - label, string -- Text for the label
  *
  * Optional props
+ * - id, string -- input's id and label's for attributes
  * - name, string, defaults to 'radios' -- Sets name attribute
  * - value, string, defaults to id -- Sets value attribute
  * - checked, bool -- If true, item is initially set to checked
@@ -24,6 +25,13 @@ export default class Radio extends Component {
   }
   
   /**
+   * check to see if an Id was passed in, if not generate one.
+   */
+  componentWillMount() {
+    this.id = this.props.id ? this.props.id : Utilities.uniqueIdForComponent(this);
+  }
+  
+  /**
    * Renders the DOM node
    * @returns {node} div that includes the input and label
    */
@@ -31,21 +39,21 @@ export default class Radio extends Component {
     return (
       <div>
         <input
-          id={this.props.id}
+          id={this.id}
           type="radio"
           name={this.props.name}
           value={this.props.value ? this.props.value : this.props.id}
           defaultChecked={this.props.checked}
           disabled={this.props.disabled} />
 
-        <InputLabel htmlFor={this.props.id} label={this.props.label} />
+        <InputLabel htmlFor={this.id} label={this.props.label} />
       </div>
     );
   }
 }
 
 Radio.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   label: PropTypes.string.isRequired,
   name: PropTypes.string,
   value: PropTypes.string,

@@ -1,15 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 import InputLabel from './InputLabel';
-// import './Checkbox.css';
+import Utilities from '../helpers/utilities';
 
 /**
  * Checkbox with label
  *
  * Required props:
  * - label, string -- the text for the label
- * - id, string -- sets the textarea's id attribute the label's for attribute. Required for 508 compliance.
  *
  * Optional props:
+ * - id, string -- sets the textarea's id attribute the label's for attribute. Required for 508 compliance.
  * - value, string -- sets the value attribute. If not provided, the id is used instead.
  * - name, string, defaults to 'checkboxs' -- sets the name attribute. Each item in a fieldset should have the same name.
  * - checked, bool -- if true, the control is selected (checked) by default.
@@ -17,15 +17,28 @@ import InputLabel from './InputLabel';
  */
 export default class Checkbox extends Component {  
   /**
+   * constructor
+   * @param {object} props The props passed in
+   */
+  constructor(props) {
+    super(props);
+  }
+  /**
+   * check to see if an Id was passed in, if not generate one.
+   */
+  componentWillMount() {
+    this.id = this.props.id ? this.props.id : Utilities.uniqueIdForComponent(this);
+  }
+  
+  /**
    * Renders the component.
-   *
    * @returns {Node} The rendered DOM node.
    */
   render() {
     return (
       <div>
         <input
-          id={this.props.id}
+          id={this.id}
           type="checkbox"
           name={this.props.name}
           value={this.props.value ? this.props.value : this.props.id}
@@ -33,14 +46,14 @@ export default class Checkbox extends Component {
           disabled={this.props.disabled}
         />
 
-        <InputLabel htmlFor={this.props.id} label={this.props.label} />
+        <InputLabel htmlFor={this.id} label={this.props.label} />
       </div>
     );
   }
 }
 
 Checkbox.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   label: PropTypes.string.isRequired,
   name: PropTypes.string,
   value: PropTypes.string,

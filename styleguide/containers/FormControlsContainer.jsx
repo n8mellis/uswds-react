@@ -35,14 +35,12 @@ export default class FormControlsContainer extends React.Component {
             <TextInput
               label="Email address"
               type="email"
-              id="thirdInput"
               value="gwashington@potus.com"
               isValid
               validators={[EmailValidator]} />
             
               <TextInput
                 label="ZIP code"
-                id="nums"
                 value="666"
                 errorMessage="Not a valid ZIP Code"
                 validators={[ZipCodeValidator]} />
@@ -50,7 +48,6 @@ export default class FormControlsContainer extends React.Component {
               <TextInput
                 type="tel"
                 label="Phone number"
-                id="tel"
                 validators={[PhoneValidator]} />
           </div>
           
@@ -59,19 +56,20 @@ export default class FormControlsContainer extends React.Component {
             <pre><code>
               {`<TextInput
   label="ZIP code"
-  id="zip"
   required
-  allowedChars={validators.onlyNumbers}
   validators={[validators.zipCode]} />`}
             </code></pre>
             <h5>Required props</h5>
             <ul>
               <li><code>lable</code> <em>string</em> — Text for the input's label</li>
-              <li><code>id</code> <em>string</em> — sets the input's <code>id</code> attribute the label's <code>for</code> attribute. Required for 508 compliance.</li>
+              
             </ul>
             
             <h5>Optional props</h5>
             <ul>
+              <li>
+                <code>id</code> <em>string, defaults to a unique generated id</em> — sets the input's <code>id</code> attribute the label's <code>for</code> attribute.
+              </li>
               <li>
                 <code>type</code> <em>string, defaults to 'text'</em> — Must be one of these: <code>"text"</code>, <code>"email"</code>, <code>"password"</code>, <code>"search"</code>, <code>"url"</code>, <code>"date"</code>, <code>"month"</code>, <code>"tel"</code>, <code>"week"</code>, <code>"number"</code>
               </li>
@@ -107,11 +105,9 @@ export default class FormControlsContainer extends React.Component {
           <div className="preview">
             <TextArea
               label="How did you hear about us?"
-              id="textareaOne"
               required />
             <TextArea
               label="How did you hear about us?"
-              id="textareaOne"
               errorMessage="Computer says no"
               value="I googled and actually clicked next page several times until I found you" />
           </div>
@@ -124,11 +120,13 @@ export default class FormControlsContainer extends React.Component {
             <h5>Required props</h5>
             <ul>
               <li><code>lable</code> <em>string</em> — the text for the label.</li>
-              <li><code>id</code> <em>string</em> — sets the textarea's <code>id</code> attribute the label's <code>for</code> attribute. Required for 508 compliance.</li>
             </ul>
             
             <h5>Optional props</h5>
             <ul>
+              <li>
+                <code>id</code> <em>string, defaults to a unique generated id</em> — sets the input's <code>id</code> attribute the label's <code>for</code> attribute.
+              </li>
               <li>
                 <code>value</code> <em>string</em> — if provided, pre-populates the input with the given string.
               </li>
@@ -147,19 +145,19 @@ export default class FormControlsContainer extends React.Component {
           <p className="usa-font-lead">A dropdown allows users to select one option from a list.</p>
           
           <div className="preview">
-            <Dropdown label="Dropdown label" id="dropdownOne" >
+            <Dropdown label="Dropdown label">
               <option value="value1">Option A</option>
               <option value="value2">Option B</option>
               <option value="value3">Option C</option>
             </Dropdown>
             
-            <Dropdown label="Dropdown label" id="dropdownTwo" required value={''}>
+            <Dropdown label="Dropdown label" required value={''}>
               <option value="value1">Option A</option>
               <option value="value2">Option B</option>
               <option value="value3">Option C</option>
             </Dropdown>
             
-            <Dropdown label="Dropdown label" id="dropdownThree" errorMessage="Wrong choice!" value={'value3'}>
+            <Dropdown label="Dropdown label" errorMessage="Wrong choice!" value={'value3'}>
               <option value="value1">Option A</option>
               <option value="value2">Option B</option>
               <option value="value3">Option C</option>
@@ -178,12 +176,14 @@ export default class FormControlsContainer extends React.Component {
             <h5>Required props</h5>
             <ul>
               <li><code>lable</code> <em>string</em> — the text for the label.</li>
-              <li><code>id</code> <em>string</em> — sets the select's <code>id</code> attribute the label's <code>for</code> attribute. Required for 508 compliance.</li>
               <li><code>children</code> <em>node</em> — expects a series of <code>option</code> elements.</li>
             </ul>
             
             <h5>Optional props</h5>
             <ul>
+              <li>
+                <code>id</code> <em>string, defaults to a unique generated id</em> — sets the input's <code>id</code> attribute the label's <code>for</code> attribute.
+              </li>
               <li>
                 <code>value</code> <em>string</em> — if this matches the <code>value</code> of one of the option elements, that becomes the default choice. If you set it to an empty string, a blank disabled option is added so that there is no default choice. 
               </li>
@@ -203,10 +203,10 @@ export default class FormControlsContainer extends React.Component {
           
           <div className="preview">
             <FieldSet name="historical-figures-1" legend="Historial figures">
-              <Checkbox id="truth" label="Sojourner Truth" checked />
-              <Checkbox id="douglass" label="Frederick Douglass" checked />
-              <Checkbox id="washington" label="Booker T. Washington" disabled />
-              <Checkbox id="carver" label="George Washington Carver" />
+              <Checkbox label="Sojourner Truth" checked />
+              <Checkbox label="Frederick Douglass" checked />
+              <Checkbox label="Booker T. Washington" disabled />
+              <Checkbox label="George Washington Carver" />
             </FieldSet>
           </div>
           
@@ -218,11 +218,13 @@ export default class FormControlsContainer extends React.Component {
             <h5>Required props</h5>
             <ul>
               <li><code>lable</code> <em>string</em> — the text for the label.</li>
-              <li><code>id</code> <em>string</em> — sets the textarea's <code>id</code> attribute the label's <code>for</code> attribute. Required for 508 compliance.</li>
             </ul>
             
             <h5>Optional props</h5>
             <ul>
+              <li>
+                <code>id</code> <em>string, defaults to a unique generated id</em> — sets the input's <code>id</code> attribute the label's <code>for</code> attribute.
+              </li>
               <li>
                 <code>value</code> <em>string</em> — sets the value attribute. If not provided, the id is used instead. 
               </li>
@@ -244,10 +246,10 @@ export default class FormControlsContainer extends React.Component {
           
           <div className="preview">
             <FieldSet name="historical-figures-2" legend="Historial figures">
-              <Radio id="stanton" label="Sojourner Truth" />
-              <Radio id="douglass" label="Frederick Douglass" checked />
-              <Radio id="washington" label="Booker T. Washington" disabled />
-              <Radio id="carver" label="George Washington Carver" />
+              <Radio label="Sojourner Truth" />
+              <Radio label="Frederick Douglass" checked />
+              <Radio label="Booker T. Washington" disabled />
+              <Radio label="George Washington Carver" />
             </FieldSet>
           </div>
           
@@ -259,11 +261,13 @@ export default class FormControlsContainer extends React.Component {
             <h5>Required props</h5>
             <ul>
               <li><code>lable</code> <em>string</em> — the text for the label.</li>
-              <li><code>id</code> <em>string</em> — sets the textarea's <code>id</code> attribute the label's <code>for</code> attribute. Required for 508 compliance.</li>
             </ul>
             
             <h5>Optional props</h5>
             <ul>
+              <li>
+                <code>id</code> <em>string, defaults to a unique generated id</em> — sets the input's <code>id</code> attribute the label's <code>for</code> attribute.
+              </li>
               <li>
                 <code>value</code> <em>string</em> — sets the value attribute. If not provided, the <code>id</code> is used instead. 
               </li>
