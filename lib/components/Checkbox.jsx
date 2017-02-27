@@ -4,6 +4,16 @@ import InputLabel from './InputLabel';
 
 /**
  * Checkbox with label
+ *
+ * Required props:
+ * - label, string -- the text for the label
+ * - id, string -- sets the textarea's id attribute the label's for attribute. Required for 508 compliance.
+ *
+ * Optional props:
+ * - value, string -- sets the value attribute. If not provided, the id is used instead.
+ * - name, string, defaults to 'checkboxs' -- sets the name attribute. Each item in a fieldset should have the same name.
+ * - checked, bool -- if true, the control is selected (checked) by default.
+ * - disabled, bool -- if true, disables the control so it can not be toggled.
  */
 export default class Checkbox extends Component {  
   /**
