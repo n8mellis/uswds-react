@@ -12,7 +12,7 @@ import React, { PropTypes } from 'react';
  *
  * If the type is 'error' and no role is specified, role defaults to 'alert'
  *
- * @returns {node} 
+ * @returns {node} the rendered DOM node
  * @param {string} type  Sets the alert type
  * @param {string} title Text for the headline
  * @param {node} body  Text for the description
