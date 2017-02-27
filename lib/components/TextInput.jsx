@@ -13,7 +13,7 @@ import InputLabel from './InputLabel';
  * - value: string. If present pre-populates the input with the given string.
  * - required: bool, defaults to false. Adds required label, required attribute and aria-required='true'
  * - validators: array of Validator objects. If present, field get error state onBlur if the value does not match the given test
- * - spellCheck: true or false, defaults to false. If true, enables browser autocorrection while typing
+ * - enableSpellCheck: true or false, defaults to false. If true, enables browser autocorrection while typing
  * - errorMessage: string. If present triggers the error state and displays the error message
  * - isValid: bool. If true, sets isValid state - i.e. green border
  * - allowedChars: Validator object. If present, user can only type characters that match the given test
@@ -31,37 +31,31 @@ export default class TextInput extends Component {
    */
   constructor(props) {
     super(props);
+    
+    let pristine = true;
+    if ( this.props.value || this.props.errorMessage) {
+      pristine = false;
+    }
+    
     this.state = {
-      value: '',
-      isPristine: true,
-      isValid: false,
-      hasError: false,
-      errorMessage : null
+      value: this.props.value || '',
+      isPristine: pristine,
+      isValid: this.props.isValid ? true : false,
+      hasError: this.props.errorMessage ? true : false,
+      errorMessage : this.props.errorMessage
     };
   }
 
   /**
-   * If a value or errorMessage is passed as props, adjust the state accordingly
+   * If errorMessage is updated after initial render, adjust the state accordingly
    */
-  componentWillMount() {
+  componentWillReceiveProps() {
     if (this.props.errorMessage) {
       this.setState({
+        isPristine: false,
         isValid: false,
         hasError: true,
-        errorMessage: this.props.errorMessage
-      });
-    }
-    if (this.props.value) {
-      this.setState({
-        value: this.props.value
-      });
-    }
-    if (this.props.isValid) {
-      this.setState({
-        isPristine: false,
-        isValid: true,
-        hasError: false,
-        errorMessage : null
+        errorMessageBody : this.props.errorMessage
       });
     }
   }
@@ -96,7 +90,7 @@ export default class TextInput extends Component {
           aria-labelledby={`${this.props.id}-label`}
           onBlur={this._handleBlur.bind(this)}
           onChange={this._handleChange.bind(this)}
-          spellCheck={this.props.spellCheck ? true : false}
+          spellCheck={this.props.enableSpellCheck ? true : false}
         />
       </div>
     );
@@ -129,7 +123,7 @@ export default class TextInput extends Component {
     else if (validators) {
       for (let validator of validators) {
         // check is validator is forced 'no validation'
-        if (!validator.test) {
+        if (!validator.pattern) {
           break;
         }
         // if validator doesn't pass it own test, set error and abort loop
@@ -137,7 +131,7 @@ export default class TextInput extends Component {
           this.setState({
             hasError: true,
             isValid: false,
-            errorMessage: validator.errorMessage
+            errorMessage: validator.message
           });
           break;
         // else assume it's valid
@@ -205,7 +199,7 @@ TextInput.propTypes = {
     'number'
   ]),
   required: PropTypes.bool,
-  spellCheck: PropTypes.bool,
+  enableSpellCheck: PropTypes.bool,
   errorMessage: PropTypes.string,
   isValid: PropTypes.bool,
   value: PropTypes.string,
@@ -215,6 +209,6 @@ TextInput.propTypes = {
 
 TextInput.defaultProps = {
   type: 'text',
-  spellCheck: false,
+  enableSpellCheck: false,
   required: false
 };
