@@ -8,7 +8,14 @@ import FieldSet from '../../lib/components/FieldSet';
 import validators from '../../lib/utils/validators';
 import BaseContainer from "./BaseContainer";
 
+/**
+ * Class representing the content on the Form Control tab
+ */
 export default class FormControlsContainer extends React.Component {
+  /**
+   * Renders the DOM node
+   * @returns {node} The rendered DOM node
+   */
   render() {
     return (
       <BaseContainer {...this.props}>
