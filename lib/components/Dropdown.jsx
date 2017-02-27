@@ -38,7 +38,7 @@ export default class Dropdown extends Component {
   /**
    * If a errorMessage is passed after initial render, adjust the state accordingly
    */
-  componentWillUpdate() {
+  componentWillReceiveProps() {
     if (this.props.errorMessage) {
       this.setState({
         hasError: true,

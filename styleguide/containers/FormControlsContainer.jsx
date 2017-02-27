@@ -5,7 +5,7 @@ import Dropdown from '../../lib/components/Dropdown';
 import Checkbox from '../../lib/components/Checkbox';
 import Radio from '../../lib/components/Radio';
 import FieldSet from '../../lib/components/FieldSet';
-import validators from '../../lib/utils/validators';
+import { EmailValidator, ZipCodeValidator, PhoneValidator } from '../../lib/utils/validators';
 import BaseContainer from "./BaseContainer";
 
 /**
@@ -33,19 +33,25 @@ export default class FormControlsContainer extends React.Component {
               required />
             
             <TextInput
-              label="Must have an 'A' and an 'e'"
+              label="Email address"
+              type="email"
               id="thirdInput"
-              value="Ave"
+              value="gwashington@potus.com"
               isValid
-              validators={[validators.hasLowercaseE, validators.hasUppercaseA]} />
+              validators={[EmailValidator]} />
             
               <TextInput
-                label="Enter only numbers"
+                label="ZIP code"
                 id="nums"
                 value="666"
-                errorMessage="These are bad numbers"
-                allowedChars={validators.onlyNumbers}
-                validators={[validators.noSatan]} />
+                errorMessage="Not a valid ZIP Code"
+                validators={[ZipCodeValidator]} />
+              
+              <TextInput
+                type="tel"
+                label="Phone number"
+                id="tel"
+                validators={[PhoneValidator]} />
           </div>
           
           <div>
