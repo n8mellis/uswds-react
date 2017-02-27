@@ -3,8 +3,15 @@ import Label from '../../lib/components/Label';
 
 import BaseContainer from "./BaseContainer";
 
+/**
+ * Class representing the content for the Labels tab
+ */
 export default class LabelsContainer extends React.Component
 {
+  /**
+   * Renders the DOM node
+   * @returns {node} The rendered DOM node
+   */
   render()
   {
     return (
@@ -14,13 +21,13 @@ export default class LabelsContainer extends React.Component
           <Label>New</Label>
           
           <h6>Large</h6>
-          <Label big>New</Label>
+          <Label size="big">New</Label>
         </div>
         
         <div>
           <h5>Example usage</h5>
           <pre><code>
-            {`<Label big>New</Label>`}
+            {`<Label size="big">New</Label>`}
           </code></pre>
           <h5>Required props</h5>
           <ul>
@@ -29,7 +36,7 @@ export default class LabelsContainer extends React.Component
           
           <h5>Optional props</h5>
           <ul>
-            <li><code>big</code> <em>bool</em> — if true, makes the font size larger.</li>
+            <li><code>size</code> <em>string, defaults to 'normal'</em> — Must be <code>"normal"</code> or <code>"big"</code>.</li>
           </ul>
         </div>
       </BaseContainer>
