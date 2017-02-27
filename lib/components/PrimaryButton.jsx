@@ -1,18 +1,30 @@
 import React from 'react';
 
+/**
+ * Provides a standard button component.
+ */
 export default class PrimaryButton extends React.Component {
-
+  /**
+   * Constructor.
+   *
+   * @param {Object} props The props that will be applied to this component.
+   */
   constructor(props) {
     super(props);
   }
 
+  /**
+   * Renders the component.
+   *
+   * @returns {Node|null} The rendered DOM node.
+   */
   render() {
 
     // local vars
     let className = [];
     let disabled = '';
 
-    if (this.props.size === 'large') {
+    if (this.props.size === 'big') {
       className.push('usa-button-big');
     }
 
@@ -37,7 +49,7 @@ PrimaryButton.defaultProps = {
 };
 
 PrimaryButton.propTypes = {
-  size: React.PropTypes.oneOf(['', 'large']),
+  size: React.PropTypes.oneOf(['', 'big']),
   status: React.PropTypes.oneOf(['', 'active', 'disabled', 'hover']),
   text: React.PropTypes.string.isRequired
 };

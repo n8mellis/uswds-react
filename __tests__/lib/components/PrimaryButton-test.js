@@ -49,14 +49,14 @@ describe('PrimaryButton', () => {
 
     for (var i = 0; i < node.attributes.length; i++) {
 
-        if (node.attributes[i].name == 'disabled') {
-            expect(node.attributes[i].name).toEqual('disabled');
-            break;
-          }
+      if (node.attributes[i].name == 'disabled') {
+        expect(node.attributes[i].name).toEqual('disabled');
+        break;
       }
+    }
   });
-  it('is has a large class', () => {
-    buttonItem = TestUtils.renderIntoDocument(<PrimaryButton text={text} size={'large'} />);
+  it('is has a big class', () => {
+    buttonItem = TestUtils.renderIntoDocument(<PrimaryButton text={text} size={'big'} />);
     let node = ReactDOM.findDOMNode(buttonItem);
     expect(node.classList).toContain('usa-button-big');
   });
