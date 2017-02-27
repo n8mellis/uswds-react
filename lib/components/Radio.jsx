@@ -1,31 +1,47 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import InputLabel from './InputLabel';
 
 /**
  * A radio button and a label 
- * 
- * @param {string, required} id input's id and label's for attributes
- * @param {string, required} label Text for the label
- * @param {string} name defaults to 'radios'. Sets name attribute
- * @param {string} value defaults to id, Sets value attribute.
- * @param {bool} checked  If true, item is initially set to checked
- * @param {bool} disabled If item, item is disabled
+ *
+ * Required props
+ * - id, string -- input's id and label's for attributes
+ * - label, string -- Text for the label
+ *
+ * Optional props
+ * - name, string, defaults to 'radios' -- Sets name attribute
+ * - value, string, defaults to id -- Sets value attribute
+ * - checked, bool -- If true, item is initially set to checked
+ * - disabled, bool --If item, item is disabled
  */
-export default function Radio({id, label, name, value, checked, disabled}) {
-  return (
-    <div>
-      <input
-        id={id}
-        type="radio"
-        name={name}
-        value={value ? value : id}
-        defaultChecked={checked}
-        disabled={disabled}
-      />
+export default class Radio extends Component {
+  /**
+   * constructor
+   * @param {Object} props The props that will be applied to this component.
+   */
+  constructor(props) {
+    super(props);
+  }
+  
+  /**
+   * Renders the DOM node
+   * @returns {node} div that includes the input and label
+   */
+  render () {
+    return (
+      <div>
+        <input
+          id={this.props.id}
+          type="radio"
+          name={this.props.name}
+          value={this.props.value ? this.props.value : this.props.id}
+          defaultChecked={this.props.checked}
+          disabled={this.props.disabled} />
 
-      <InputLabel htmlFor={id} label={label} />
-    </div>
-  );
+        <InputLabel htmlFor={this.props.id} label={this.props.label} />
+      </div>
+    );
+  }
 }
 
 Radio.propTypes = {
