@@ -9,11 +9,10 @@ import React, { PropTypes } from 'react';
  *
  * As a convenience, passing a name property will give that name to each 
  * Checkbox or radio button child so they will all be the same. 
- * 
- * @param {string, required} legend  Screen-reader only label of what the radio group represents
- * @param {node, required} children Expected to be Checkbox components
+ * @returns {node} The rendered DOM node 
+ * @param {string} legend  required. Screen-reader only label of what the radio group represents
+ * @param {node} children required. Expected to be Checkbox components
  * @param {string} name Applies this name to all the children
- * 
  */
 export default function FieldSet({name, children, legend}) {
   let newKids;

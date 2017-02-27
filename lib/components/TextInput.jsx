@@ -19,6 +19,8 @@ import InputLabel from './InputLabel';
  */
 export default class TextInput extends Component {
   /**
+   * constructor 
+   * @param {object} props The props that will be applied to this component.
    * Set initial state
    * Value: value of the input. 
    * isPristine: tracks if user has typed in the input
@@ -166,6 +168,7 @@ export default class TextInput extends Component {
 
   /**
    * change event on input
+   * @param {event} event The event
    */
   _handleChange(event) {
     if (this.props.allowedChars) {
