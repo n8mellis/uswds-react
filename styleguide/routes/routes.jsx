@@ -21,6 +21,9 @@ import SidebarContainer from "containers/SidebarContainer";
 import HeadersContainer from "containers/HeadersContainer";
 import FootersContainer from "containers/FootersContainer";
 
+/**
+ * resolve internal page links 
+ */
 function hashLinkScroll() {
   const { hash } = window.location;
   if (hash !== '') {
@@ -35,6 +38,11 @@ function hashLinkScroll() {
   }
 }
 
+/**
+ * Application routes
+ * @param {unknown} history [description]
+ * @returns {node} 
+ */
 export default function AppRouter(history) {
   return (
     <Router history={history} onUpdate={hashLinkScroll}>
