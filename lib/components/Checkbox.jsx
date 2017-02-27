@@ -1,32 +1,32 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import InputLabel from './InputLabel';
 // import './Checkbox.css';
 
 /**
  * Checkbox with label
- * 
- * @param {string, required} id input's id and label's for attributes
- * @param {string, required} label Text for the label
- * @param {string} name defaults to 'checkboxs'. Sets name attribute
- * @param {string} value Sets value attribute. If not provided the id is used.
- * @param {bool} checked  If true, item is initially set to checked
- * @param {bool} disabled If item, item is disabled
  */
-export default function Checkbox({id, label, name, value, checked, disabled }) {
-  return (
-    <div>
-      <input
-        id={id}
-        type="checkbox"
-        name={name}
-        value={value ? value : id}
-        defaultChecked={checked}
-        disabled={disabled}
-      />
+export default class Checkbox extends Component {  
+  /**
+   * Renders the component.
+   *
+   * @returns {Node} The rendered DOM node.
+   */
+  render() {
+    return (
+      <div>
+        <input
+          id={this.props.id}
+          type="checkbox"
+          name={this.props.name}
+          value={this.props.value ? this.props.value : this.props.id}
+          defaultChecked={this.props.checked}
+          disabled={this.props.disabled}
+        />
 
-      <InputLabel htmlFor={id} label={label} />
-    </div>
-  );
+        <InputLabel htmlFor={this.props.id} label={this.props.label} />
+      </div>
+    );
+  }
 }
 
 Checkbox.propTypes = {
