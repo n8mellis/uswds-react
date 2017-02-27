@@ -18,8 +18,11 @@ import InputLabel from './InputLabel';
  */
 export default class Dropdown extends Component {
   /**
-   * Set initial state
+   * Constructor 
+   * @param {object} props The props. See proptypes below.
    * 
+   * Set initial state
+   * value: default selected option passed from a prop
    * hasError: tracks if the field has an error
    * errorMessage: displayed message when the field hasError
    */
@@ -27,15 +30,15 @@ export default class Dropdown extends Component {
     super(props);
     this.state = {
       value: this.props.value,
-      hasError: false,
-      errorMessageBody: null
+      hasError: this.props.errorMessage ? true : false,
+      errorMessageBody: this.props.errorMessage ? this.props.errorMessage : null
     };
   }
   
   /**
-   * If a errorMessage is passed as props, adjust the state accordingly
+   * If a errorMessage is passed after initial render, adjust the state accordingly
    */
-  componentWillMount() {
+  componentWillUpdate() {
     if (this.props.errorMessage) {
       this.setState({
         hasError: true,
@@ -44,23 +47,19 @@ export default class Dropdown extends Component {
     }
   }
   
-  componentDidMount() {
-    if (this.props.value) {
-      this.setState({
-        value: this.props.value
-      });
-    }
-  }
-  
+
+  /**
+   * Update the state when user selects a new option
+   * @param {event} event The async event
+   */
   _handleChange(event) {
-    // console.log(event.target.value);
     this.setState({
       value: event.target.value
     });
   }
 
   /**
-   * @returns {node} (div) that includes a label, select 
+   * @returns {node} The rendered DOM node 
    */
   render() {
     let errorMessage = null;
