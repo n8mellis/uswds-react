@@ -3,8 +3,16 @@ import React from "react";
 import BaseContainer from "./BaseContainer";
 import { Accordion, AccordionItem } from "../../lib/components/Accordion";
 
+/**
+ * Displays the Styleguide content for Accordions.
+ */
 export default class AccordionsContainer extends React.Component
 {
+  /**
+   * Renders the component.
+   *
+   * @returns {Node|null} The rendered DOM node.
+   */
   render()
   {
     return (

@@ -4,6 +4,12 @@ import OfficialSiteBanner from "./OfficialSiteBanner";
 // import NavigationBar from "./NavigationBar";
 // import SearchField from "./SearchField";
 
+/**
+ * A standard Header.
+ *
+ * TODO: Add support for Basic and Extended headers.
+ * TODO: Add support for embedded NavigationBars
+ */
 export default class Header extends React.Component
 {
   /**

@@ -21,7 +21,7 @@ import SidebarContainer from "containers/SidebarContainer";
 import HeadersContainer from "containers/HeadersContainer";
 import FootersContainer from "containers/FootersContainer";
 
-export default function AppRouter(history) {
+export default function AppRouter(history) { // eslint-disable-line require-jsdoc
   return (
     <Router history={history}>
       <Route path="/" component={App}>

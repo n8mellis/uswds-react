@@ -5,9 +5,20 @@ import Helmet from 'react-helmet';
 import Header from "../../lib/components/Header";
 import { Sidebar, SidebarLink } from "../../lib/components/Sidebar";
 
+/**
+ * The main app component for the Styleguide.
+ *
+ * This component will render the main page layout items as well as any header
+ * metadata supplied to the `<Helmet .../>` component.
+ */
 class App extends React.Component 
 {
-  render() 
+  /**
+   * Renders the component.
+   *
+   * @returns {Node|null} The rendered DOM node.
+   */
+  render()
   {
     return (
       <div>
@@ -55,7 +66,7 @@ App.propTypes = {
   children: React.PropTypes.node
 };
 
-function mapStateToProps(state) { // eslint-disable-line no-unused-vars
+function mapStateToProps(state) { // eslint-disable-line no-unused-vars, require-jsdoc
   return {};
 }
 

@@ -25,7 +25,7 @@ const createStoreWithMiddleware = applyMiddleware(
   ...middlewares
 )(createStore);
 
-export default function configureStore(initialState) {
+export default function configureStore(initialState) { // eslint-disable-line require-jsdoc
   const store = createStoreWithMiddleware(rootReducer, initialState);
 
   if (module.hot) {

@@ -1,7 +1,33 @@
 import React from "react";
 
+/**
+ * Provides a common container for all Styleguide sub pages.
+ *
+ * This component takes `title` and `summary` props that will automatically
+ * be rendered into the common format. Its children will then be rendered as
+ * the content.
+ *
+ * Usage:
+ * <code>
+ * class SampleCodeContainer extends React.Component
+ * {
+ *   render() {
+ *     return (
+ *       <BaseContainer title="Sample Code" summary="This is some sample code...">
+ *         <p>Sample code...</p>
+ *       </BaseContainer>
+ *     );
+ *   }
+ * }
+ * </code>
+ */
 export default class BaseContainer extends React.Component
 {
+  /**
+   * Renders the component.
+   *
+   * @returns {Node|null} The rendered DOM node.
+   */
   render()
   {
     return (

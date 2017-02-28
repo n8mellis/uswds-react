@@ -3,8 +3,16 @@ import React from "react";
 import BaseContainer from "./BaseContainer";
 import SearchField from "../../lib/components/SearchField";
 
+/**
+ * Displays the Styleguide content for Search Bars.
+ */
 export default class SearchBarContainer extends React.Component
 {
+  /**
+   * Renders the component.
+   *
+   * @returns {Node|null} The rendered DOM node.
+   */
   render()
   {
     return (

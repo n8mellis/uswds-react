@@ -2,8 +2,16 @@ import React from "react";
 
 import BaseContainer from "./BaseContainer";
 
+/**
+ * Displays the Styleguide content for Form Templates.
+ */
 export default class FormTemplatesContainer extends React.Component
 {
+  /**
+   * Renders the component.
+   *
+   * @returns {Node|null} The rendered DOM node.
+   */
   render()
   {
     return (

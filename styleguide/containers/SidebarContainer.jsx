@@ -2,8 +2,16 @@ import React from "react";
 
 import BaseContainer from "./BaseContainer";
 
+/**
+ * Displays the Styleguide content for Sidebars.
+ */
 export default class SidebarContainer extends React.Component
 {
+  /**
+   * Renders the component.
+   *
+   * @returns {Node|null} The rendered DOM node.
+   */
   render()
   {
     return (
