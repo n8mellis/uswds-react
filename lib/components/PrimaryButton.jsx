@@ -24,13 +24,16 @@ export default class PrimaryButton extends React.Component {
     let className = [];
     let disabled = '';
 
+    // big
     if (this.props.size === 'big') {
       className.push('usa-button-big');
     }
 
+    // handle status
     if (this.props.status !== '') {
       className.push('usa-button-' + this.props.status);
 
+      // disable button
       if (this.props.status === 'disabled') {
         disabled = 'disabled';
       }
