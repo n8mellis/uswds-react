@@ -51,8 +51,21 @@ PrimaryButton.defaultProps = {
   status: ''
 };
 
+// size
+PrimaryButton.SIZE_BIG = 'big';
+
+// status
+PrimaryButton.STATUS_ACTIVE = 'active';
+PrimaryButton.STATUS_DISABLED = 'disabled';
+PrimaryButton.STATUS_HOVER = 'hover';
+
 PrimaryButton.propTypes = {
-  size: React.PropTypes.oneOf(['', 'big']),
-  status: React.PropTypes.oneOf(['', 'active', 'disabled', 'hover']),
+  size: React.PropTypes.oneOf(['', PrimaryButton.SIZE_BIG]),
+  status: React.PropTypes.oneOf(['', PrimaryButton.STATUS_ACTIVE, PrimaryButton.STATUS_DISABLED, PrimaryButton.STATUS_HOVER]),
   text: React.PropTypes.string.isRequired
+};
+
+PrimaryButton.defaultProps = {
+  size: '',
+  status: ''
 };

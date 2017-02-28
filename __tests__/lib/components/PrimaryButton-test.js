@@ -31,19 +31,19 @@ describe('PrimaryButton', () => {
   });
 
   it('is has a active class', () => {
-    buttonItem = TestUtils.renderIntoDocument(<PrimaryButton text={text} status={'active'} />);
+    buttonItem = TestUtils.renderIntoDocument(<PrimaryButton text={text} status={PrimaryButton.STATUS_ACTIVE} />);
     let node = ReactDOM.findDOMNode(buttonItem);
     expect(node.classList).toContain('usa-button-active');
   });
 
   it('is has a hover class', () => {
-    buttonItem = TestUtils.renderIntoDocument(<PrimaryButton text={text} status={'hover'} />);
+    buttonItem = TestUtils.renderIntoDocument(<PrimaryButton text={text} status={PrimaryButton.STATUS_HOVER} />);
     let node = ReactDOM.findDOMNode(buttonItem);
     expect(node.classList).toContain('usa-button-hover');
   });
 
   it('is has a disabled status', () => {
-    buttonItem = TestUtils.renderIntoDocument(<PrimaryButton text={text} status={'disabled'} />);
+    buttonItem = TestUtils.renderIntoDocument(<PrimaryButton text={text} status={PrimaryButton.STATUS_DISABLED} />);
     let node = ReactDOM.findDOMNode(buttonItem);
     expect(node.classList).toContain('usa-button-disabled');
 
@@ -56,7 +56,7 @@ describe('PrimaryButton', () => {
     }
   });
   it('is has a big class', () => {
-    buttonItem = TestUtils.renderIntoDocument(<PrimaryButton text={text} size={'big'} />);
+    buttonItem = TestUtils.renderIntoDocument(<PrimaryButton text={text} size={PrimaryButton.SIZE_BIG} />);
     let node = ReactDOM.findDOMNode(buttonItem);
     expect(node.classList).toContain('usa-button-big');
   });
