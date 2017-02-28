@@ -41,7 +41,7 @@ describe('PrimaryButton', () => {
   });
 
   it('is has a disabled status', () => {
-    buttonItem = shallow(<PrimaryButton text={text} status={PrimaryButton.STATUS_DISABLED} />);
+    buttonItem = shallow(<PrimaryButton text={text} disabled={true} />);
     expect(buttonItem.hasClass('usa-button-disabled')).toBe(true);
     expect(buttonItem.prop('disabled')).toBeDefined();
   });

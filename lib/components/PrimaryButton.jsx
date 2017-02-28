@@ -33,6 +33,15 @@ export default class PrimaryButton extends React.Component {
     let className = [];
     let disabled = '';
 
+    // disabled
+    if (this.props.disabled) {
+
+      // disable button
+      className.push('usa-button-disabled');
+      disabled = 'disabled';
+    }
+
+
     // big
     if (this.props.size === 'big') {
       className.push('usa-button-big');
@@ -41,11 +50,6 @@ export default class PrimaryButton extends React.Component {
     // handle status
     if (this.props.status !== '') {
       className.push('usa-button-' + this.props.status);
-
-      // disable button
-      if (this.props.status === 'disabled') {
-        disabled = 'disabled';
-      }
     }
 
     return (
@@ -65,17 +69,18 @@ PrimaryButton.SIZE_BIG = 'big';
 
 // status
 PrimaryButton.STATUS_ACTIVE = 'active';
-PrimaryButton.STATUS_DISABLED = 'disabled';
 PrimaryButton.STATUS_HOVER = 'hover';
 
 PrimaryButton.propTypes = {
+  disabled: React.PropTypes.bool,
   onClick: React.PropTypes.function,
   size: React.PropTypes.oneOf(['', PrimaryButton.SIZE_BIG]),
-  status: React.PropTypes.oneOf(['', PrimaryButton.STATUS_ACTIVE, PrimaryButton.STATUS_DISABLED, PrimaryButton.STATUS_HOVER]),
+  status: React.PropTypes.oneOf(['', PrimaryButton.STATUS_ACTIVE, PrimaryButton.STATUS_HOVER]),
   text: React.PropTypes.string.isRequired
 };
 
 PrimaryButton.defaultProps = {
+  disabled: false,
   size: '',
   status: ''
 };
