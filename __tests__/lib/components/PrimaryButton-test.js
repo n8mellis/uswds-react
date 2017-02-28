@@ -3,6 +3,7 @@ jest.unmock('../../../lib/components/PrimaryButton.jsx');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
+import {shallow} from 'enzyme';
 
 import PrimaryButton from '../../../lib/components/PrimaryButton.jsx';
 
@@ -13,51 +14,38 @@ describe('PrimaryButton', () => {
   const text = 'Test Label';
 
   beforeEach(function() {
-    buttonItem = TestUtils.renderIntoDocument(<PrimaryButton text={text} />);
+    buttonItem = shallow(<PrimaryButton text={text} />);
   });
 
   it('is defined', () => {
     expect(buttonItem).toBeDefined();
   });
 
-  it('is a label element', () => {
-    let node = ReactDOM.findDOMNode(buttonItem);
-    expect(node.tagName).toBe('BUTTON');
+  it('is a button element', () => {
+    expect(buttonItem.type()).toEqual('button');
   });
 
   it('is has specified text', () => {
-    let node = ReactDOM.findDOMNode(buttonItem);
-    expect(node.textContent).toEqual(text);
+    expect(buttonItem.text()).toEqual(text);
   });
 
   it('is has a active class', () => {
-    buttonItem = TestUtils.renderIntoDocument(<PrimaryButton text={text} status={PrimaryButton.STATUS_ACTIVE} />);
-    let node = ReactDOM.findDOMNode(buttonItem);
-    expect(node.classList).toContain('usa-button-active');
+    buttonItem = shallow(<PrimaryButton text={text} status={PrimaryButton.STATUS_ACTIVE} />);
+    expect(buttonItem.hasClass('usa-button-active'));
   });
 
   it('is has a hover class', () => {
-    buttonItem = TestUtils.renderIntoDocument(<PrimaryButton text={text} status={PrimaryButton.STATUS_HOVER} />);
-    let node = ReactDOM.findDOMNode(buttonItem);
-    expect(node.classList).toContain('usa-button-hover');
+    buttonItem = shallow(<PrimaryButton text={text} status={PrimaryButton.STATUS_HOVER} />);
+    expect(buttonItem.hasClass('usa-button-hover'));
   });
 
   it('is has a disabled status', () => {
-    buttonItem = TestUtils.renderIntoDocument(<PrimaryButton text={text} status={PrimaryButton.STATUS_DISABLED} />);
-    let node = ReactDOM.findDOMNode(buttonItem);
-    expect(node.classList).toContain('usa-button-disabled');
-
-    for (var i = 0; i < node.attributes.length; i++) {
-
-      if (node.attributes[i].name == 'disabled') {
-        expect(node.attributes[i].name).toEqual('disabled');
-        break;
-      }
-    }
+    buttonItem = shallow(<PrimaryButton text={text} status={PrimaryButton.STATUS_DISABLED} />);
+    expect(buttonItem.hasClass('usa-button-disabled'));
+    expect(buttonItem.prop('disabled')).toBeDefined();
   });
   it('is has a big class', () => {
-    buttonItem = TestUtils.renderIntoDocument(<PrimaryButton text={text} size={PrimaryButton.SIZE_BIG} />);
-    let node = ReactDOM.findDOMNode(buttonItem);
-    expect(node.classList).toContain('usa-button-big');
+    buttonItem = shallow(<PrimaryButton text={text} size={PrimaryButton.SIZE_BIG} />);
+    expect(buttonItem.hasClass('usa-button-big'));
   });
 });
