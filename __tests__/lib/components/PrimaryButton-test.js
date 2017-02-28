@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import {shallow} from 'enzyme';
+import sinon from 'sinon';
 
 import PrimaryButton from '../../../lib/components/PrimaryButton.jsx';
 
@@ -44,8 +45,16 @@ describe('PrimaryButton', () => {
     expect(buttonItem.hasClass('usa-button-disabled'));
     expect(buttonItem.prop('disabled')).toBeDefined();
   });
+
   it('is has a big class', () => {
     buttonItem = shallow(<PrimaryButton text={text} size={PrimaryButton.SIZE_BIG} />);
     expect(buttonItem.hasClass('usa-button-big'));
+  });
+
+  it('handles onClick', () => {
+    var onClick = sinon.spy();
+    buttonItem = shallow(<PrimaryButton text={text} onClick={onClick} />);
+    buttonItem.find('button').simulate('click');
+    expect(onClick.called);
   });
 });

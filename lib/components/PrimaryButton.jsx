@@ -11,6 +11,15 @@ export default class PrimaryButton extends React.Component {
    */
   constructor(props) {
     super(props);
+
+    this._handleClick = this._handleClick.bind(this);
+  }
+
+  /**
+   * Handles button click
+   */
+  _handleClick() {
+    this.props.onClick();
   }
 
   /**
@@ -40,7 +49,7 @@ export default class PrimaryButton extends React.Component {
     }
 
     return (
-      <button className={className} disabled={disabled}>{this.props.text}</button>
+      <button className={className} disabled={disabled} onClick={this._handleCLick}>{this.props.text}</button>
     );
   }
 }
@@ -60,6 +69,7 @@ PrimaryButton.STATUS_DISABLED = 'disabled';
 PrimaryButton.STATUS_HOVER = 'hover';
 
 PrimaryButton.propTypes = {
+  onClick: React.PropTypes.function,
   size: React.PropTypes.oneOf(['', PrimaryButton.SIZE_BIG]),
   status: React.PropTypes.oneOf(['', PrimaryButton.STATUS_ACTIVE, PrimaryButton.STATUS_DISABLED, PrimaryButton.STATUS_HOVER]),
   text: React.PropTypes.string.isRequired
