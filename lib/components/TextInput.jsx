@@ -7,7 +7,7 @@ import Utilities from '../helpers/utilities';
  *
  * Required props:
  * - label: Sets the text for the input's label
- * 
+ *
  * Optional props:
  * - id: sets the id attribute for the input and the <label for... attribute
  * - type: string, defaults to 'text'. Sets the input type
@@ -21,10 +21,10 @@ import Utilities from '../helpers/utilities';
  */
 export default class TextInput extends Component {
   /**
-   * constructor 
+   * constructor
    * @param {object} props The props that will be applied to this component.
    * Set initial state
-   * Value: value of the input. 
+   * Value: value of the input.
    * isPristine: tracks if user has typed in the input
    * isValid: tracks if the field is valid based on passed validators
    * hasError: tracks if the field has an error
@@ -32,12 +32,12 @@ export default class TextInput extends Component {
    */
   constructor(props) {
     super(props);
-    
+
     let pristine = true;
     if ( this.props.value || this.props.errorMessage) {
       pristine = false;
     }
-    
+
     this.state = {
       value: this.props.value || '',
       isPristine: pristine,
@@ -46,7 +46,7 @@ export default class TextInput extends Component {
       errorMessage : this.props.errorMessage
     };
   }
-  
+
   /**
    * check to see if an Id was passed in, if not generate one.
    */
@@ -69,7 +69,7 @@ export default class TextInput extends Component {
   }
 
   /**
-   * @returns {node} (div) that includes a label, errorMessage, input 
+   * @returns {node} (div) that includes a label, errorMessage, input
    */
   render() {
     let error = null;
