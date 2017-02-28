@@ -2,13 +2,28 @@ import React from "react";
 
 import BaseContainer from "./BaseContainer";
 
+import PrimaryButton from "../../lib/components/PrimaryButton"
+
 export default class ButtonsContainer extends React.Component
 {
   render()
   {
     return (
       <BaseContainer {...this.props}>
-        TODO
+        <h6>Primary Buttons</h6>
+        <div className="button_wrapper">
+          <PrimaryButton text={'Default'} />
+          <PrimaryButton text={'Active'} status={PrimaryButton.STATUS_ACTIVE} />
+          <PrimaryButton text={'Hover'} status={PrimaryButton.STATUS_HOVER} />
+        </div>
+        <h6>Disabled Button</h6>
+        <div className="button_wrapper">
+          <PrimaryButton text={'Default'} status={PrimaryButton.STATUS_DISABLED} />
+        </div>
+        <h6>Big Button</h6>
+        <div className="button_wrapper">
+          <PrimaryButton text={'Default'} size={PrimaryButton.SIZE_BIG} />
+        </div>
       </BaseContainer>
     );
   }
