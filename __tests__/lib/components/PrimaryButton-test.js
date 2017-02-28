@@ -32,29 +32,29 @@ describe('PrimaryButton', () => {
 
   it('is has a active class', () => {
     buttonItem = shallow(<PrimaryButton text={text} status={PrimaryButton.STATUS_ACTIVE} />);
-    expect(buttonItem.hasClass('usa-button-active'));
+    expect(buttonItem.hasClass('usa-button-active')).toBe(true);
   });
 
   it('is has a hover class', () => {
     buttonItem = shallow(<PrimaryButton text={text} status={PrimaryButton.STATUS_HOVER} />);
-    expect(buttonItem.hasClass('usa-button-hover'));
+    expect(buttonItem.hasClass('usa-button-hover')).toBe(true);
   });
 
   it('is has a disabled status', () => {
     buttonItem = shallow(<PrimaryButton text={text} status={PrimaryButton.STATUS_DISABLED} />);
-    expect(buttonItem.hasClass('usa-button-disabled'));
+    expect(buttonItem.hasClass('usa-button-disabled')).toBe(true);
     expect(buttonItem.prop('disabled')).toBeDefined();
   });
 
   it('is has a big class', () => {
     buttonItem = shallow(<PrimaryButton text={text} size={PrimaryButton.SIZE_BIG} />);
-    expect(buttonItem.hasClass('usa-button-big'));
+    expect(buttonItem.hasClass('usa-button-big')).toBe(true);
   });
 
   it('handles onClick', () => {
     var onClick = sinon.spy();
     buttonItem = shallow(<PrimaryButton text={text} onClick={onClick} />);
     buttonItem.find('button').simulate('click');
-    expect(onClick.called);
+    expect(onClick.called).toBeDefined();
   });
 });
