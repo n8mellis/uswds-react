@@ -170,20 +170,29 @@ export default class TextInput extends Component {
   }
 
   /**
-   * change event on input
+   * This function runs every time the user changes the contents of the input.
    * @param {event} event The event
    */
   _handleChange(event) {
+    // Check if allowedChars validator exists. If it does, check the last char
+    // entered against the validator. If validation fails, return thereby preventing
+    // the value from being added to the state.
     if (this.props.allowedChars) {
       let input = event.target.value.slice(-1);
       if (!this.props.allowedChars.isValid(input)) {
         return;
       }
     }
+    // Commit the input's value to state.value.
     this.setState({value: event.target.value}, () => {
-      if (this.state.value) {
+      // React docs suggest this callback should generally go in ComponentDidUpdate,
+      // however since both this callback actions update the state, they must
+      // go here because changing state in ComponentDidUpdate would cause a
+      // recursive loop and blow up the call stack
+      if (this.state.value && this.state.isPristine) {
         this.setState({isPristine: false});
       }
+      // if
       if (this.state.hasError || this.state.isValid) {
         this._validate();
       }
