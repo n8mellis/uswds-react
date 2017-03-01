@@ -39,9 +39,9 @@ export default class BaseContainer extends React.Component
         <p className="usa-font-lead">
           {this.props.summary}
         </p>
-        <div className="usa-grid">
-          {this.props.children}
-        </div>
+        
+        {this.props.children}
+
       </div>
     );
   }

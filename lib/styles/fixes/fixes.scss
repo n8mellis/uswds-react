@@ -1,0 +1,34 @@
+// When there's multiple paragraphs in the alert body, 
+// remove top and bottom margins to preserve spacing
+.usa-alert-text p:first-child {
+  margin-top: 0;
+}
+
+.usa-alert-text p:last-child {
+  margin-bottom: 0;
+}
+
+
+
+// Adjust checkbox label lineheight because they are not inside <li>'s
+[type="checkbox"]+label {
+  line-height: 1.5;
+}
+
+
+// Adjust radio button label lineheight because they are not inside <li>'s
+[type="radio"]+label {
+  line-height: 1.5;
+}
+
+// Made disabled radio button labels gray
+[type="radio"]:disabled+label {
+  color: #5b616b;
+}
+
+// no borders on fieldsets
+.usa-fieldset-inputs {
+  border: none;
+  margin: 0;
+  padding: 0;
+}

@@ -5,7 +5,7 @@ import OfficialSiteBanner from "./OfficialSiteBanner";
 // import SearchField from "./SearchField";
 
 /**
- * A standard Header.
+ * The site header containing the official site banner, logo and nav.
  *
  * TODO: Add support for Basic and Extended headers.
  * TODO: Add support for embedded NavigationBars

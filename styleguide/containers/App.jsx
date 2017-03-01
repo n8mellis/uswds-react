@@ -43,7 +43,14 @@ class App extends React.Component
               <SidebarLink label="Tables" to="/tables" />
               <SidebarLink label="Alerts" to="/alerts" />
               <SidebarLink label="Accordions" to="/accordions" />
-              <SidebarLink label="Form Controls" to="/form-controls" />
+              <SidebarLink label="Form Controls" to="/form-controls" >
+                <SidebarLink label="Text inputs" to="/form-controls#text-input" />
+                <SidebarLink label="Text area" to="/form-controls#text-area" />
+                <SidebarLink label="Dropdown" to="/form-controls#dropdown" />
+                <SidebarLink label="Checkboxes" to="/form-controls#checkboxes" />
+                <SidebarLink label="Radio buttons" to="/form-controls#radio-buttons" />
+                <SidebarLink label="Field set" to="/form-controls#field-set" />
+              </SidebarLink>
               <SidebarLink label="Form Templates" to="/form-templates" />
               <SidebarLink label="Search Bar" to="/search-bar" />
               <SidebarLink label="Side Navigation" to="/sidebar" />
@@ -66,7 +73,12 @@ App.propTypes = {
   children: React.PropTypes.node
 };
 
-function mapStateToProps(state) { // eslint-disable-line no-unused-vars, require-jsdoc
+/**
+ * [mapStateToProps description]
+ * @param  {object} state [description]
+ * @returns {object}       [description]
+ */
+function mapStateToProps(state) { // eslint-disable-line no-unused-vars
   return {};
 }
 

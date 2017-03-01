@@ -2,7 +2,7 @@ import React from "react";
 
 import BaseContainer from "./BaseContainer";
 
-import PrimaryButton from "../../lib/components/PrimaryButton"
+import PrimaryButton from "../../lib/components/PrimaryButton";
 
 /**
  * Displays the Styleguide content for Buttons.
