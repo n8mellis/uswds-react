@@ -76,5 +76,6 @@ Radio.propTypes = {
 };
 
 Radio.defaultProps = {
-  name: 'radios'
+  name: 'radios',
+  disabled: false
 };
