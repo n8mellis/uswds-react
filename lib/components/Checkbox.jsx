@@ -45,7 +45,7 @@ export default class Checkbox extends Component {
           id={this.id}
           type="checkbox"
           name={this.props.name}
-          value={this.props.value ? this.props.value : this.props.id}
+          value={this.props.value ? this.props.value : this.id}
           disabled={this.props.disabled}
           onChange={this._handleChange.bind(this)}
           checked={this.state.checked}
