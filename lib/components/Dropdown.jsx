@@ -19,9 +19,9 @@ import Utilities from '../helpers/utilities';
  */
 export default class Dropdown extends Component {
   /**
-   * Constructor 
+   * Constructor
    * @param {object} props The props. See proptypes below.
-   * 
+   *
    * Set initial state
    * value: default selected option passed from a prop
    * hasError: tracks if the field has an error
@@ -35,26 +35,25 @@ export default class Dropdown extends Component {
       errorMessageBody: this.props.errorMessage ? this.props.errorMessage : null
     };
   }
-  
+
   /**
    * check to see if an Id was passed in, if not generate one.
    */
   componentWillMount() {
     this.id = this.props.id ? this.props.id : Utilities.uniqueIdForComponent(this);
   }
-  
+
   /**
    * If a errorMessage is passed after initial render, adjust the state accordingly
    */
-  componentWillReceiveProps() {
-    if (this.props.errorMessage) {
+  componentWillReceiveProps({errorMessage}) {
+    if (errorMessage) {
       this.setState({
         hasError: true,
-        errorMessageBody: this.props.errorMessage
+        errorMessageBody: errorMessage
       });
     }
   }
-  
 
   /**
    * Update the state when user selects a new option
@@ -67,7 +66,7 @@ export default class Dropdown extends Component {
   }
 
   /**
-   * @returns {node} The rendered DOM node 
+   * @returns {node} The rendered DOM node
    */
   render() {
     let errorMessage = null;
@@ -78,9 +77,9 @@ export default class Dropdown extends Component {
         </span>
       );
     }
-    
+
     let emptyPlaceholder = null;
-    
+
     if (this.props.value === '') {
       emptyPlaceholder = (<option disabled value=""> </option>);
     }
