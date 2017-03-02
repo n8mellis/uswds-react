@@ -15,13 +15,17 @@ import Utilities from '../helpers/utilities';
  * - checked, bool -- if true, the control is selected (checked) by default.
  * - disabled, bool -- if true, disables the control so it can not be toggled.
  */
-export default class Checkbox extends Component {  
+export default class Checkbox extends Component {
   /**
    * constructor
    * @param {object} props The props passed in
    */
   constructor(props) {
     super(props);
+
+    this.state = {
+      checked: this.props.checked || false
+    };
   }
   /**
    * check to see if an Id was passed in, if not generate one.
@@ -29,7 +33,7 @@ export default class Checkbox extends Component {
   componentWillMount() {
     this.id = this.props.id ? this.props.id : Utilities.uniqueIdForComponent(this);
   }
-  
+
   /**
    * Renders the component.
    * @returns {Node} The rendered DOM node.
@@ -41,14 +45,23 @@ export default class Checkbox extends Component {
           id={this.id}
           type="checkbox"
           name={this.props.name}
-          value={this.props.value ? this.props.value : this.props.id}
-          defaultChecked={this.props.checked}
-          disabled={this.props.disabled}
-        />
+          value={this.props.value ? this.props.value : this.id}
+          disabled={this.props.disabled || false}
+          onChange={this._handleChange.bind(this)}
+          checked={this.state.checked} />
 
         <InputLabel htmlFor={this.id} label={this.props.label} />
       </div>
     );
+  }
+
+  /**
+   * toggle the checked state
+   */
+  _handleChange() {
+    this.setState({
+      checked: !this.state.checked
+    });
   }
 }
 
