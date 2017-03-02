@@ -91,7 +91,6 @@ export default class TextArea extends Component {
           aria-labelledby={`${this.props.id}-label`}
           onBlur={this._handleBlur.bind(this)}
           onChange={this._handleChange.bind(this)}
-          // ref={(input) => this._input = input}
         ></textarea>
       </div>
     );

@@ -1,18 +1,18 @@
-jest.unmock('../../../lib/components/Checkbox.jsx');
+jest.unmock('../../../lib/components/Radio.jsx');
 
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Checkbox from '../../../lib/components/Checkbox.jsx';
+import Radio from '../../../lib/components/Radio.jsx';
 
-describe('Checkbox', () => {
+describe('Radio', () => {
 
   let wrapper = null;
-  const checkboxLabel = 'label goes here';
+  const label = 'label goes here';
 
 
   beforeEach(function() {
-    wrapper = mount(<Checkbox label={checkboxLabel} />);
+    wrapper = mount(<Radio label={label} />);
   });
 
   it('is defined', () => {
@@ -21,7 +21,7 @@ describe('Checkbox', () => {
 
   it('renders the label text correctly', () => {
     const labelElement = wrapper.find('label');
-    expect(labelElement.text()).toBe(checkboxLabel);
+    expect(labelElement.text()).toBe(label);
   });
 
   it('has an id attribute', () => {
@@ -42,19 +42,19 @@ describe('Checkbox', () => {
 
   it('accepts a value property', () => {
     const testValue = 'testing';
-    wrapper = mount(<Checkbox value={testValue} label={checkboxLabel} />);
+    wrapper = mount(<Radio value={testValue} label={label} />);
     const inputValue = wrapper.find('input').props().value;
     expect(inputValue).toBe(testValue);
   });
 
   it('has a default name property', () => {
     const inputName = wrapper.find('input').props().name;
-    expect(inputName).toBe('checkboxes');
+    expect(inputName).toBe('radios');
   });
 
   it('accepts a name property', () => {
     const testValue = 'testing';
-    wrapper = mount(<Checkbox name={testValue} label={checkboxLabel} />);
+    wrapper = mount(<Radio name={testValue} label={label} />);
     const inputName = wrapper.find('input').props().name;
     expect(inputName).toBe(testValue);
   });
@@ -65,7 +65,7 @@ describe('Checkbox', () => {
   });
 
   it('accepts the checked property', () => {
-    wrapper = mount(<Checkbox checked label={checkboxLabel} />);
+    wrapper = mount(<Radio checked label={label} />);
     const inputChecked = wrapper.find('input').props().checked;
     expect(inputChecked).toBe(true);
   });
@@ -76,7 +76,7 @@ describe('Checkbox', () => {
   });
 
   it('accepts the disabled property', () => {
-    wrapper = mount(<Checkbox disabled label={checkboxLabel} />);
+    wrapper = mount(<Radio disabled label={label} />);
     const inputDisabled = wrapper.find('input').props().disabled;
     expect(inputDisabled).toBe(true);
   });
