@@ -27,7 +27,7 @@ class App extends React.Component
         <Header title="Draft U.S. Web Design Standards" />
         
         <div className="sub-header">
-          <aside className="sidenav">
+          <aside className="sidenav sticky">
             <Sidebar>
               <SidebarLink label="Overview" to="/" onlyActiveOnIndex={true} />
               <SidebarLink label="Typography" to="/typography" />
@@ -47,7 +47,12 @@ class App extends React.Component
                 <SidebarLink label="Radio buttons" to="/form-controls#radio-buttons" />
                 <SidebarLink label="Field set" to="/form-controls#field-set" />
               </SidebarLink>
-              <SidebarLink label="Form Templates" to="/form-templates" />
+              <SidebarLink label="Form Templates" to="/form-templates">
+                <SidebarLink label="Name Form" to="/form-templates#name-form" />
+                <SidebarLink label="Address Form" to="/form-templates#address-form" />
+                <SidebarLink label="Sign-in Form" to="/form-templates#signin-form" />
+                <SidebarLink label="Password Reset Form" to="/form-templates#pwd-form" />
+              </SidebarLink>
               <SidebarLink label="Search Bar" to="/search-bar" />
               <SidebarLink label="Side Navigation" to="/sidebar" />
               <SidebarLink label="Headers" to="/headers" />

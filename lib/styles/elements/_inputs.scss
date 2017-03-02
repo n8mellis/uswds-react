@@ -44,7 +44,14 @@ select {
   &.usa-input-success {
     border: 3px solid $color-green-light;
   }
+  @media screen and (min-width: $medium-screen) {
+    input.usa-input-tiny {
+        max-width: 6rem;
+    }
+  }  
 }
+
+
 /* stylelint-enable */
 
 .usa-input-error {
