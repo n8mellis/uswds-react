@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import Form from './Form';
 import TextInput from './TextInput';
-import { EmailValidator, ZipCodeValidator, PhoneValidator } from '../../lib/utils/validators';
 
 /**
  * Class representing a generic Name Form

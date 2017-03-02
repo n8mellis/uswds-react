@@ -1,5 +1,6 @@
 import React from "react";
 import NameForm from "../../lib/components/NameForm";
+import AddressForm from "../../lib/components/AddressForm";
 import BaseContainer from "./BaseContainer";
 
 /**
@@ -26,7 +27,7 @@ export default class FormTemplatesContainer extends React.Component
           <h2 className="usa-heading heading-margin-alt" id="address-form">Address Form</h2>
           <p className="usa-font-lead">A standard template for entering a U.S. mailing or shipping address</p>
           <div className="preview">
-            
+            <AddressForm />
           </div>
         </section>
         <section id="signin-form">  

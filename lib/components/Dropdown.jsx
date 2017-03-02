@@ -69,7 +69,19 @@ export default class Dropdown extends Component {
    * @returns {node} The rendered DOM node
    */
   render() {
-    let errorMessage = null;
+    let errorMessage = null,
+        options,
+        self = this;
+
+    //builds the option list from array passed in by prop "options"
+    options = self.props.options.map(function(option){
+      return (
+          <option key={option} value={option}>
+              {option}
+          </option>
+      )
+    });
+    
     if (this.state.hasError) {
       errorMessage = (
         <span className="usa-input-error-message" role="alert">
@@ -96,6 +108,7 @@ export default class Dropdown extends Component {
           value={this.state.value}
           onChange={this._handleChange.bind(this)} >
             {emptyPlaceholder}
+            {options}
             {this.props.children}
         </select>
       </div>
