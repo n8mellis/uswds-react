@@ -61,8 +61,7 @@ export default class FormControlsContainer extends React.Component {
             </code></pre>
             <h5>Required props</h5>
             <ul>
-              <li><code>lable</code> <em>string</em> — Text for the input's label</li>
-
+              <li><code>label</code> <em>string</em> — Text for the input's label</li>
             </ul>
 
             <h5>Optional props</h5>
@@ -99,7 +98,7 @@ export default class FormControlsContainer extends React.Component {
         </section>
 
         <section id="text-area">
-          <h2 className="usa-heading heading-margin-alt" id="text-input">Text area</h2>
+          <h2 className="usa-heading heading-margin-alt" id="text-area">Text area</h2>
           <p className="usa-font-lead">Text area is a multi-line, plain-text editing control</p>
 
           <div className="preview">
@@ -119,7 +118,7 @@ export default class FormControlsContainer extends React.Component {
             </code></pre>
             <h5>Required props</h5>
             <ul>
-              <li><code>lable</code> <em>string</em> — the text for the label.</li>
+              <li><code>label</code> <em>string</em> — the text for the label.</li>
             </ul>
 
             <h5>Optional props</h5>
@@ -175,7 +174,7 @@ export default class FormControlsContainer extends React.Component {
             </code></pre>
             <h5>Required props</h5>
             <ul>
-              <li><code>lable</code> <em>string</em> — the text for the label.</li>
+              <li><code>label</code> <em>string</em> — the text for the label.</li>
               <li><code>children</code> <em>node</em> — expects a series of <code>option</code> elements.</li>
             </ul>
 
@@ -217,7 +216,7 @@ export default class FormControlsContainer extends React.Component {
             </code></pre>
             <h5>Required props</h5>
             <ul>
-              <li><code>lable</code> <em>string</em> — the text for the label.</li>
+              <li><code>label</code> <em>string</em> — the text for the label.</li>
             </ul>
 
             <h5>Optional props</h5>
@@ -241,9 +240,8 @@ export default class FormControlsContainer extends React.Component {
           </div>
         </section>
         <section id="radio-buttons">
-          <h2 className="usa-heading heading-margin-alt" id="checkboxes">Radio buttons</h2>
+          <h2 className="usa-heading heading-margin-alt" id="radio-buttons">Radio buttons</h2>
           <p className="usa-font-lead">Radio buttons allow users to see all available choices at once and select exactly one option.</p>
-
           <div className="preview">
             <FieldSet name="historical-figures-2" legend="Historial figures">
               <Radio label="Sojourner Truth" />
@@ -260,7 +258,7 @@ export default class FormControlsContainer extends React.Component {
             </code></pre>
             <h5>Required props</h5>
             <ul>
-              <li><code>lable</code> <em>string</em> — the text for the label.</li>
+              <li><code>label</code> <em>string</em> — the text for the label.</li>
             </ul>
 
             <h5>Optional props</h5>
@@ -285,7 +283,7 @@ export default class FormControlsContainer extends React.Component {
         </section>
 
         <section id="field-set">
-          <h2 className="usa-heading heading-margin-alt" id="checkboxes">Field set</h2>
+          <h2 className="usa-heading heading-margin-alt" id="field-set">Field set</h2>
           <p className="usa-font-lead">The Field set is used to group two or more checkboxes or radio buttons together.</p>
 
           <div>

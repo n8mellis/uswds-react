@@ -18,6 +18,7 @@ import Utilities from '../helpers/utilities';
  * - errorMessage: string. If present triggers the error state and displays the error message
  * - isValid: bool. If true, sets isValid state - i.e. green border
  * - allowedChars: Validator object. If present, user can only type characters that match the given test
+ * - inputClass: string. If present, adds an custom class to field, for UI specific targeting
  */
 export default class TextInput extends Component {
   /**
@@ -82,7 +83,7 @@ export default class TextInput extends Component {
     }
 
     return (
-      <div className={this.state.hasError ? 'usa-input-error' : 'usa-input'}>
+      <div className={this.state.hasError ? 'usa-input-error' : 'usa-input' }>
         <InputLabel htmlFor={this.id} required={this.props.required} label={this.props.label} />
 
         {error}
@@ -92,7 +93,7 @@ export default class TextInput extends Component {
           name={this.props.id}
           type={this.props.type}
           value={this.state.value}
-          className={this.state.isValid ? 'usa-input-success' : null}
+          className={this.state.isValid ? 'usa-input-success ' + this.props.inputClass : this.props.inputClass}
           required={this.props.required}
           aria-required={this.props.required}
           aria-labelledby={`${this.props.id}-label`}
@@ -221,7 +222,8 @@ TextInput.propTypes = {
   isValid: PropTypes.bool,
   value: PropTypes.string,
   validators: PropTypes.array,
-  allowedChars: PropTypes.object
+  allowedChars: PropTypes.object,
+  inputClass: PropTypes.string
 };
 
 TextInput.defaultProps = {
