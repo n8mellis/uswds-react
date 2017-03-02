@@ -32,8 +32,8 @@
     "concurrently": "^2.0.0",
     "cross-env": "^1.0.7",
     "dotenv": "^4.0.0",
-    "ejs": "^2.3.4",
-    "express": "^4.13.3",
+    "ejs": "^2.5.0",
+    "express": "^4.15.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-filter": "^3.0.1",
@@ -54,14 +54,14 @@
     "normalizr": "^1.0.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-helmet": "^3.1.0",
-    "react-redux": "^2.1.2",
-    "react-router": "^2.8.1",
+    "react-helmet": "^4.0.0",
+    "react-redux": "^5.0.0",
+    "react-router": "^3.0.0",
     "redux": "^3.0.0",
-    "redux-logger": "^1.0.9",
-    "redux-thunk": "^0.1.0",
+    "redux-logger": "^2.8.0",
+    "redux-thunk": "^2.2.0",
     "rewire": "^2.3.4",
-    "rimraf": "^2.5.2",
+    "rimraf": "^2.6.0",
     "run-sequence": "^1.2.2",
     "superagent": "^1.4.0",
     "webpack": "^2.2.0"
@@ -93,6 +93,6 @@
     "sinon": "^1.17.1",
     "sinon-chai": "^2.8.0",
     "style-loader": "^0.13.2",
-    "webpack-dev-server": "^2.2.0"
+    "webpack-dev-server": "^2.4.0"
   }
 }
