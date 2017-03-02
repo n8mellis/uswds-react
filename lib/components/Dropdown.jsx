@@ -30,7 +30,7 @@ export default class Dropdown extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: this.props.value,
+      value: this.props.value || '',
       hasError: this.props.errorMessage ? true : false,
       errorMessageBody: this.props.errorMessage ? this.props.errorMessage : null
     };
@@ -80,8 +80,8 @@ export default class Dropdown extends Component {
 
     let emptyPlaceholder = null;
 
-    if (this.props.value === '') {
-      emptyPlaceholder = (<option disabled value=""> </option>);
+    if (this.state.value == '') {
+      emptyPlaceholder = (<option disabled value="">Select ...</option>);
     }
 
     return (

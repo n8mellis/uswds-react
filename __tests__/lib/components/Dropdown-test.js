@@ -39,6 +39,10 @@ describe('Dropdown', () => {
     expect(htmlFor).toBe(id);
   });
 
+  it('adds a placeholder if there\'s no value', () => {
+    expect(wrapper.find('option').first().text()).toBe('Select ...');
+  });
+
   it('accepts a value property', () => {
     const testValue = 'testing';
     wrapper = mount(<Dropdown value={testValue} label={labelText}>

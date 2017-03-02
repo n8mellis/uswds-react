@@ -26,31 +26,31 @@ export default class FormControlsContainer extends React.Component {
             <TextInput
               label="Text input label"
               id="firstInput"/>
-            
+
             <TextInput
               label="This input is required"
               id="secondInput"
               required />
-            
+
             <TextInput
               label="Email address"
               type="email"
               value="gwashington@potus.com"
               isValid
               validators={[EmailValidator]} />
-            
+
               <TextInput
                 label="ZIP code"
                 value="666"
                 errorMessage="Not a valid ZIP Code"
                 validators={[ZipCodeValidator]} />
-              
+
               <TextInput
                 type="tel"
                 label="Phone number"
                 validators={[PhoneValidator]} />
           </div>
-          
+
           <div>
             <h5>Example usage</h5>
             <pre><code>
@@ -62,9 +62,9 @@ export default class FormControlsContainer extends React.Component {
             <h5>Required props</h5>
             <ul>
               <li><code>lable</code> <em>string</em> — Text for the input's label</li>
-              
+
             </ul>
-            
+
             <h5>Optional props</h5>
             <ul>
               <li>
@@ -97,11 +97,11 @@ export default class FormControlsContainer extends React.Component {
             </ul>
           </div>
         </section>
-        
+
         <section id="text-area">
           <h2 className="usa-heading heading-margin-alt" id="text-input">Text area</h2>
           <p className="usa-font-lead">Text area is a multi-line, plain-text editing control</p>
-          
+
           <div className="preview">
             <TextArea
               label="How did you hear about us?"
@@ -111,7 +111,7 @@ export default class FormControlsContainer extends React.Component {
               errorMessage="Computer says no"
               value="I googled and actually clicked next page several times until I found you" />
           </div>
-          
+
           <div>
             <h5>Example usage</h5>
             <pre><code>
@@ -121,7 +121,7 @@ export default class FormControlsContainer extends React.Component {
             <ul>
               <li><code>lable</code> <em>string</em> — the text for the label.</li>
             </ul>
-            
+
             <h5>Optional props</h5>
             <ul>
               <li>
@@ -139,31 +139,31 @@ export default class FormControlsContainer extends React.Component {
             </ul>
           </div>
         </section>
-        
+
         <section id="dropdown">
           <h2 className="usa-heading heading-margin-alt" id="dropdown">Dropdown</h2>
           <p className="usa-font-lead">A dropdown allows users to select one option from a list.</p>
-          
+
           <div className="preview">
-            <Dropdown label="Dropdown label">
+            <Dropdown label="Dropdown label" id="dropdown1">
               <option value="value1">Option A</option>
               <option value="value2">Option B</option>
               <option value="value3">Option C</option>
             </Dropdown>
-            
-            <Dropdown label="Dropdown label" required value={''}>
+
+            <Dropdown label="Dropdown label" required id="dropdown2">
               <option value="value1">Option A</option>
               <option value="value2">Option B</option>
               <option value="value3">Option C</option>
             </Dropdown>
-            
-            <Dropdown label="Dropdown label" errorMessage="Wrong choice!" value={'value3'}>
+
+            <Dropdown label="Dropdown label" errorMessage="Wrong choice!" value={'value3'} id="dropdown3">
               <option value="value1">Option A</option>
               <option value="value2">Option B</option>
               <option value="value3">Option C</option>
             </Dropdown>
           </div>
-          
+
           <div>
             <h5>Example usage</h5>
             <pre><code>
@@ -178,14 +178,14 @@ export default class FormControlsContainer extends React.Component {
               <li><code>lable</code> <em>string</em> — the text for the label.</li>
               <li><code>children</code> <em>node</em> — expects a series of <code>option</code> elements.</li>
             </ul>
-            
+
             <h5>Optional props</h5>
             <ul>
               <li>
                 <code>id</code> <em>string, defaults to a unique generated id</em> — sets the input's <code>id</code> attribute the label's <code>for</code> attribute.
               </li>
               <li>
-                <code>value</code> <em>string</em> — if this matches the <code>value</code> of one of the option elements, that becomes the default choice. If you set it to an empty string, a blank disabled option is added so that there is no default choice. 
+                <code>value</code> <em>string</em> — if this matches the <code>value</code> of one of the option elements, that becomes the default choice. If you set it to an empty string, a blank disabled option is added so that there is no default choice.
               </li>
               <li>
                 <code>required</code> <em>bool, defaults to false</em> — adds required label, required attribute, and aria-required='true'.
@@ -196,11 +196,11 @@ export default class FormControlsContainer extends React.Component {
             </ul>
           </div>
         </section>
-        
+
         <section id="checkboxes">
           <h2 className="usa-heading heading-margin-alt" id="checkboxes">Checkboxes</h2>
           <p className="usa-font-lead">Checkboxes allow users to select one or more options from a visible list.</p>
-          
+
           <div className="preview">
             <FieldSet name="historical-figures-1" legend="Historial figures">
               <Checkbox label="Sojourner Truth" checked />
@@ -209,7 +209,7 @@ export default class FormControlsContainer extends React.Component {
               <Checkbox label="George Washington Carver" />
             </FieldSet>
           </div>
-          
+
           <div>
             <h5>Example usage</h5>
             <pre><code>
@@ -219,14 +219,14 @@ export default class FormControlsContainer extends React.Component {
             <ul>
               <li><code>lable</code> <em>string</em> — the text for the label.</li>
             </ul>
-            
+
             <h5>Optional props</h5>
             <ul>
               <li>
                 <code>id</code> <em>string, defaults to a unique generated id</em> — sets the input's <code>id</code> attribute the label's <code>for</code> attribute.
               </li>
               <li>
-                <code>value</code> <em>string</em> — sets the value attribute. If not provided, the id is used instead. 
+                <code>value</code> <em>string</em> — sets the value attribute. If not provided, the id is used instead.
               </li>
               <li>
                 <code>name</code> <em>string, defaults to 'checkboxs'</em> — sets the name attribute. Each item in a fieldset should have the same name.
@@ -243,7 +243,7 @@ export default class FormControlsContainer extends React.Component {
         <section id="radio-buttons">
           <h2 className="usa-heading heading-margin-alt" id="checkboxes">Radio buttons</h2>
           <p className="usa-font-lead">Radio buttons allow users to see all available choices at once and select exactly one option.</p>
-          
+
           <div className="preview">
             <FieldSet name="historical-figures-2" legend="Historial figures">
               <Radio label="Sojourner Truth" />
@@ -252,7 +252,7 @@ export default class FormControlsContainer extends React.Component {
               <Radio label="George Washington Carver" />
             </FieldSet>
           </div>
-          
+
           <div>
             <h5>Example usage</h5>
             <pre><code>
@@ -262,14 +262,14 @@ export default class FormControlsContainer extends React.Component {
             <ul>
               <li><code>lable</code> <em>string</em> — the text for the label.</li>
             </ul>
-            
+
             <h5>Optional props</h5>
             <ul>
               <li>
                 <code>id</code> <em>string, defaults to a unique generated id</em> — sets the input's <code>id</code> attribute the label's <code>for</code> attribute.
               </li>
               <li>
-                <code>value</code> <em>string</em> — sets the value attribute. If not provided, the <code>id</code> is used instead. 
+                <code>value</code> <em>string</em> — sets the value attribute. If not provided, the <code>id</code> is used instead.
               </li>
               <li>
                 <code>name</code> <em>string, defaults to 'radios'</em> — sets the name attribute. Each item in a fieldset should have the same name.
@@ -283,11 +283,11 @@ export default class FormControlsContainer extends React.Component {
             </ul>
           </div>
         </section>
-        
+
         <section id="field-set">
           <h2 className="usa-heading heading-margin-alt" id="checkboxes">Field set</h2>
           <p className="usa-font-lead">The Field set is used to group two or more checkboxes or radio buttons together.</p>
-          
+
           <div>
             <h5>Example usage</h5>
             <pre><code>
@@ -299,19 +299,19 @@ export default class FormControlsContainer extends React.Component {
             </code></pre>
             <h5>Required props</h5>
             <ul>
-              <li><code>legend</code> <em>string</em> — screen-reader only label of what the radio or checkbox group represents. Many screen readers will read the legend for each control, so it shoud be 
+              <li><code>legend</code> <em>string</em> — screen-reader only label of what the radio or checkbox group represents. Many screen readers will read the legend for each control, so it shoud be
               brief and descriptive. Required for 508 compliance. </li>
               <li>
                 <code>children</code> <em>node</em> — expects two or more checkboxes or radio buttons.
               </li>
             </ul>
-            
+
             <h5>Optional props</h5>
             <ul>
               <li>
                 <code>name</code> <em>string</em> — applies this name to all the children rather than having to set the name of each child individually.
               </li>
-              
+
             </ul>
           </div>
         </section>
