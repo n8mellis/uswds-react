@@ -94,5 +94,10 @@
     "sinon-chai": "^2.8.0",
     "style-loader": "^0.13.2",
     "webpack-dev-server": "^2.4.0"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "collectCoverageFrom": ["**/*.{js,jsx}", "!**/node_modules/**", "!gulpfile.js", "!**/coverage/**", "!**/dist/**", "!**/server/**", "!**/styleguide/**", "!**/support/**"]
   }
 }

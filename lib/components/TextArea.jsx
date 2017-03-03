@@ -52,13 +52,13 @@ export default class TextArea extends Component {
   /**
    * If errorMessage is updated after initial render, adjust the state accordingly
    */
-  componentWillReceiveProps() {
-    if (this.props.errorMessage) {
+  componentWillReceiveProps({errorMessage}) {
+    if (errorMessage) {
       this.setState({
         isPristine: false,
         isValid: false,
         hasError: true,
-        errorMessageBody : this.props.errorMessage
+        errorMessageBody : errorMessage
       });
     }
   }
@@ -91,7 +91,6 @@ export default class TextArea extends Component {
           aria-labelledby={`${this.props.id}-label`}
           onBlur={this._handleBlur.bind(this)}
           onChange={this._handleChange.bind(this)}
-          ref={(input) => this._input = input}
         ></textarea>
       </div>
     );
@@ -102,7 +101,7 @@ export default class TextArea extends Component {
    */
   _validate() {
     // Check if field is required and empty
-    if (this.props.required && !this._input.value) {
+    if (this.props.required && !this.state.value) {
       this.setState({
         hasError: true,
         isValid: false,

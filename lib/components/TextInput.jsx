@@ -57,13 +57,13 @@ export default class TextInput extends Component {
   /**
    * If errorMessage is updated after initial render, adjust the state accordingly
    */
-  componentWillReceiveProps() {
-    if (this.props.errorMessage) {
+  componentWillReceiveProps({errorMessage}) {
+    if (errorMessage) {
       this.setState({
         isPristine: false,
         isValid: false,
         hasError: true,
-        errorMessageBody : this.props.errorMessage
+        errorMessageBody : errorMessage
       });
     }
   }

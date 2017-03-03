@@ -6,7 +6,7 @@ import React, { PropTypes } from 'react';
  * an icon, a headline, and a short explaination.
  *
  * The alert type determines the background color and icon displayed
- * 
+ *
  * Alert types are 'success', 'warning', 'error', 'info'
  * The type defaults to 'info' if no type is sent via props
  *
@@ -16,13 +16,13 @@ import React, { PropTypes } from 'react';
  * @param {string} type  Sets the alert type
  * @param {string} title Text for the headline
  * @param {node} body  Text for the description
- * @param {string} role  ARIA role type 
+ * @param {string} role  ARIA role type
  */
 export default function Alert ({type, title, body, role}) {
   if ( type === 'error' && !role) {
     role = 'alert';
   }
-  
+
   return (
     <div className={`usa-alert usa-alert-${type}`} role={role}>
       <div className="usa-alert-body">
@@ -37,6 +37,8 @@ const TYPE_INFO = 'info';
 const TYPE_SUCCESS = 'success';
 const TYPE_ERROR = 'error';
 const TYPE_WARNING = 'warning';
+const ROLE_ALERT = 'alert';
+const ROLE_ALERTDIALOG = 'alertdialog';
 
 Alert.propTypes = {
   type: PropTypes.oneOf([
@@ -47,7 +49,10 @@ Alert.propTypes = {
   ]),
   title: PropTypes.string.isRequired,
   body: PropTypes.node.isRequired,
-  role: PropTypes.string
+  role: PropTypes.oneOf([
+    ROLE_ALERT,
+    ROLE_ALERTDIALOG
+  ])
 };
 
 Alert.defaultProps = {

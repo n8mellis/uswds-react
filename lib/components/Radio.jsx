@@ -3,7 +3,7 @@ import InputLabel from './InputLabel';
 import Utilities from '../helpers/utilities';
 
 /**
- * A radio button and a label 
+ * A radio button and a label
  *
  * Required props
  * - label, string -- Text for the label
@@ -22,15 +22,19 @@ export default class Radio extends Component {
    */
   constructor(props) {
     super(props);
+
+    this.state = {
+      checked: this.props.checked || false
+    };
   }
-  
+
   /**
    * check to see if an Id was passed in, if not generate one.
    */
   componentWillMount() {
     this.id = this.props.id ? this.props.id : Utilities.uniqueIdForComponent(this);
   }
-  
+
   /**
    * Renders the DOM node
    * @returns {node} div that includes the input and label
@@ -42,13 +46,23 @@ export default class Radio extends Component {
           id={this.id}
           type="radio"
           name={this.props.name}
-          value={this.props.value ? this.props.value : this.props.id}
-          defaultChecked={this.props.checked}
-          disabled={this.props.disabled} />
+          value={this.props.value ? this.props.value : this.id}
+          disabled={this.props.disabled}
+          onChange={this._handleChange.bind(this)}
+          checked={this.state.checked} />
 
         <InputLabel htmlFor={this.id} label={this.props.label} />
       </div>
     );
+  }
+
+  /**
+   * toggle the checked state
+   */
+  _handleChange() {
+    this.setState({
+      checked: !this.state.checked
+    });
   }
 }
 
@@ -62,5 +76,6 @@ Radio.propTypes = {
 };
 
 Radio.defaultProps = {
-  name: 'radios'
+  name: 'radios',
+  disabled: false
 };
