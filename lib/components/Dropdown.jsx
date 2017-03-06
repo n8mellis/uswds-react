@@ -70,9 +70,11 @@ export default class Dropdown extends Component {
    */
   render() {
     let errorMessage = null,
-        options,
+        emptyPlaceholder = null,
+        options = this.props.options,
         self = this;
 
+    console.log('options value: ', options);
     
     if (this.state.hasError) {
       errorMessage = (
@@ -82,20 +84,20 @@ export default class Dropdown extends Component {
       );
     }
 
-    let emptyPlaceholder = null;
-
-    if (this.state.value == '') {
-      emptyPlaceholder = (<option disabled value="">Select ...</option>);
-    }
+    emptyPlaceholder = <option disabled value="">Select ...</option>;
 
     //builds the option list from array passed in by prop "options"
-    options = self.props.options.map(function(option){
-      return (
-          <option key={option} value={option}>
-              {option}
-          </option>
-      )
-    });
+    if (options){
+      options = self.props.options.map(function(option){
+        return (
+            <option key={option} value={option}>
+                {option}
+            </option>
+        )
+      });
+    } else {
+      options = '';
+    }
 
     return (
       <div className={this.state.hasError ? 'usa-input-error' : 'usa-input'}>
@@ -104,13 +106,12 @@ export default class Dropdown extends Component {
         {errorMessage}
 
         <select
-          className={this.props.className}
           name={this.props.id}
           id={this.id}
           value={this.state.value}
           onChange={this._handleChange.bind(this)} >
-            {emptyPlaceholder}
-            {this.props.children ? this.props.children : options}
+          {emptyPlaceholder}
+          {this.props.children ? this.props.children : options}
         </select>
       </div>
     );
