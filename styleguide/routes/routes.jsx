@@ -21,9 +21,31 @@ import SidebarContainer from "containers/SidebarContainer";
 import HeadersContainer from "containers/HeadersContainer";
 import FootersContainer from "containers/FootersContainer";
 
+/**
+ * resolve internal page links 
+ */
+function hashLinkScroll() {
+  const { hash } = window.location;
+  if (hash !== '') {
+    // Push onto callback queue so it runs after the DOM is updated,
+    // this is required when navigating from a different page so that
+    // the element is rendered on the page before trying to getElementById.
+    setTimeout(() => {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) element.scrollIntoView();
+    }, 0);
+  }
+}
+
+/**
+ * Application routes
+ * @param {unknown} history [description]
+ * @returns {node} 
+ */
 export default function AppRouter(history) {
   return (
-    <Router history={history}>
+    <Router history={history} onUpdate={hashLinkScroll}>
       <Route path="/" component={App}>
         <Route path="typography" component={TypographyContainer} />
         <Route path="colors" component={ColorsContainer} />

@@ -1,14 +1,44 @@
 import React from "react";
+import Label from '../../lib/components/Label';
 
 import BaseContainer from "./BaseContainer";
 
+/**
+ * Class representing the content for the Labels tab
+ */
 export default class LabelsContainer extends React.Component
 {
+  /**
+   * Renders the DOM node
+   * @returns {node} The rendered DOM node
+   */
   render()
   {
     return (
       <BaseContainer {...this.props}>
-        TODO
+        <div className="preview">
+          <h6>Small</h6>
+          <Label>New</Label>
+          
+          <h6>Large</h6>
+          <Label size="big">New</Label>
+        </div>
+        
+        <div>
+          <h5>Example usage</h5>
+          <pre><code>
+            {`<Label size="big">New</Label>`}
+          </code></pre>
+          <h5>Required props</h5>
+          <ul>
+            <li><code>children</code> <em>node</em> — expected to be the text to display inside the pill.</li>
+          </ul>
+          
+          <h5>Optional props</h5>
+          <ul>
+            <li><code>size</code> <em>string, defaults to 'normal'</em> — Must be <code>"normal"</code> or <code>"big"</code>.</li>
+          </ul>
+        </div>
       </BaseContainer>
     );
   }

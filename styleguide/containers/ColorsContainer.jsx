@@ -2,8 +2,15 @@ import React from "react";
 
 import BaseContainer from "./BaseContainer";
 
+/**
+ * Colors content
+ */
 export default class ColorsContainer extends React.Component
 {
+  /**
+   * Renders the node
+   * @returns {node} the rendered DOM node
+   */
   render()
   {
     return (

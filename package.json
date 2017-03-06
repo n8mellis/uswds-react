@@ -73,6 +73,7 @@
     "babel-plugin-rewire": "^1.0.0-beta-5",
     "babel-polyfill": "^6.23.0",
     "babel-preset-react-hmre": "^1.0.1",
+    "babel-preset-stage-0": "^6.22.0",
     "chai": "^3.3.0",
     "chai-as-promised": "^5.1.0",
     "enzyme": "^2.7.1",
@@ -92,5 +93,10 @@
     "sinon": "^1.17.1",
     "sinon-chai": "^2.8.0",
     "webpack-dev-server": "^2.2.0"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "collectCoverageFrom": ["**/*.{js,jsx}", "!**/node_modules/**", "!gulpfile.js", "!**/coverage/**", "!**/dist/**", "!**/server/**", "!**/styleguide/**", "!**/support/**"]
   }
 }

@@ -16,6 +16,8 @@ $output-bourbon-deprecation-warnings: false;
 // To replace...
 @import "elements/buttons";
 @import "elements/inputs";
+@import "elements/labels";
+@import "elements/tables";
 
 // Components
 @import "components/Accordion";
@@ -23,3 +25,7 @@ $output-bourbon-deprecation-warnings: false;
 @import "components/Header";
 @import "components/SearchField";
 @import "components/Sidebar";
+@import "components/Alerts";
+
+//Fixes
+@import "fixes/fixes";

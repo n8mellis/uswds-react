@@ -25,6 +25,11 @@ const createStoreWithMiddleware = applyMiddleware(
   ...middlewares
 )(createStore);
 
+/**
+ * [configureStore description]
+ * @param {object} initialState the initial state
+ * @returns {object} the store
+ */
 export default function configureStore(initialState) {
   const store = createStoreWithMiddleware(rootReducer, initialState);
 

@@ -3,22 +3,22 @@ import InputLabel from './InputLabel';
 import Utilities from '../helpers/utilities';
 
 /**
- * Checkbox with label
+ * A radio button and a label
  *
- * Required props:
- * - label, string -- the text for the label
+ * Required props
+ * - label, string -- Text for the label
  *
- * Optional props:
- * - id, string -- sets the textarea's id attribute the label's for attribute. Required for 508 compliance.
- * - value, string -- sets the value attribute. If not provided, the id is used instead.
- * - name, string, defaults to 'checkboxs' -- sets the name attribute. Each item in a fieldset should have the same name.
- * - checked, bool -- if true, the control is selected (checked) by default.
- * - disabled, bool -- if true, disables the control so it can not be toggled.
+ * Optional props
+ * - id, string -- input's id and label's for attributes
+ * - name, string, defaults to 'radios' -- Sets name attribute
+ * - value, string, defaults to id -- Sets value attribute
+ * - checked, bool -- If true, item is initially set to checked
+ * - disabled, bool --If item, item is disabled
  */
-export default class Checkbox extends Component {
+export default class Radio extends Component {
   /**
    * constructor
-   * @param {object} props The props passed in
+   * @param {Object} props The props that will be applied to this component.
    */
   constructor(props) {
     super(props);
@@ -27,6 +27,7 @@ export default class Checkbox extends Component {
       checked: this.props.checked || false
     };
   }
+
   /**
    * check to see if an Id was passed in, if not generate one.
    */
@@ -35,18 +36,18 @@ export default class Checkbox extends Component {
   }
 
   /**
-   * Renders the component.
-   * @returns {Node} The rendered DOM node.
+   * Renders the DOM node
+   * @returns {node} div that includes the input and label
    */
-  render() {
+  render () {
     return (
       <div>
         <input
           id={this.id}
-          type="checkbox"
+          type="radio"
           name={this.props.name}
           value={this.props.value ? this.props.value : this.id}
-          disabled={this.props.disabled || false}
+          disabled={this.props.disabled}
           onChange={this._handleChange.bind(this)}
           checked={this.state.checked} />
 
@@ -65,7 +66,7 @@ export default class Checkbox extends Component {
   }
 }
 
-Checkbox.propTypes = {
+Radio.propTypes = {
   id: PropTypes.string,
   label: PropTypes.string.isRequired,
   name: PropTypes.string,
@@ -74,6 +75,7 @@ Checkbox.propTypes = {
   disabled: PropTypes.bool
 };
 
-Checkbox.defaultProps = {
-  name: 'checkboxes'
+Radio.defaultProps = {
+  name: 'radios',
+  disabled: false
 };
