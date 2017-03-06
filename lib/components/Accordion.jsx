@@ -49,8 +49,7 @@ export class Accordion extends React.Component
    * which will cause the children to be re-rendered so that the correct item 
    * has its content displayed.
    *
-   * If this item is currently active, it will pass "-1" as the value to the
-   * parent {@link Accordion} so that it will collapse the item.
+   * To collapse all the items, pass -1 as the value.
    *
    * @param {Number} index The item index that should be the active item.
    */
@@ -170,6 +169,9 @@ export class AccordionItem extends React.Component
    * This method calls the method defined in our `action` prop (usually set 
    * by the parent {@link Accordion} class) with our index to make ourselves
    * the active element and show our content.
+   *
+   * If this item is currently active, it will pass -1 as the value to the
+   * parent {@link Accordion} so that it will collapse the item.
    */
   makeActive()
   {
