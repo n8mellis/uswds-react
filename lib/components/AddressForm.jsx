@@ -33,18 +33,20 @@ export default function AddressForm ({legend, input}) {
       label="Street address 2 (Optional)"
       id="streetAddress2"
        />
-      <div className="usa-input-grid usa-input-grid-medium">
-        <TextInput
-        label="City"
-        id="cityAddress"
-         />
-       </div>
-      <div className="usa-input-grid usa-input-grid-small">
-        <Dropdown label="State" id="stateAddress" options={states} />
-      </div>     
+      <div>
+        <div className="usa-input-grid usa-input-grid-medium">
+          <TextInput
+          label="City"
+          id="cityAddress"
+           />
+         </div>
+        <div className="usa-input-grid usa-input-grid-small">
+          <Dropdown label="State" id="stateAddress" options={states} />
+        </div> 
+      </div>    
 
       <TextInput
-      inputClass="usa-input-medium"
+      className="usa-input-medium"
       label="Zip"
       id="zipAddress"
        />

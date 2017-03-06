@@ -73,14 +73,6 @@ export default class Dropdown extends Component {
         options,
         self = this;
 
-    //builds the option list from array passed in by prop "options"
-    options = self.props.options.map(function(option){
-      return (
-          <option key={option} value={option}>
-              {option}
-          </option>
-      )
-    });
     
     if (this.state.hasError) {
       errorMessage = (
@@ -96,6 +88,15 @@ export default class Dropdown extends Component {
       emptyPlaceholder = (<option disabled value="">Select ...</option>);
     }
 
+    //builds the option list from array passed in by prop "options"
+    options = self.props.options.map(function(option){
+      return (
+          <option key={option} value={option}>
+              {option}
+          </option>
+      )
+    });
+
     return (
       <div className={this.state.hasError ? 'usa-input-error' : 'usa-input'}>
         <InputLabel htmlFor={this.id} required={this.props.required} label={this.props.label} />
@@ -103,13 +104,13 @@ export default class Dropdown extends Component {
         {errorMessage}
 
         <select
+          className={this.props.className}
           name={this.props.id}
           id={this.id}
           value={this.state.value}
           onChange={this._handleChange.bind(this)} >
             {emptyPlaceholder}
-            {options}
-            {this.props.children}
+            {this.props.children ? this.props.children : options}
         </select>
       </div>
     );
@@ -119,7 +120,7 @@ export default class Dropdown extends Component {
 Dropdown.propTypes = {
   id: PropTypes.string,
   label: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   required: PropTypes.bool,
   hasError: PropTypes.bool,
   errorMessage: PropTypes.string,

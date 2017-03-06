@@ -21,13 +21,12 @@ export default function NameForm ({legend, input}) {
     legend="Name"
     >
       <TextInput
-      inputClass="usa-input-tiny"
+      className="usa-input-tiny"
       label="Title"
       id="titleName"
        />
 
       <TextInput
-      className="usa-input-tiny"
       label="First Name"
       id="firstName"
       required />
@@ -43,7 +42,7 @@ export default function NameForm ({legend, input}) {
       required />
 
       <TextInput
-      inputClass="usa-input-tiny"
+      className="usa-input-tiny"
       label="Suffix"
       id="suffixName"
        />

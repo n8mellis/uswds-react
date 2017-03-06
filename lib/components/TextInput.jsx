@@ -93,7 +93,7 @@ export default class TextInput extends Component {
           name={this.props.id}
           type={this.props.type}
           value={this.state.value}
-          className={this.state.isValid ? 'usa-input-success ' + this.props.inputClass : this.props.inputClass}
+          className={this.state.isValid ? 'usa-input-success ' + this.props.className : this.props.className}
           required={this.props.required}
           aria-required={this.props.required}
           aria-labelledby={`${this.props.id}-label`}
