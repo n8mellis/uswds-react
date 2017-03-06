@@ -63,7 +63,7 @@ export class Accordion extends React.Component
    */
   render()
   {
-    var index = 0;
+    let index = 0;
     let children = React.Children.map(this.props.children, (child) => {
       let i = index++;
       return React.cloneElement(child, { 
