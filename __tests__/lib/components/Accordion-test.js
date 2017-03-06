@@ -101,4 +101,20 @@ describe('Accordion', () => {
     expect(secondItem.prop("contentVisible")).toBeFalsy();
   });
 
+  it("should have no expanded items if 'startCollapsed' is passed as a prop", () => {
+    accordion = mount(
+      <Accordion startCollapsed>
+        <AccordionItem title="First Amendment">
+          <p>Congress shall make no law respecting an establishment of ...</p>
+        </AccordionItem>
+        <AccordionItem>
+          <span>Second Amendment</span>
+          <p>A well regulated Militia, being necessary to the security ...</p>
+        </AccordionItem>
+      </Accordion>
+    );
+    expect(accordion.find("AccordionItem").at(0).prop("contentVisible")).toBeFalsy();
+    expect(accordion.find("AccordionItem").at(1).prop("contentVisible")).toBeFalsy();
+  });
+
 });

@@ -24,6 +24,16 @@ import utilities from "../helpers/utilities";
  *     <AccordionItem ... />
  *   </Accordion>
  * </code>
+ *
+ * By default the Accordion will expand the first item.  To prevent this behavior,
+ * you can supply the `startCollapsed` prop.
+ *
+ * Example:
+ * <code>
+ *   <Accordion startCollapsed>
+ *     <AccordionItem ... />
+ *   </Accordion>
+ * </code>
  */
 export class Accordion extends React.Component
 {
@@ -36,10 +46,10 @@ export class Accordion extends React.Component
   {
     super(props);
     this.state = {
-      activeIndex: 0
+      activeIndex: (props.startCollapsed ? -1 : 0)
     };
   }
-  
+
   /**
    * Sets the active accordion item.
    *
@@ -87,11 +97,13 @@ Accordion.TYPE_BORDERED   = "usa-accordion-bordered";
 
 Accordion.propTypes = {
   type: React.PropTypes.oneOf([ Accordion.TYPE_BORDERLESS, Accordion.TYPE_BORDERED ]),
-  children: React.PropTypes.node
+  children: React.PropTypes.node,
+  startCollapsed: React.PropTypes.bool
 };
 
 Accordion.defaultProps = {
-  type: Accordion.TYPE_BORDERLESS
+  type: Accordion.TYPE_BORDERLESS,
+  startCollapsed: false
 };
 
 // =============================================================================
