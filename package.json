@@ -98,6 +98,15 @@
   "jest": {
     "verbose": true,
     "collectCoverage": true,
-    "collectCoverageFrom": ["**/*.{js,jsx}", "!**/node_modules/**", "!gulpfile.js", "!**/coverage/**", "!**/dist/**", "!**/server/**", "!**/styleguide/**", "!**/support/**"]
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!gulpfile.js",
+      "!**/coverage/**",
+      "!**/dist/**",
+      "!**/server/**",
+      "!**/styleguide/**",
+      "!**/support/**"
+    ]
   }
 }
