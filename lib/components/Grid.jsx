@@ -1,13 +1,13 @@
 import React, { PropTypes } from 'react';
 
 /**
- * Column container aka row.
- * You should put columns inside a Row
+ * Column container aka Grid.
+ * You should put columns inside a Grid
  * @param {[bool]} full defaults to false -- if true, removes padding
  * @param {[node]} children Children
  * @returns {[node]} the rendered DOM node
  */
-export function Row ({full, children}) {
+export function Grid ({full, children}) {
   return (
     <div className={full ? 'usa-grid-full' : 'usa-grid'}>
       {children}
@@ -15,17 +15,17 @@ export function Row ({full, children}) {
   );
 }
 
-Row.propTypes = {
+Grid.propTypes = {
   full: PropTypes.bool,
   children: PropTypes.node.isRequired
 };
 
-Row.defaultProps = {
+Grid.defaultProps = {
   full: false
 };
 
 /**
- * Column that goes in a row that makes a grid
+ * Column that goes in a Grid that makes a grid
  * @param {[string]} width width of the column
  * @param {[node]} children Children
  * @returns {[node]} the rendered DOM node

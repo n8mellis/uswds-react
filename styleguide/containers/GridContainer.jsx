@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col } from '../../lib/components/Grid';
+import { Grid, Col } from '../../lib/components/Grid';
 import BaseContainer from "./BaseContainer";
 
 /**
@@ -16,7 +16,7 @@ export default class GridContainer extends React.Component
       <BaseContainer {...this.props}>
         <h2 className="usa-heading">Grid expressed in fractions</h2>
         <div className="preview preview-no_border grid-example grid-example-blank grid-text">
-          <Row>
+          <Grid>
             <Col width="1/12">1/12</Col>
             <Col width="1/12">1/12</Col>
             <Col width="1/12">1/12</Col>
@@ -29,39 +29,39 @@ export default class GridContainer extends React.Component
             <Col width="1/12">1/12</Col>
             <Col width="1/12">1/12</Col>
             <Col width="1/12">1/12</Col>
-          </Row>
-          <Row>
+          </Grid>
+          <Grid>
             <Col width="1/1">1/1</Col>
-          </Row>
-          <Row>
+          </Grid>
+          <Grid>
             <Col width="1/2">1/2</Col>
             <Col width="1/2">1/2</Col>
-          </Row>
-          <Row>
+          </Grid>
+          <Grid>
             <Col width="5/12">5/12</Col>
             <Col width="7/12">7/12</Col>
-          </Row>
-          <Row>
+          </Grid>
+          <Grid>
             <Col width="1/3">1/3</Col>
             <Col width="2/3">2/3</Col>
-          </Row>
-          <Row>
+          </Grid>
+          <Grid>
             <Col width="1/4">1/4</Col>
             <Col width="3/4">3/4</Col>
-          </Row>
-          <Row>
+          </Grid>
+          <Grid>
             <Col width="1/6">1/6</Col>
             <Col width="5/6">5/6</Col>
-          </Row>
-          <Row>
+          </Grid>
+          <Grid>
             <Col width="1/12">1/12</Col>
             <Col width="5/12">5/12</Col>
             <Col width="1/2">1/2</Col>
-          </Row>
+          </Grid>
         </div>
         <h2 className="usa-heading">Grid expressed in columns</h2>
         <div className="preview preview-no_border grid-example grid-example-blank grid-text">
-          <Row>
+          <Grid>
             <Col width="1">1</Col>
             <Col width="1">1</Col>
             <Col width="1">1</Col>
@@ -74,49 +74,49 @@ export default class GridContainer extends React.Component
             <Col width="1">1</Col>
             <Col width="1">1</Col>
             <Col width="1">1</Col>
-          </Row>
-          <Row>
+          </Grid>
+          <Grid>
             <Col width="12">12</Col>
-          </Row>
-          <Row>
+          </Grid>
+          <Grid>
             <Col width="6">6</Col>
             <Col width="6">6</Col>
-          </Row>
-          <Row>
+          </Grid>
+          <Grid>
             <Col width="5">5</Col>
             <Col width="7">7</Col>
-          </Row>
-          <Row>
+          </Grid>
+          <Grid>
             <Col width="4">4</Col>
             <Col width="8">8</Col>
-          </Row>
-          <Row>
+          </Grid>
+          <Grid>
             <Col width="3">3</Col>
             <Col width="9">9</Col>
-          </Row>
-          <Row>
+          </Grid>
+          <Grid>
             <Col width="2">2</Col>
             <Col width="10">10</Col>
-          </Row>
-          <Row>
+          </Grid>
+          <Grid>
             <Col width="1">1</Col>
             <Col width="5">5</Col>
             <Col width="6">6</Col>
-          </Row>
+          </Grid>
         </div>
         
         <div>
           <h5>Example usage</h5>
           <pre><code>
-            {`import { Row, Col } from 'pathto../lib/Grid'
+            {`import { Grid, Col } from 'pathto../lib/Grid'
 
-<Row>
+<Grid>
   <Col width="1/2">Half of twelve columns ...</Col>
   <Col width="6">... is the same as 6 columns</Col>
-</Row>`}
+</Grid>`}
           </code></pre>
           
-          <h4>Row</h4>
+          <h4>Grid</h4>
           <h5>Optional props</h5>
           <ul>
             <li>
