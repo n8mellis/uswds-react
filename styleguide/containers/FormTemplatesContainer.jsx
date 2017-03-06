@@ -20,14 +20,14 @@ export default class FormTemplatesContainer extends React.Component
           <h2 className="usa-heading heading-margin-alt" id="name-form">Name Form</h2>
           <p className="usa-font-lead">A standard template for collecting a person’s full name</p>
           <div className="preview">
-            <NameForm />
+            <NameForm legend="Name" />
           </div>
         </section>
         <section id="address-form">  
           <h2 className="usa-heading heading-margin-alt" id="address-form">Address Form</h2>
           <p className="usa-font-lead">A standard template for entering a U.S. mailing or shipping address</p>
           <div className="preview">
-            <AddressForm />
+            <AddressForm legend="Mailing address" />
           </div>
         </section>
         <section id="signin-form">  

@@ -18,12 +18,7 @@ export default class Form extends Component {
     return (
       <div>
         <form className="usa-form">
-          <fieldset className="usa-fieldset-inputs usa-sans">
-            <legend>
-              {this.props.legend}
-            </legend>
-            {this.props.children}
-          </fieldset>
+          {this.props.children}
         </form>
       </div>
     );

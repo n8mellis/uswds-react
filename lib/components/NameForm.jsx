@@ -17,35 +17,43 @@ import TextInput from './TextInput';
  */
 export default function NameForm ({legend, input}) {
   return (
-    <Form
-    legend="Name"
-    >
-      <TextInput
-      className="usa-input-tiny"
-      label="Title"
-      id="titleName"
-       />
+    <Form>
+          <fieldset className="usa-fieldset-inputs usa-sans">
+            <legend>
+              {legend}
+            </legend>
+            
+              <TextInput
+              className="usa-input-tiny"
+              label="Title"
+              id="titleName"
+               />
 
-      <TextInput
-      label="First Name"
-      id="firstName"
-      required />
+              <TextInput
+              label="First Name"
+              id="firstName"
+              required />
 
-      <TextInput
-      label="Middle Name"
-      id="middleName"
-       />
+              <TextInput
+              label="Middle Name"
+              id="middleName"
+               />
 
-      <TextInput
-      label="Last Name"
-      id="lastName"
-      required />
+              <TextInput
+              label="Last Name"
+              id="lastName"
+              required />
 
-      <TextInput
-      className="usa-input-tiny"
-      label="Suffix"
-      id="suffixName"
-       />
+              <TextInput
+              className="usa-input-tiny"
+              label="Suffix"
+              id="suffixName"
+               />
+          </fieldset>
     </Form>
   );
 }
+
+NameForm.propTypes = {
+  legend: PropTypes.string
+};
