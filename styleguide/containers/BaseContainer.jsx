@@ -27,6 +27,8 @@ export default class BaseContainer extends React.Component
 {
   /**
    * Renders the preview.
+   *
+   * @returns {Node} The render tree for the preview section.
    */
   renderPreview()
   {

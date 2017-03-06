@@ -1,10 +1,7 @@
 jest.unmock('../../../lib/components/Accordion.jsx');
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import TestUtils from 'react-addons-test-utils';
-import {shallow, mount} from 'enzyme';
-import sinon from 'sinon';
+import { mount } from 'enzyme';
 
 import { Accordion, AccordionItem } from '../../../lib/components/Accordion.jsx';
 
