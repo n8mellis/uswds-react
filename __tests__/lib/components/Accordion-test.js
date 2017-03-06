@@ -91,4 +91,14 @@ describe('Accordion', () => {
     }).toThrowError();
   });
 
+  it("should collapse an expanded element if clicked again", () => {
+    let firstItem = accordion.find("AccordionItem").at(0);
+    let secondItem = accordion.find("AccordionItem").at(1);
+    expect(firstItem.prop("contentVisible")).toBeTruthy();
+    expect(secondItem.prop("contentVisible")).toBeFalsy();
+    firstItem.find("button").simulate("click");
+    expect(firstItem.prop("contentVisible")).toBeFalsy();
+    expect(secondItem.prop("contentVisible")).toBeFalsy();
+  });
+
 });

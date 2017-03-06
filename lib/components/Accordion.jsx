@@ -170,7 +170,12 @@ export class AccordionItem extends React.Component
    */
   makeActive()
   {
-    this.props.action(this.props.accordionIndex);
+    if (this.props.contentVisible) {
+      this.props.action(-1);
+    }
+    else {
+      this.props.action(this.props.accordionIndex);
+    }
   }
   
   /**
