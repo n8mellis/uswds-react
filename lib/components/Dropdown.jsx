@@ -84,6 +84,7 @@ export default class Dropdown extends Component {
       );
     }
 
+    //Sets the Default Selected placeholder
     emptyPlaceholder = <option disabled value="">Select ...</option>;
 
     //builds the option list from array passed in by prop "options"
@@ -100,12 +101,13 @@ export default class Dropdown extends Component {
     }
 
     return (
-      <div className={this.state.hasError ? 'usa-input-error' : 'usa-input'}>
+      <div className={this.state.hasError ? 'usa-input-error ' : 'usa-input ' + ((this.props.children || options) ? '' : 'disabled')}>
         <InputLabel htmlFor={this.id} required={this.props.required} label={this.props.label} />
 
         {errorMessage}
 
         <select
+          disabled={(this.props.children || options) ? false : true}
           name={this.props.id}
           id={this.id}
           value={this.state.value}
