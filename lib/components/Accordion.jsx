@@ -113,9 +113,9 @@ export class Accordion extends React.Component
       });
     });
     return (
-      <ul className={this.props.type}>
+      <div className={this.props.type}>
         {children}
-      </ul>
+      </div>
     );
   }
 }
@@ -292,10 +292,10 @@ export class AccordionItem extends React.Component
     }
     
     return (
-      <li className="usa-accordion-item">
+      <div className="usa-accordion-item">
         {this.renderTitleElement()}
         {this.renderContentElement()}
-      </li>
+      </div>
     );
   }
 }

@@ -30,9 +30,9 @@ describe('Accordion', () => {
     expect(accordion).toBeDefined();
   });
 
-  it('is a ul element', () => {
+  it('is a div element', () => {
     expect(accordion.type()).toEqual(Accordion);
-    expect(accordion.getDOMNode().tagName.toLowerCase()).toEqual('ul');
+    expect(accordion.getDOMNode().tagName.toLowerCase()).toEqual('div');
   });
 
   it('has two items', () => {
