@@ -18,7 +18,6 @@ import Utilities from '../helpers/utilities';
  * - errorMessage: string. If present triggers the error state and displays the error message
  * - isValid: bool. If true, sets isValid state - i.e. green border
  * - allowedChars: Validator object. If present, user can only type characters that match the given test
- * - inputClass: string. If present, adds an custom class to field, for UI specific targeting
  */
 export default class TextInput extends Component {
   /**
