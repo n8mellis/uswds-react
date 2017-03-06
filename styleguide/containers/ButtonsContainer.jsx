@@ -1,7 +1,6 @@
 import React from "react";
 
 import BaseContainer from "./BaseContainer";
-
 import PrimaryButton from "../../lib/components/PrimaryButton";
 
 /**
