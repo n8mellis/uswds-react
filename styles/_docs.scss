@@ -1,0 +1,116 @@
+.usa-content.styleguide-content {
+  code,
+  pre {
+    background-color: $color-gray-lightest;
+    font-family: $font-monospace;
+    font-size: 14px;
+  }
+  
+  header {
+    > h1 {
+      display: inline-block;
+      margin-top: 0;
+    }
+  }
+
+  section {
+    margin-bottom: 4em;
+    margin-top: 1em;
+    
+    > h2 {
+      display: inline-block;
+    }
+    
+    > h3 {
+      font-family: $font-sans;
+      font-size: 24px;
+      margin: 0 0 20px 0;
+    }
+    
+    > h4 {
+      font-family: $font-sans;
+      font-size: 17px;
+      margin: 5px 0;
+      font-weight: normal;
+    }
+
+    > .tooltip {
+      margin-top: 56px;
+    }
+    
+    > p {
+      margin: 30px 0 5px 0;
+      max-width: 100%;
+      
+      &:first-of-type {
+        margin-top: 5px;
+      }
+    }
+    
+    > pre {
+      margin: 5px 0;
+    }
+    
+    > table {
+      font-size: 16px;
+      margin: 5px 0 20px 0;
+      
+      td, th {
+        padding: 1.3rem;
+      }
+      
+      td:last-of-type {
+        width: 50%;
+      }
+      
+      tbody {
+        th {
+          white-space: nowrap;
+        }
+        
+        .usa-label {
+          font-size: 12px;
+          background: $color-secondary-dark;
+          margin-left: 1em;
+        }
+      }
+    }
+  }
+  
+  .example {
+    margin: 30px 0;
+    
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    
+    > h4 {
+      font-family: $font-sans;
+      font-size: 17px;
+      margin: 5px 0;
+      font-weight: normal;
+    }
+    
+    > p {
+      margin: 5px 0;
+      max-width: 80rem;
+    }
+    > pre {
+      margin-top: 0;
+      // border: solid 1px $color-gray-lighter;
+      // border-top: none;
+      
+      code {
+        padding: 10px;
+      }
+    }
+    
+    .preview {
+      border: 2px solid $color-gray-lightest; // scss-lint:disable ColorVariable
+    }
+  }
+  
+  
+  
+  
+}

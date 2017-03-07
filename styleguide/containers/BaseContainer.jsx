@@ -30,6 +30,6 @@ export default class BaseContainer extends React.Component
 
 BaseContainer.propTypes = {
   title: React.PropTypes.string.isRequired,
-  summary: React.PropTypes.string.isRequired,
+  summary: React.PropTypes.string,
   children: React.PropTypes.node
 };
