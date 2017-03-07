@@ -4,6 +4,15 @@ import Label from '../../lib/components/Label';
 import Highlight from 'react-highlight';
 import { Table, TableRow, TableHeaderCell, TableCell } from '../../lib/components/Tables';
 
+
+
+class ComponentDoc extends React.Component {
+  
+}
+
+
+
+
 /**
  * Alerts content
  */
@@ -15,43 +24,21 @@ export default class AlertsContainer extends React.Component {
   render() {
     const message = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.';
     const longMessage = (<div><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p><p>Not what you expected? <a href="#">Go back.</a></p></div>);
-    
+
     return (
       <div className="styleguide-content usa-content">
         <header>
           <p className="site-subheading">UI components</p>
           <h1>Alerts</h1>
         </header>
-        {/* <p className="usa-font-lead">
-          {this.props.summary}
-        </p> */}
-        
-        {/* <section>
-          <h3>Dependencies</h3>
-          <p>React-superthingy is used to do something that we didn’t want to redo because the wheel’s already been invented</p>
-          <Highlight className="bash">npm install react-superthingy --save-dev</Highlight>
-        </section> */}
-        
-        {/* <section>
-          <h3>Importing</h3>
-          <p>You can auto-populated Thingy by passing in data. In this case you only need Component1</p>
-          <Highlight language="javascript">
-            {`import { Component } from './lib/components/Thingy';`}
-          </Highlight>
-          
-          <p>If constructing manually, import all the subcomponents</p>
-          <Highlight language="javascript">
-            {`import { Component, OtherComponent, OtherOther } from './lib/components/Thingy';`}
-          </Highlight>
-        </section> */}
-        
+
         <section>
           <h3>Importing</h3>
           <Highlight language="javascript">
             {`import Alert from './lib/components/Alert';`}
           </Highlight>
         </section>
-        
+
         <section>
           <h3>Props</h3>
           <Table columns={['Prop', 'Type', 'Default', 'Description']}>
@@ -81,10 +68,10 @@ export default class AlertsContainer extends React.Component {
             </TableRow>
           </Table>
         </section>
-        
+
         <section>
           <h3>Example usage</h3>
-          
+
           <div className="example">
             <h4>The alert body can be a string, or if HTML formatting is needed, a React element</h4>
             <Highlight className="javascript">
@@ -95,10 +82,10 @@ let longMessage = (
     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
     <p>Not what you expected? <a href="#">Go back</a>.</p>
   </div>
-);`}            
+);`}
             </Highlight>
           </div>
-          
+
 
           <div className="example">
             <div className="preview">
@@ -111,7 +98,7 @@ let longMessage = (
               {`<Alert type="success" title="Success Status" body={message} />`}
             </Highlight>
           </div>
-          
+
           <div className="example">
             <div className="preview">
               <Alert
@@ -123,7 +110,7 @@ let longMessage = (
               {`<Alert type="warning" title="Warning Status" body={message} />`}
             </Highlight>
           </div>
-          
+
           <div className="example">
             <div className="preview">
               <Alert
@@ -135,7 +122,7 @@ let longMessage = (
               {`<Alert type="error" title="Error Status" body={message} />`}
             </Highlight>
           </div>
-          
+
           <div className="example">
             <h4>Info alert with HTML in the body</h4>
             <div className="preview">
