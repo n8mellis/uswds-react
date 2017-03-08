@@ -1,14 +1,10 @@
 import React from 'react';
+import { DocsPage } from './Docs.jsx';
 import Alert from '../../lib/components/Alert';
 import Label from '../../lib/components/Label';
 import Highlight from 'react-highlight';
 import { Table, TableRow, TableHeaderCell, TableCell } from '../../lib/components/Tables';
 
-
-
-class ComponentDoc extends React.Component {
-  
-}
 
 
 
@@ -26,12 +22,7 @@ export default class AlertsContainer extends React.Component {
     const longMessage = (<div><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p><p>Not what you expected? <a href="#">Go back.</a></p></div>);
 
     return (
-      <div className="styleguide-content usa-content">
-        <header>
-          <p className="site-subheading">UI components</p>
-          <h1>Alerts</h1>
-        </header>
-
+      <DocsPage title="Alerts">
         <section>
           <h3>Importing</h3>
           <Highlight language="javascript">
@@ -135,8 +126,7 @@ let longMessage = (
             </Highlight>
           </div>
         </section>
-      </div>
-
+      </DocsPage>
     );
   }
 }
