@@ -6,7 +6,6 @@ import React, { Component, PropTypes } from 'react';
  * This component returns a <form> with legend.
  *
  * Required props:
- * - legend: string. sets the form legend
  * - children: node. Series of field control types
  *
  * Optional props:
@@ -26,6 +25,5 @@ export default class Form extends Component {
 }
 
 Form.propTypes = {
-  legend: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };

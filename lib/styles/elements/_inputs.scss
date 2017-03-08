@@ -16,6 +16,11 @@ $input-height-exact: (
 // (i.e., 1.21rem -> 1.2rem)
 $input-height: floor($input-height-exact * 10) / 10;
 
+//Form element wrapper
+div.usa-input {
+    margin-top: 3rem;
+}
+
 // Block form elements
 /* stylelint-disable selector-no-qualifying-type */
 input,

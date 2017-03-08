@@ -10,10 +10,10 @@ import { ZipCodeValidator } from '../../lib/utils/validators';
  * This component returns a <form> with legend and some default Address fields: street address (1 & 2), city, state, zip
  *
  * Required props:
- * - legend: string. sets the form legend
  * - input: node. Series of field control types
  *
  * Optional props:
+ * - legend: string. sets the form legend
  * - id: string. Sets the form's id attribute
  * - inputClass: string. Adds any custom classes to TextInput fields
  */
@@ -29,6 +29,7 @@ export default function AddressForm ({legend, input}) {
         <TextInput
         label="Street address 1"
         id="streetAddress"
+        required
          />
 
         <TextInput
@@ -40,10 +41,11 @@ export default function AddressForm ({legend, input}) {
             <TextInput
             label="City"
             id="cityAddress"
+            required
              />
            </div>
           <div className="usa-input-grid usa-input-grid-small">
-            <Dropdown label="State" id="stateAddress" options={states} />
+            <Dropdown label="State" id="stateAddress" options={states} required />
           </div> 
         </div>    
 
@@ -51,6 +53,7 @@ export default function AddressForm ({legend, input}) {
         className="usa-input-medium"
         label="Zip"
         id="zipAddress"
+        required
          />
         </fieldset>
     </Form>

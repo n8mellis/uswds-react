@@ -73,8 +73,6 @@ export default class Dropdown extends Component {
         emptyPlaceholder = null,
         options = this.props.options,
         self = this;
-
-    console.log('options value: ', options);
     
     if (this.state.hasError) {
       errorMessage = (

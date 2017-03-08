@@ -11,7 +11,6 @@ export default function InputLabel ({label, htmlFor, required}) {
   return (
     <label
       id={`${htmlFor}-label`}
-      className={required ? 'usa-input-required' : null}
       htmlFor={htmlFor}>
       {label}
     </label>

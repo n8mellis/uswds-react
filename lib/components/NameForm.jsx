@@ -8,10 +8,10 @@ import TextInput from './TextInput';
  * This component returns a <form> with legend and some default Name fields: title, first/middle/last name, suffix
  *
  * Required props:
- * - legend: string. sets the form legend
  * - input: node. Series of field control types
  *
  * Optional props:
+ * - legend: string. sets the form legend
  * - id: string. Sets the form's id attribute
  * - inputClass: string. Adds any custom classes to TextInput fields
  */
