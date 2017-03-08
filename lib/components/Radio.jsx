@@ -16,17 +16,6 @@ import Utilities from '../helpers/utilities';
  * - disabled, bool --If item, item is disabled
  */
 export default class Radio extends Component {
-  /**
-   * constructor
-   * @param {Object} props The props that will be applied to this component.
-   */
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      checked: this.props.checked || false
-    };
-  }
 
   /**
    * check to see if an Id was passed in, if not generate one.
@@ -40,29 +29,14 @@ export default class Radio extends Component {
    * @returns {node} div that includes the input and label
    */
   render () {
-    return (
-      <div>
-        <input
-          id={this.id}
-          type="radio"
-          name={this.props.name}
-          value={this.props.value ? this.props.value : this.id}
-          disabled={this.props.disabled}
-          onChange={this._handleChange.bind(this)}
-          checked={this.state.checked} />
+    const {label, className, disabled, id = this.id, ...otherProps} = this.props;
 
-        <InputLabel htmlFor={this.id} label={this.props.label} />
+    return (
+      <div className={className}>
+        <input type="radio" disabled={disabled} aria-disabled={disabled} id={id} {...otherProps}/>
+        <InputLabel htmlFor={id} label={label} />
       </div>
     );
-  }
-
-  /**
-   * toggle the checked state
-   */
-  _handleChange() {
-    this.setState({
-      checked: !this.state.checked
-    });
   }
 }
 
@@ -72,7 +46,10 @@ Radio.propTypes = {
   name: PropTypes.string,
   value: PropTypes.string,
   checked: PropTypes.bool,
-  disabled: PropTypes.bool
+  defaultChecked: PropTypes.bool,
+  disabled: PropTypes.bool,
+  onChange: React.PropTypes.func,
+  className: React.PropTypes.string
 };
 
 Radio.defaultProps = {
