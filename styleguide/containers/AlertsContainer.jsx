@@ -1,5 +1,5 @@
 import React from 'react';
-import { DocsPage, DocsComponent, DocsSection, DocsExample } from './Docs.jsx';
+import { DocsPage, DocsSection, DocsExample } from './Docs.jsx';
 import Alert from '../../lib/components/Alert';
 import Label from '../../lib/components/Label';
 import Highlight from 'react-highlight';
@@ -9,6 +9,7 @@ import { Table, TableRow, TableHeaderCell, TableCell } from '../../lib/component
 
 /**
  * Alerts content
+ * @returns {[node]} The rendered DOM node
  */
 export default function AlertsContainer () {
 
@@ -53,18 +54,18 @@ export default function AlertsContainer () {
         </Table>
       </DocsSection>
 
-      <DocsSection title="Example usage">
+      <DocsSection title="Usage">
         <DocsExample>
           <h4>The alert body can be a string, or if HTML formatting is needed, a React element</h4>
           <Highlight className="javascript">
-      {`let message = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.';
+{`let message = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.';
 
-      let longMessage = (
-      <div>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
-        <p>Not what you expected? <a href="#">Go back</a>.</p>
-      </div>
-      );`}
+let longMessage = (
+  <div>
+    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
+    <p>Not what you expected? <a href="#">Go back</a>.</p>
+  </div>
+);`}
           </Highlight>
         </DocsExample>
 
