@@ -41,7 +41,7 @@ var config = {
         loaders: [
           {
             loader: "babel-loader"
-          },
+          }
           // {
           //   loader: "eslint-loader",
           //   options: {

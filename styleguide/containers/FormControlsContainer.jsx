@@ -9,14 +9,17 @@ import { EmailValidator, ZipCodeValidator, PhoneValidator } from '../../lib/util
 import BaseContainer from "./BaseContainer";
 
 /**
- * Class representing the content on the Form Control tab
+ * Displays the Styleguide content for Form Controls.
  */
-export default class FormControlsContainer extends React.Component {
+export default class FormControlsContainer extends React.Component
+{
   /**
-   * Renders the DOM node
-   * @returns {node} The rendered DOM node
+   * Renders the component.
+   *
+   * @returns {Node|null} The rendered DOM node.
    */
-  render() {
+  render()
+  {
     return (
       <BaseContainer {...this.props}>
         <section id="text-input">

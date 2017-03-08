@@ -4,13 +4,14 @@ import Label from '../../lib/components/Label';
 import BaseContainer from "./BaseContainer";
 
 /**
- * Class representing the content for the Labels tab
+ * Displays the Styleguide content for Labels.
  */
 export default class LabelsContainer extends React.Component
 {
   /**
-   * Renders the DOM node
-   * @returns {node} The rendered DOM node
+   * Renders the component.
+   *
+   * @returns {Node|null} The rendered DOM node.
    */
   render()
   {

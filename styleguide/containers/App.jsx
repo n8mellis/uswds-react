@@ -6,15 +6,19 @@ import Header from "../../lib/components/Header";
 import { Sidebar, SidebarLink } from "../../lib/components/Sidebar";
 
 /**
- * Class for the App
+ * The main app component for the Styleguide.
+ *
+ * This component will render the main page layout items as well as any header
+ * metadata supplied to the `<Helmet .../>` component.
  */
 class App extends React.Component 
 {
   /**
-   * Renders the node
-   * @returns {node} the rendered DOM node
+   * Renders the component.
+   *
+   * @returns {Node|null} The rendered DOM node.
    */
-  render() 
+  render()
   {
     return (
       <div>
