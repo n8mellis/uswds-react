@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import Form from './Form';
 import TextInput from './TextInput';
 import PasswordField from "./PasswordField";
+import PrimaryButton from "./PrimaryButton";
 
 /**
  * Class representing a generic Address Form
@@ -14,24 +15,55 @@ import PasswordField from "./PasswordField";
  * Optional props:
  * - legend: string. sets the form legend
  * - id: string. Sets the form's id attribute
- * - inputClass: string. Adds any custom classes to TextInput fields
  */
-export default function SignInForm ({legend, input}) {
-  return (
-    <Form>
-      <fieldset className="usa-fieldset-inputs usa-sans">
-        <legend className="usa-drop_text">{legend}</legend>
-        <span>or <a href="javascript:void(0);">create an account</a></span>
-        <TextInput
-        label="Username or email address"
-        id="username"
-        required />
-        <PasswordField />
-      </fieldset>
-    </Form>
-  )
+export default class SignInForm extends React.Component {  /**
+   * Constructor.
+   *
+   * @param {Object} props The props that will be applied to this component.
+   */
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+
+    let legend;
+
+    if (this.props.formTitle){
+      legend = (<legend className="usa-drop_text">{this.props.formTitle}</legend>)
+    } 
+
+    return (
+      <Form>
+        <fieldset className="usa-fieldset-inputs">
+          {legend}
+          <span>or <a href="javascript:void(0);">create an account</a></span>
+          <TextInput
+          label="Username or email address"
+          id="username"
+          required />
+          <PasswordField />
+          <p className="usa-form-note">
+          <a title="Show password" href="javascript:void(0);"
+              className="usa-show_password"
+              aria-controls="password">
+            Show password</a>
+          </p>        
+          <PrimaryButton
+          text="Sign in"
+          onClick="javascript:void(0);"
+           />
+           <p><a href="javascript:void(0);" title="Forgot username">
+          Forgot username?</a></p>
+          <p><a href="javascript:void(0);" title="Forgot password">
+            Forgot password?</a></p>
+        </fieldset>
+      </Form>
+    )
+
+  }
 }
 
 SignInForm.PropTypes = {
-  legend: PropTypes.string
+  formTitle: PropTypes.string
 }

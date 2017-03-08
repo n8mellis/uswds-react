@@ -35,7 +35,7 @@ export default class FormTemplatesContainer extends React.Component
           <h2 className="usa-heading heading-margin-alt" id="signin-form">Sign-in Form</h2>
           <p className="usa-font-lead">A template for signing a user into a website or app</p>
           <div className="preview">
-            <SignInForm legend="Sign in" />
+            <SignInForm formTitle="Sign in" />
           </div>
         </section>
         <section id="pwd-form">  
