@@ -213,7 +213,7 @@ export default class FormControlsContainer extends React.Component {
           <div>
             <h5>Example usage</h5>
             <pre><code>
-              {`<Checkbox id="truth" label="Sojourner Truth" checked />`}
+              {`<Checkbox id="truth" label="Sojourner Truth" defaultChecked />`}
             </code></pre>
             <h5>Required props</h5>
             <ul>
@@ -232,7 +232,7 @@ export default class FormControlsContainer extends React.Component {
                 <code>name</code> <em>string, defaults to 'checkboxs'</em> — sets the name attribute. Each item in a fieldset should have the same name.
               </li>
               <li>
-                <code>checked</code> <em>bool</em> — if true, the control is selected (checked) by default.
+                <code>defaultChecked</code> <em>bool</em> — if true, the control is selected (checked) by default.
               </li>
               <li>
                 <code>disabled</code> <em>bool</em> — if true, disables the control so it can not be toggled.
@@ -256,7 +256,7 @@ export default class FormControlsContainer extends React.Component {
           <div>
             <h5>Example usage</h5>
             <pre><code>
-              {`<Radio id="truth" label="Sojourner Truth" checked />`}
+              {`<Radio id="truth" label="Sojourner Truth" defaultChecked />`}
             </code></pre>
             <h5>Required props</h5>
             <ul>
@@ -275,7 +275,7 @@ export default class FormControlsContainer extends React.Component {
                 <code>name</code> <em>string, defaults to 'radios'</em> — sets the name attribute. Each item in a fieldset should have the same name.
               </li>
               <li>
-                <code>checked</code> <em>bool</em> — if true, the control is selected (checked) by default.
+                <code>defaultChecked</code> <em>bool</em> — if true, the control is selected (checked) by default.
               </li>
               <li>
                 <code>disabled</code> <em>bool</em> — if true, disables the control so it can not be toggled.
