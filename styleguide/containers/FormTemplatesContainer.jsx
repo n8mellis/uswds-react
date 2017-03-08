@@ -5,13 +5,14 @@ import SignInForm from "../../lib/components/SignInForm";
 import BaseContainer from "./BaseContainer";
 
 /**
- * Form Templates content
+ * Displays the Styleguide content for Form Templates.
  */
 export default class FormTemplatesContainer extends React.Component
 {
   /**
-   * Renders the node
-   * @returns {node} the rendered DOM node
+   * Renders the component.
+   *
+   * @returns {Node|null} The rendered DOM node.
    */
   render()
   {

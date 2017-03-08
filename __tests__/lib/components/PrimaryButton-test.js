@@ -1,8 +1,6 @@
 jest.unmock('../../../lib/components/PrimaryButton.jsx');
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import TestUtils from 'react-addons-test-utils';
 import {shallow} from 'enzyme';
 import sinon from 'sinon';
 

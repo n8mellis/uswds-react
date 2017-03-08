@@ -3,13 +3,14 @@ import React from "react";
 import BaseContainer from "./BaseContainer";
 
 /**
- * Footer content
+ * Displays the Styleguide content for Footers.
  */
 export default class FootersContainer extends React.Component
 {
   /**
-   * Renders the node
-   * @returns {node} the rendered DOM node
+   * Renders the component.
+   *
+   * @returns {Node|null} The rendered DOM node.
    */
   render()
   {
