@@ -203,8 +203,8 @@ export default class FormControlsContainer extends React.Component {
 
           <div className="preview">
             <FieldSet name="historical-figures-1" legend="Historial figures">
-              <Checkbox label="Sojourner Truth" checked />
-              <Checkbox label="Frederick Douglass" checked />
+              <Checkbox label="Sojourner Truth" defaultChecked />
+              <Checkbox label="Frederick Douglass" defaultChecked />
               <Checkbox label="Booker T. Washington" disabled />
               <Checkbox label="George Washington Carver" />
             </FieldSet>
@@ -213,7 +213,7 @@ export default class FormControlsContainer extends React.Component {
           <div>
             <h5>Example usage</h5>
             <pre><code>
-              {`<Checkbox id="truth" label="Sojourner Truth" checked />`}
+              {`<Checkbox id="truth" label="Sojourner Truth" defaultChecked />`}
             </code></pre>
             <h5>Required props</h5>
             <ul>
@@ -232,7 +232,7 @@ export default class FormControlsContainer extends React.Component {
                 <code>name</code> <em>string, defaults to 'checkboxs'</em> — sets the name attribute. Each item in a fieldset should have the same name.
               </li>
               <li>
-                <code>checked</code> <em>bool</em> — if true, the control is selected (checked) by default.
+                <code>defaultChecked</code> <em>bool</em> — if true, the control is selected (checked) by default.
               </li>
               <li>
                 <code>disabled</code> <em>bool</em> — if true, disables the control so it can not be toggled.
@@ -246,17 +246,17 @@ export default class FormControlsContainer extends React.Component {
 
           <div className="preview">
             <FieldSet name="historical-figures-2" legend="Historial figures">
-              <Radio label="Sojourner Truth" />
-              <Radio label="Frederick Douglass" checked />
-              <Radio label="Booker T. Washington" disabled />
-              <Radio label="George Washington Carver" />
+              <Radio id="truth" label="Sojourner Truth" />
+              <Radio id="douglass" label="Frederick Douglass" defaultChecked />
+              <Radio id="washington" label="Booker T. Washington" disabled />
+              <Radio id="carver" label="George Washington Carver" />
             </FieldSet>
           </div>
 
           <div>
             <h5>Example usage</h5>
             <pre><code>
-              {`<Radio id="truth" label="Sojourner Truth" checked />`}
+              {`<Radio id="truth" label="Sojourner Truth" defaultChecked />`}
             </code></pre>
             <h5>Required props</h5>
             <ul>
@@ -275,7 +275,7 @@ export default class FormControlsContainer extends React.Component {
                 <code>name</code> <em>string, defaults to 'radios'</em> — sets the name attribute. Each item in a fieldset should have the same name.
               </li>
               <li>
-                <code>checked</code> <em>bool</em> — if true, the control is selected (checked) by default.
+                <code>defaultChecked</code> <em>bool</em> — if true, the control is selected (checked) by default.
               </li>
               <li>
                 <code>disabled</code> <em>bool</em> — if true, disables the control so it can not be toggled.
