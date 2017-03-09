@@ -6,7 +6,7 @@ import { Accordion, AccordionItem } from "../../lib/components/Accordion";
 /**
  * Displays the Styleguide content for Accordions.
  */
-export default class AccordionsContainer extends BaseContainer
+export default class AccordionsContainer extends React.Component
 {
   /**
    * Renders the preview portion of the container.
@@ -131,6 +131,19 @@ export default class AccordionsContainer extends BaseContainer
               class to the <code>ul</code> element that's now at the top level.</li>
         </ul>
       </div>
+    );
+  }
+
+  /**
+   * Renders the component.
+   *
+   * @returns {Node|null} The rendered DOM node.
+   */
+  render() {
+    return (
+      <BaseContainer {...this.props}>
+        {this.renderPreview()}
+      </BaseContainer>
     );
   }
 
