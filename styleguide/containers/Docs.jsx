@@ -68,3 +68,14 @@ export function DocsExample (props) {
 DocsExample.propTypes = {
   children: React.PropTypes.node
 };
+
+export function DocsPreview (props) {
+  return (
+    <div className="preview">
+      {props.children}
+    </div>
+  );
+}
+DocsPreview.propTypes = {
+  children: React.PropTypes.node
+};

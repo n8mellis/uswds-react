@@ -1,9 +1,9 @@
 import React from 'react';
-import { DocsPage, DocsSection, DocsExample } from './Docs.jsx';
-import Alert from '../../lib/components/Alert';
-import Label from '../../lib/components/Label';
+import { DocsPage, DocsSection, DocsExample, DocsPreview } from './Docs.jsx';
 import Highlight from 'react-highlight';
 import { Table, TableRow, TableHeaderCell, TableCell } from '../../lib/components/Tables';
+import Alert from '../../lib/components/Alert';
+import Label from '../../lib/components/Label';
 
 
 
@@ -54,6 +54,20 @@ export default function AlertsContainer () {
         </Table>
       </DocsSection>
 
+      <DocsSection title="Accessibility">
+        <p>
+          Because of its intrusive nature, the ARIA alert role (role="alert") must be used sparingly and only in situations where the user's immediate attention is required. It's appropriate for instances such as
+        </p>
+        <ul>
+          <li>An invalid value was entered into a form field</li>
+          <li>The user's login session is about to expire</li>
+          <li>The connection to the server was lost, local changes will not be saved</li>
+        </ul>
+        <p>
+          Read more: <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_alert_role">Mozilla: Using the alert role</a>
+        </p>
+      </DocsSection>
+
       <DocsSection title="Usage">
         <DocsExample>
           <h4>The alert body can be a string, or if HTML formatting is needed, a React element</h4>
@@ -70,66 +84,28 @@ let longMessage = (
         </DocsExample>
 
         <DocsExample>
-          <div className="preview">
-            <Alert
-              type="success"
-              title="Success Status"
-              body={message}/>
-          </div>
-          <Highlight className="javascript">
-            {`<Alert type="success" title="Success Status" body={message} />`}
-          </Highlight>
-        </DocsExample>
-
-        <DocsExample>
-          <div className="preview">
-            <Alert
-              type="warning"
-              title="Warning Status"
-              body={message}/>
-          </div>
-          <Highlight className="javascript">
-            {`<Alert type="warning" title="Warning Status" body={message} />`}
-          </Highlight>
-        </DocsExample>
-
-        <DocsExample>
-          <div className="preview">
-            <Alert
-              type="error"
-              title="Error Status"
-              body={message}/>
-          </div>
-          <Highlight className="javascript">
-            {`<Alert type="error" title="Error Status" body={message} />`}
-          </Highlight>
-        </DocsExample>
-
-        <DocsExample>
-          <h4>Info alert with HTML in the body</h4>
-          <div className="preview">
-            <Alert
-              title="Info Status"
-              body={longMessage}/>
-          </div>
-          <Highlight className="javascript">
+          <h4>Alert with HTML in the body</h4>
+          <DocsPreview>
+            <Alert title="Info Status" body={longMessage}/>
+          </DocsPreview>
+          <Highlight className="html">
             {`<Alert title="Info Status" body={longMessage} />`}
           </Highlight>
         </DocsExample>
-      </DocsSection>
 
-      <DocsSection title="Accessibility">
-        <p>
-          Because of its intrusive nature, the ARIA alert role (role="alert") must be used sparingly and only in situations where the user's immediate attention is required. It's appropriate for instances such as
-        </p>
-        <ul>
-          <li>An invalid value was entered into a form field</li>
-          <li>The user's login session is about to expire</li>
-          <li>The connection to the server was lost, local changes will not be saved</li>
-        </ul>
-        <p>
-          Read more: <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_alert_role">Mozilla: Using the alert role</a>
-        </p>
+        <DocsExample>
+          <h4>Alerts with the body passed as a string</h4>
+          <DocsPreview>
+            <Alert type="success" title="Success Status" body={message}/>
+            <Alert type="warning" title="Warning Status" body={message}/>
+            <Alert type="error" title="Error Status" body={message}/>
+          </DocsPreview>
+          <Highlight className="html">
+            {`<Alert type="success" title="Success Status" body={message} />
+<Alert type="warning" title="Warning Status" body={message} />
+<Alert type="error" title="Error Status" body={message} />`}
+          </Highlight>
+        </DocsExample>
       </DocsSection>
     </DocsPage>
   );

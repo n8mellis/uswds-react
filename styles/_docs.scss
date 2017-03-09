@@ -5,7 +5,7 @@
     font-family: $font-monospace;
     font-size: 14px;
   }
-  
+
   header {
     > h1 {
       display: inline-block;
@@ -16,58 +16,59 @@
   section {
     margin-bottom: 4em;
     margin-top: 1em;
-    
-    > h2 {
+
+    h2 {
       display: inline-block;
     }
-    
-    > h3 {
+
+    h3 {
       font-family: $font-sans;
       font-size: 24px;
-      margin: 0 0 20px 0;
+      margin: 0 0 15px 0;
     }
-    
-    > h4 {
+
+    h4 {
       font-family: $font-sans;
-      font-size: 17px;
+      font-size: 18px;
       margin: 5px 0;
-      font-weight: normal;
+      font-weight: 600;
+      margin-bottom: 15px;
     }
 
     > .tooltip {
       margin-top: 56px;
     }
-    
+
     > p {
       margin: 30px 0 5px 0;
       max-width: 100%;
-      
+
       &:first-of-type {
         margin-top: 5px;
       }
     }
-    
+
     > pre {
       margin: 5px 0;
     }
-    
+
     > table {
       font-size: 16px;
       margin: 5px 0 20px 0;
-      
+
       td, th {
         padding: 1.3rem;
       }
-      
+
       td:last-of-type {
         width: 50%;
       }
-      
+
       tbody {
         th {
           white-space: nowrap;
         }
-        
+
         .usa-label {
           font-size: 12px;
           background: $color-secondary-dark;
@@ -76,21 +77,14 @@
       }
     }
   }
-  
+
   .example {
-    margin: 30px 0;
-    
+    margin: 40px 0;
+
     &:last-of-type {
       margin-bottom: 0;
     }
-    
-    > h4 {
-      font-family: $font-sans;
-      font-size: 17px;
-      margin: 5px 0;
-      font-weight: normal;
-    }
-    
+
     > p {
       margin: 5px 0;
       max-width: 80rem;
@@ -99,18 +93,18 @@
       margin-top: 0;
       // border: solid 1px $color-gray-lighter;
       // border-top: none;
-      
+
       code {
         padding: 10px;
       }
     }
-    
+
     .preview {
       border: 2px solid $color-gray-lightest; // scss-lint:disable ColorVariable
     }
   }
-  
-  
-  
-  
+
+
+
+
 }
