@@ -3,13 +3,14 @@ import { Grid, Col } from '../../lib/components/Grid';
 import BaseContainer from "./BaseContainer";
 
 /**
- * Grid content
+ * Displays the Styleguide content for Grids.
  */
 export default class GridContainer extends React.Component
 {
   /**
-   * Renders the node
-   * @returns {node} the rendered DOM node
+   * Renders the component.
+   *
+   * @returns {Node|null} The rendered DOM node.
    */
   render() {
     return (

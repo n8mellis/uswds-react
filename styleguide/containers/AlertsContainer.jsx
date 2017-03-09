@@ -8,11 +8,10 @@ import Label from '../../lib/components/Label';
 
 
 /**
- * Alerts content
+ * Displays the Styleguide content for Alerts.
  * @returns {[node]} The rendered DOM node
  */
 export default function AlertsContainer () {
-
   const message = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.';
   const longMessage = (<div><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p><p>Not what you expected? <a href="#">Go back.</a></p></div>);
 
@@ -41,7 +40,7 @@ export default function AlertsContainer () {
           </TableRow>
           <TableRow>
             <TableHeaderCell>type</TableHeaderCell>
-            <TableCell>oneOf['success', 'warning', 'error', 'info']</TableCell>
+            <TableCell>oneOf ['success', 'warning', 'error', 'info']</TableCell>
             <TableCell>'info'</TableCell>
             <TableCell>sets the background color and icon</TableCell>
           </TableRow>

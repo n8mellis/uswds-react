@@ -4,10 +4,8 @@ import Highlight from 'react-highlight';
 import { Table, TableRow, TableHeaderCell, TableCell } from '../../lib/components/Tables';
 import Label from '../../lib/components/Label';
 
-import BaseContainer from "./BaseContainer";
-
 /**
- * Tables content
+ * Displays the Styleguide content for Tables.
  */
 export default function TablesContainer() {
   const cols = [
@@ -50,19 +48,19 @@ export default function TablesContainer() {
   return (
     <DocsPage title="Tables">
       <DocsSection title="Importing">
-        <p>Import all the table components if manually building a table</p>
+        <h5>Import all the table components if manually building a table</h5>
         <Highlight language="javascript">
           {`import { Table, TableRow, TableHeaderCell, TableCell } from './lib/components/Tables';`}
         </Highlight>
 
-        <p>If your generating a table with data you only need Table</p>
+        <h5>If your generating a table with data you only need Table</h5>
         <Highlight language="javascript">
           {`import { Table } from './lib/components/Tables';`}
         </Highlight>
       </DocsSection>
 
       <DocsSection title="Props">
-        <p>Table</p>
+        <h5>Table</h5>
         <Table columns={['Prop', 'Type', 'Default', 'Description']}>
           <TableRow>
             <TableHeaderCell>cols  <Label>Required</Label></TableHeaderCell>
@@ -100,7 +98,7 @@ export default function TablesContainer() {
           </TableRow>
         </Table>
 
-        <p>TableHeaderCell</p>
+        <h5>TableHeaderCell</h5>
         <Table columns={['Prop', 'Type', 'Default', 'Description']}>
           <TableRow>
             <TableHeaderCell>scope  <Label>Required</Label></TableHeaderCell>
@@ -124,7 +122,7 @@ export default function TablesContainer() {
           </TableRow>
         </Table>
 
-        <p>TableRow</p>
+        <h5>TableRow</h5>
         <Table columns={['Prop', 'Type', 'Default', 'Description']}>
           <TableRow>
             <TableHeaderCell>children</TableHeaderCell>
@@ -140,7 +138,7 @@ export default function TablesContainer() {
           </TableRow>
         </Table>
 
-        <p>TableCell</p>
+        <h5>TableCell</h5>
         <Table columns={['Prop', 'Type', 'Default', 'Description']}>
           <TableRow>
             <TableHeaderCell>children</TableHeaderCell>

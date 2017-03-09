@@ -17,17 +17,6 @@ import Utilities from '../helpers/utilities';
  */
 export default class Checkbox extends Component {
   /**
-   * constructor
-   * @param {object} props The props passed in
-   */
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      checked: this.props.checked || false
-    };
-  }
-  /**
    * check to see if an Id was passed in, if not generate one.
    */
   componentWillMount() {
@@ -39,29 +28,20 @@ export default class Checkbox extends Component {
    * @returns {Node} The rendered DOM node.
    */
   render() {
+    const {label, value, name, className, disabled, id = this.id, ...otherProps} = this.props;
     return (
-      <div>
+      <div className={className}>
         <input
-          id={this.id}
+          id={id}
           type="checkbox"
-          name={this.props.name}
-          value={this.props.value ? this.props.value : this.id}
-          disabled={this.props.disabled || false}
-          onChange={this._handleChange.bind(this)}
-          checked={this.state.checked} />
+          name={name}
+          value={value ? value : id}
+          disabled={disabled || false}
+          {...otherProps} />
 
-        <InputLabel htmlFor={this.id} label={this.props.label} />
+        <InputLabel htmlFor={id} label={label} />
       </div>
     );
-  }
-
-  /**
-   * toggle the checked state
-   */
-  _handleChange() {
-    this.setState({
-      checked: !this.state.checked
-    });
   }
 }
 
@@ -71,7 +51,8 @@ Checkbox.propTypes = {
   name: PropTypes.string,
   value: PropTypes.string,
   checked: PropTypes.bool,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  className: PropTypes.string
 };
 
 Checkbox.defaultProps = {

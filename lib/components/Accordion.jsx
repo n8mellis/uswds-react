@@ -24,6 +24,16 @@ import utilities from "../helpers/utilities";
  *     <AccordionItem ... />
  *   </Accordion>
  * </code>
+ *
+ * By default the Accordion will expand the first item.  To prevent this behavior,
+ * you can supply the `startCollapsed` prop.
+ *
+ * Example:
+ * <code>
+ *   <Accordion startCollapsed>
+ *     <AccordionItem ... />
+ *   </Accordion>
+ * </code>
  */
 export class Accordion extends React.Component
 {
@@ -36,10 +46,38 @@ export class Accordion extends React.Component
   {
     super(props);
     this.state = {
-      activeIndex: 0
+      activeIndex: (props.startCollapsed ? -1 : 0)
     };
   }
-  
+
+  /**
+   * Before the component mounts, loop through the children to see if any of
+   * them have the `expanded` prop.  This allows consumers of this class to
+   * specify which specific item they want expanded when the component is
+   * rendered.
+   *
+   * If no items have `expanded` passed as a prop, then the default behavior
+   * will take effect.
+   *
+   * If more than one item has `expanded`, the last one wins and a console
+   * warning will be printed.
+   */
+  componentWillMount()
+  {
+    let foundExpandedItem = false;
+    let children = React.Children.toArray(this.props.children);
+    for (let i = 0; i < children.length; i++) {
+      let child = children[i];
+      if (child.props.expanded) {
+        if (foundExpandedItem) {
+          console.warn("Only one AccordionItem can be expanded at a time. You have marked more than one for expansion by default."); // eslint-disable-line no-console
+        }
+        this.setState({ activeIndex: i });
+        foundExpandedItem = true;
+      }
+    }
+  }
+
   /**
    * Sets the active accordion item.
    *
@@ -48,6 +86,8 @@ export class Accordion extends React.Component
    * it will invoke this method with its index.  We can simply update our state,
    * which will cause the children to be re-rendered so that the correct item 
    * has its content displayed.
+   *
+   * To collapse all the items, pass -1 as the value.
    *
    * @param {Number} index The item index that should be the active item.
    */
@@ -63,19 +103,19 @@ export class Accordion extends React.Component
    */
   render()
   {
-    var index = 0;
+    let index = 0;
     let children = React.Children.map(this.props.children, (child) => {
       let i = index++;
       return React.cloneElement(child, { 
         accordionIndex: i, 
         action: this.setActiveItem.bind(this),
-        contentVisible: (i == this.state.activeIndex)
+        expanded: (i == this.state.activeIndex)
       });
     });
     return (
-      <ul className={this.props.type}>
+      <div className={this.props.type}>
         {children}
-      </ul>
+      </div>
     );
   }
 }
@@ -85,11 +125,13 @@ Accordion.TYPE_BORDERED   = "usa-accordion-bordered";
 
 Accordion.propTypes = {
   type: React.PropTypes.oneOf([ Accordion.TYPE_BORDERLESS, Accordion.TYPE_BORDERED ]),
-  children: React.PropTypes.node
+  children: React.PropTypes.node,
+  startCollapsed: React.PropTypes.bool
 };
 
 Accordion.defaultProps = {
-  type: Accordion.TYPE_BORDERLESS
+  type: Accordion.TYPE_BORDERLESS,
+  startCollapsed: false
 };
 
 // =============================================================================
@@ -167,10 +209,18 @@ export class AccordionItem extends React.Component
    * This method calls the method defined in our `action` prop (usually set 
    * by the parent {@link Accordion} class) with our index to make ourselves
    * the active element and show our content.
+   *
+   * If this item is currently active, it will pass -1 as the value to the
+   * parent {@link Accordion} so that it will collapse the item.
    */
   makeActive()
   {
-    this.props.action(this.props.accordionIndex);
+    if (this.props.expanded) {
+      this.props.action(-1);
+    }
+    else {
+      this.props.action(this.props.accordionIndex);
+    }
   }
   
   /**
@@ -199,7 +249,7 @@ export class AccordionItem extends React.Component
     }
     return (
       <button className="usa-accordion-button" 
-              aria-expanded={this.props.contentVisible}
+              aria-expanded={this.props.expanded}
               aria-controls={`${this.state.uuid}-content`}
               onClick={this.makeActive.bind(this)}>
         {element}
@@ -208,16 +258,16 @@ export class AccordionItem extends React.Component
   }
   
   /**
-   * Renders our content element unless our `contentVisible` prop is set 
+   * Renders our content element unless our `expanded` prop is set
    * to `false`.
    *
    * @returns {Node|String} The rendered DOM node or an empty string.
    */
   renderContentElement()
   {
-    // If `this.state.contentVisible` is set to false then don't render the 
+    // If `this.state.expanded` is set to false then don't render the
     // content element.
-    if (!this.props.contentVisible) {
+    if (!this.props.expanded) {
       return "";
     }
     let children = React.Children.toArray(this.props.children);
@@ -242,10 +292,10 @@ export class AccordionItem extends React.Component
     }
     
     return (
-      <li className="usa-accordion-item">
+      <div className="usa-accordion-item">
         {this.renderTitleElement()}
         {this.renderContentElement()}
-      </li>
+      </div>
     );
   }
 }
@@ -254,12 +304,12 @@ AccordionItem.propTypes = {
   title: React.PropTypes.string,
   children: React.PropTypes.node,
   accordionIndex: React.PropTypes.number,
-  contentVisible: React.PropTypes.bool,
+  expanded: React.PropTypes.bool,
   action: React.PropTypes.func
 };
 
 AccordionItem.defaultProps = {
   title: "",
-  contentVisible: false,
+  expanded: false,
   action: function() {}
 };

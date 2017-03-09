@@ -5,7 +5,10 @@ import OfficialSiteBanner from "./OfficialSiteBanner";
 // import SearchField from "./SearchField";
 
 /**
- * The site header containing the official site banner, logo and nav 
+ * The site header containing the official site banner, logo and nav.
+ *
+ * TODO: Add support for Basic and Extended headers.
+ * TODO: Add support for embedded NavigationBars
  */
 export default class Header extends React.Component
 {

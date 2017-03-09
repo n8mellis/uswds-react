@@ -8,7 +8,15 @@
   margin-bottom: 0;
 }
 
+// Make labels and inputs have pointer cursor.
+[type="checkbox"] {
+  cursor: pointer;
+}
 
+// Make labels and inputs have pointer cursor
+[type="radio"] {
+  cursor: pointer;
+}
 
 // Adjust checkbox label lineheight because they are not inside <li>'s
 [type="checkbox"]+label {
@@ -31,4 +39,9 @@
   border: none;
   margin: 0;
   padding: 0;
+}
+
+// fix label text being cropped at the bottom
+.usa-input-error select {
+  line-height: 1.1;
 }
