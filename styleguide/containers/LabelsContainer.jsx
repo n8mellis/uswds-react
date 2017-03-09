@@ -45,7 +45,7 @@ export default function LabelsContainer() {
             <Label size="big">New</Label>
           </DocsPreview>
           <Highlight className="javascript">
-            {`<h6>Small</h6>
+{`<h6>Small</h6>
 <Label>New</Label>
 
 <h6>Large</h6>

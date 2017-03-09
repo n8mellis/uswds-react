@@ -28,14 +28,15 @@ export function DocsComponent (props) {
     title = <h2 className="usa-heading">{props.title}</h2>;
   }
   return (
-    <section className="docs-component">
+    <section id={props.id} className="docs-component">
       {title}
       {props.children}
     </section>
   );
 }
 DocsComponent.propTypes = {
-  title: React.PropTypes.string,
+  title: React.PropTypes.string.isRequired,
+  id: React.PropTypes.string.isRequired,
   children: React.PropTypes.node
 };
 

@@ -2,8 +2,8 @@ import React from 'react';
 import { DocsPage, DocsSection, DocsExample, DocsPreview } from './Docs.jsx';
 import Highlight from 'react-highlight';
 import { Table, TableRow, TableHeaderCell, TableCell } from '../../lib/components/Tables';
-import Alert from '../../lib/components/Alert';
 import Label from '../../lib/components/Label';
+import Alert from '../../lib/components/Alert';
 
 
 

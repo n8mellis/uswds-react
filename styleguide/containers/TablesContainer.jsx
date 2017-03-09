@@ -36,13 +36,7 @@ export default function TablesContainer() {
       title: 'Declaration of Sentiments',
       desc: 'A document written during the Seneca Falls Convention outlining the rights that American women should be entitled to as citizens.',
       Year: '1848'
-    },
-    {
-      title: 'Emancipation Proclamation',
-      desc: 'An executive order granting freedom to slaves in designated southern states.',
-      Year: '1863'
     }
-
   ];
 
   return (
@@ -79,13 +73,13 @@ export default function TablesContainer() {
           <TableRow>
             <TableHeaderCell>caption</TableHeaderCell>
             <TableCell>string</TableCell>
-            <TableCell></TableCell>
+            <TableCell>&nbsp;</TableCell>
             <TableCell>If included, adds a caption with the caption text</TableCell>
           </TableRow>
           <TableRow>
             <TableHeaderCell>data</TableHeaderCell>
             <TableCell>array of objects</TableCell>
-            <TableCell></TableCell>
+            <TableCell>&nbsp;</TableCell>
             <TableCell>
               Used to automatically generate rows and cells. Each object should contain a key that matches the <code>colId</code>s in the columns property.
             </TableCell>
@@ -93,7 +87,7 @@ export default function TablesContainer() {
           <TableRow>
             <TableHeaderCell>children</TableHeaderCell>
             <TableCell>node</TableCell>
-            <TableCell></TableCell>
+            <TableCell>&nbsp;</TableCell>
             <TableCell>If data is not passed, children will include as many <code>TableRow</code>, <code>TableHeaderCell</code>, <code>TableCell</code> as needed</TableCell>
           </TableRow>
         </Table>
@@ -111,7 +105,7 @@ export default function TablesContainer() {
           <TableRow>
             <TableHeaderCell>children</TableHeaderCell>
             <TableCell>node</TableCell>
-            <TableCell></TableCell>
+            <TableCell>&nbsp;</TableCell>
             <TableCell>Contents of the cell</TableCell>
           </TableRow>
           <TableRow>
@@ -127,7 +121,7 @@ export default function TablesContainer() {
           <TableRow>
             <TableHeaderCell>children</TableHeaderCell>
             <TableCell>node</TableCell>
-            <TableCell></TableCell>
+            <TableCell>&nbsp;</TableCell>
             <TableCell>Expects <code>TableCell</code>'s or <code>TableHeaderCell</code>'s</TableCell>
           </TableRow>
           <TableRow>
@@ -143,7 +137,7 @@ export default function TablesContainer() {
           <TableRow>
             <TableHeaderCell>children</TableHeaderCell>
             <TableCell>node</TableCell>
-            <TableCell></TableCell>
+            <TableCell>>&nbsp;</TableCell>
             <TableCell>Contents of the cell</TableCell>
           </TableRow>
           <TableRow>
@@ -153,6 +147,103 @@ export default function TablesContainer() {
             <TableCell>Passes down additional props to the HTML element</TableCell>
           </TableRow>
         </Table>
+      </DocsSection>
+
+      <DocsSection title="Accessibility">
+        <h4>Captions</h4>
+        <p>Captions appear above the table and are a brief description of the table's content. While it is not necessary for each table to have a caption, a caption is generally very helpful.</p>
+        <h4>Table headers and scope</h4>
+        <p>For data tables, the first cell in each row should be a TableHeaderCell with a scope of "row". This provides a proper title of the row and associates the cells in the row to the header.</p>
+      </DocsSection>
+
+      <DocsSection title="Usage">
+        <DocsExample>
+          <h4>Tables can be built automatically by passing in data</h4>
+          <Highlight className="javascript">
+{`const cols = [
+  {
+    colId: 'title',
+    displayName: 'Document title'
+  },
+  {
+    colId: 'desc',
+    displayName: 'Description'
+  },
+  {
+    colId: 'Year'
+  }
+];
+
+const data = [
+  {
+    title: 'Declaration of Independence',
+    desc: 'Statement adopted by the Continental Congress declaring independence from the British Empire.',
+    Year: '1776'
+  },
+  {
+    title: 'Bill of Rights',
+    desc: 'The first ten amendments of the U.S. Constitution guaranteeing rights and freedoms.',
+    Year: '1791'
+  },
+  {
+    title: 'Declaration of Sentiments',
+    desc: 'A document written during the Seneca Falls Convention outlining the rights that American women should be entitled to as citizens.',
+    Year: '1848'
+  }
+];`}
+          </Highlight>
+        </DocsExample>
+
+        <DocsExample>
+          <DocsPreview>
+            <Table columns={cols} data={data} />
+          </DocsPreview>
+          <Highlight className="html">
+            {`<Table columns={cols} data={data} />`}
+          </Highlight>
+        </DocsExample>
+
+        <DocsExample>
+          <h4>Tables can also be constructed manually</h4>
+          <DocsPreview>
+            <Table columns={['Document title', 'Description', 'Year']}>
+              <TableRow>
+                <TableHeaderCell>Declaration of Independence</TableHeaderCell>
+                <TableCell>Statement adopted by the Continental Congress declaring independence from the British Empire.</TableCell>
+                <TableCell>1776</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableHeaderCell>Bill of Rights</TableHeaderCell>
+                <TableCell>The first ten amendments of the U.S. Constitution guaranteeing rights and freedoms.</TableCell>
+                <TableCell>1791</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableHeaderCell>Declaration of Sentiments</TableHeaderCell>
+                <TableCell>A document written during the Seneca Falls Convention outlining the rights that American women should be entitled to as citizens.</TableCell>
+                <TableCell>1848</TableCell>
+              </TableRow>
+            </Table>
+          </DocsPreview>
+          <Highlight className="html">
+{`<Table columns={['Document title', 'Description', 'Year']}>
+  <TableRow>
+    <TableHeaderCell>Declaration of Independence</TableHeaderCell>
+    <TableCell>Statement adopted by the Continental Congress declaring independence from the British Empire.</TableCell>
+    <TableCell>1776</TableCell>
+  </TableRow>
+  <TableRow>
+    <TableHeaderCell>Bill of Rights</TableHeaderCell>
+    <TableCell>The first ten amendments of the U.S. Constitution guaranteeing rights and freedoms.</TableCell>
+    <TableCell>1791</TableCell>
+  </TableRow>
+  <TableRow>
+    <TableHeaderCell>Declaration of Sentiments</TableHeaderCell>
+    <TableCell>A document written during the Seneca Falls Convention outlining the rights that American women should be entitled to as citizens.</TableCell>
+    <TableCell>1848</TableCell>
+  </TableRow>
+</Table>`}
+          </Highlight>
+        </DocsExample>
       </DocsSection>
     </DocsPage>
   );
