@@ -72,11 +72,12 @@ DocsExample.propTypes = {
 
 export function DocsPreview (props) {
   return (
-    <div className="preview">
+    <div className={'preview ' + props.className}>
       {props.children}
     </div>
   );
 }
 DocsPreview.propTypes = {
-  children: React.PropTypes.node
+  children: React.PropTypes.node,
+  className: React.PropTypes.string
 };

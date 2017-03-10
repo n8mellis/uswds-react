@@ -410,36 +410,14 @@ h2 + .tooltip {
 
 .grid-example {
   .usa-grid {
-    background: $color-grid-light;
+    background: $color-grid-dark;
+    text-align: center;
 
     > * {
       @include margin(.5em null);
-      color: $color-white;
-      padding: 1em;
-      background: $color-grid-dark;
-    }
-  }
-
-  .usa-width-one-twelfth {
-    @include media($medium-screen) {
-      @include padding(null 0);
-    }
-  }
-}
-
-.grid-example-blank {
-  .usa-grid {
-    text-align: center;
-  }
-}
-
-.grid-text {
-  .usa-grid {
-    background: $color-grid-dark;
-
-    > * {
-      background: $color-grid-light;
       color: $color-black;
+      padding: 1em;
+      background: $color-grid-light;
     }
 
     h3 {
@@ -450,7 +428,14 @@ h2 + .tooltip {
       margin-bottom: 0;
     }
   }
+
+  .usa-width-one-twelfth {
+    @include media($medium-screen) {
+      @include padding(null 0);
+    }
+  }
 }
+
 
 h3 + .button_wrapper {
   margin-top: -0.5em;

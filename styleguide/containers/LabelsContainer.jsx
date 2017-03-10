@@ -35,6 +35,10 @@ export default function LabelsContainer() {
         </Table>
       </DocsSection>
 
+      <DocsSection title="Accessibility">
+        <p>When labels are used to call out new content that is dynamically loaded onto a page, be sure to use ARIA live regions to alert screen readers of the change. This should most likely be handled on the parent and not the label.</p>
+      </DocsSection>
+
       <DocsSection title="Usage">
         <DocsExample>
           <DocsPreview>
@@ -52,10 +56,6 @@ export default function LabelsContainer() {
 <Label size="big">New</Label>`}
           </Highlight>
         </DocsExample>
-      </DocsSection>
-
-      <DocsSection title="Accessibility">
-        <p>When labels are used to call out new content that is dynamically loaded onto a page, be sure to use ARIA live regions to alert screen readers of the change. This should most likely be handled on the parent and not the label.</p>
       </DocsSection>
     </DocsPage>
 

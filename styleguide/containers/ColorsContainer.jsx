@@ -1,28 +1,18 @@
 import React from "react";
-
-import BaseContainer from "./BaseContainer";
+import { DocsPage, DocsSection, DocsExample, DocsPreview } from './Docs.jsx';
 
 /**
  * Displays the Styleguide content for Colors.
  */
-export default class ColorsContainer extends React.Component
-{
+export default class ColorsContainer extends React.Component {
   /**
    * Renders the component.
    *
    * @returns {Node|null} The rendered DOM node.
    */
-  render()
-  {
+  render() {
     return (
-      <BaseContainer {...this.props}>
-        TODO
-      </BaseContainer>
+      <DocsPage title="Colors"></DocsPage>
     );
   }
 }
-
-ColorsContainer.defaultProps = {
-  title: "Colors",
-  summary: "A flexible, yet distinctly American palette designed to communicate warmth and trustworthiness while meeting the highest standards of 508 color contrast requirements."
-};
