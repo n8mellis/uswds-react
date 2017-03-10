@@ -8,8 +8,7 @@
     "test": "jest",
     "test:ci": "cross-env NODE_ENV=test cross-env NODE_PATH=./styleguide mocha --compilers js:babel-register -r app/spec/support/setup.mocha.js --recursive 'app/spec/**/*.test.js'",
     "webpack": "webpack --config support/webpack.config.js",
-    "build": "rimraf dist/ && npm run webpack && gulp build",
-    "postinstall": "npm run build"
+    "build": "rimraf dist/ && npm run webpack && gulp build"
   },
   "engines": {
     "node": "6.1.0",
