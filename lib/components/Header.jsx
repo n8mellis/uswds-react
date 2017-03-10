@@ -1,7 +1,7 @@
 import React from "react";
 
 import OfficialSiteBanner from "./OfficialSiteBanner";
-// import NavigationBar from "./NavigationBar";
+import { NavigationBar } from "./NavigationBar";
 // import SearchField from "./SearchField";
 
 /**
@@ -29,10 +29,14 @@ export default class Header extends React.Component
    */
   render()
   {
+    // Extract the NavigationBar (if present) from our children.
+    const children = React.Children.toArray(this.props.children);
+    const navBar = children.find((child) => child.type === NavigationBar );
+
     return (
       <div>
         <a className="usa-skipnav" href="#main-content">Skip to main content</a>
-        <header className="usa-header usa-header-basic" role="banner">
+        <header className={`usa-header ${this.props.layout}`} role="banner">
           <OfficialSiteBanner />
           <div className="usa-nav-container">
             <div className="usa-navbar">
@@ -50,12 +54,24 @@ export default class Header extends React.Component
               <SearchField size={SearchField.SIZE_SMALL} />
             </NavigationBar> */}
           </div>
+          {this.props.layout === Header.LAYOUT_EXTENDED && navBar}
         </header>
       </div>
     );
   }
 }
 
+Header.LAYOUT_BASIC    = "usa-header-basic";
+Header.LAYOUT_EXTENDED = "usa-header-extended";
+
 Header.propTypes = {
-  title: React.PropTypes.string.isRequired
+  title: React.PropTypes.string.isRequired,
+  layout: React.PropTypes.oneOf([
+    Header.LAYOUT_BASIC,
+    Header.LAYOUT_EXTENDED ]),
+  children: React.PropTypes.node
+};
+
+Header.defaultProps = {
+  layout: Header.LAYOUT_EXTENDED
 };
