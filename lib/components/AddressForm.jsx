@@ -17,49 +17,70 @@ import { ZipCodeValidator } from '../../lib/utils/validators';
  * - id: string. Sets the form's id attribute
  * - inputClass: string. Adds any custom classes to TextInput fields
  */
-export default function AddressForm ({legend, input}) {
-    let states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
+export default class AddressForm extends React.Component {
+ /*
+   * Constructor.
+   *
+   * @param {Object} props The props that will be applied to this component.
+   */
+  constructor(props) {
+    super(props);
+  }  
 
-  return (
-    <Form>
-      <fieldset className="usa-fieldset-inputs usa-sans">
-        <legend>
-          {legend}
-        </legend>
-        <TextInput
-        label="Street address 1"
-        id="streetAddress"
-        required
-         />
+  render() {
+    let legend,
+        states = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
 
-        <TextInput
-        label="Street address 2 (Optional)"
-        id="streetAddress2"
-         />
-        <div>
-          <div className="usa-input-grid usa-input-grid-medium">
-            <TextInput
-            label="City"
-            id="cityAddress"
-            required
-             />
-           </div>
-          <div className="usa-input-grid usa-input-grid-small">
-            <Dropdown label="State" id="stateAddress" options={states} required />
-          </div> 
-        </div>    
+    if (this.props.formTitle){
+      legend = (<legend className="usa-drop_text">{this.props.formTitle}</legend>)
+    }
 
-        <TextInput
-        className="usa-input-medium"
-        label="Zip"
-        id="zipAddress"
-        required
-         />
-        </fieldset>
-    </Form>
-  );
+    return (
+      <Form>
+        <fieldset className="usa-fieldset-inputs usa-sans">
+          <legend>
+            {legend}
+          </legend>
+          <TextInput
+          label="Street address 1"
+          id="streetAddress"
+          required
+           />
+
+          <TextInput
+          label="Street address 2 (Optional)"
+          id="streetAddress2"
+           />
+          <div>
+            <div className="usa-input-grid usa-input-grid-medium">
+              <TextInput
+              label="City"
+              id="cityAddress"
+              required
+               />
+             </div>
+            <div className="usa-input-grid usa-input-grid-small">
+              <Dropdown label="State" id="stateAddress" options={states} required />
+            </div> 
+          </div>    
+
+          <TextInput
+          className="usa-input-medium"
+          label="Zip"
+          id="zipAddress"
+          required
+           />
+          </fieldset>
+      </Form>
+    )
+
+  }
 }
 
 AddressForm.PropTypes = {
-  legend: PropTypes.string
-}
+  formTitle: PropTypes.string
+};
+
+AddressForm.defaultProps = {
+  formTitle: "Mailing address",
+};

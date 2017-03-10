@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react';
 import Form from './Form';
 import TextInput from './TextInput';
 import Alert from './Alert';
+import PrimaryButton from './PrimaryButton';
+import PasswordField from './PasswordField';
 
 /**
  * Class representing a generic Password Reset Form
@@ -10,6 +12,7 @@ import Alert from './Alert';
  *
  * Required props:
  * - input: node. Series of field control types
+ * - primaryButtonText: string. Sets the button text
  *
  * Optional props:
  * - legend: string. sets the form legend
@@ -33,7 +36,10 @@ export default class PasswordResetForm extends React.Component {
 
     if (this.props.formTitle){
       legend = (<legend className="usa-drop_text">{this.props.formTitle}</legend>)
-    }    
+    }
+    if (this.props.primaryButtonText) {
+      primaryButtonText = this.props.primaryButtonText;
+    }
     message = (<p>Be at least 8 characters <br /> Have at least 1 uppercase character <br /> Have at least 1 numerical character <br />  Another requirement</p>);
 
     return (
@@ -44,7 +50,12 @@ export default class PasswordResetForm extends React.Component {
           <Alert
             type="info"
             title="Passwords must:"
-            body={message}/>    
+            body={message}/>  
+            <PasswordField />
+            <PasswordField label="Confirm password" />     
+          <PrimaryButton
+          text={primaryButtonText}
+           />   
         </fieldset>
       </Form>
       ) 
@@ -53,10 +64,12 @@ export default class PasswordResetForm extends React.Component {
 
 PasswordResetForm.PropTypes = {
   summary: PropTypes.string,
-  formTitle: PropTypes.string
+  formTitle: PropTypes.string,
+  primaryButtonText: PropTypes.string
 }
 
 PasswordResetForm.defaultProps = {
   formTitle: 'Reset password',
   summary: 'Please enter your new password',
+  primaryButtonText: "Reset password"
 }

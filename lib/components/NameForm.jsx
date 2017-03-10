@@ -15,45 +15,67 @@ import TextInput from './TextInput';
  * - id: string. Sets the form's id attribute
  * - inputClass: string. Adds any custom classes to TextInput fields
  */
-export default function NameForm ({legend, input}) {
-  return (
-    <Form>
-          <fieldset className="usa-fieldset-inputs usa-sans">
-            <legend>
-              {legend}
-            </legend>
-            
-              <TextInput
-              className="usa-input-tiny"
-              label="Title"
-              id="titleName"
-               />
+export default class NameForm extends React.Component {  
+/**
+   * Constructor.
+   *
+   * @param {Object} props The props that will be applied to this component.
+   */
+  constructor(props) {
+    super(props);
+  }
 
-              <TextInput
-              label="First Name"
-              id="firstName"
-              required />
+  render() {
 
-              <TextInput
-              label="Middle Name"
-              id="middleName"
-               />
+    let legend;
+    
+    if (this.props.formTitle){
+      legend = (<legend className="usa-drop_text">{this.props.formTitle}</legend>)
+    }
 
-              <TextInput
-              label="Last Name"
-              id="lastName"
-              required />
+    return (
+      <Form>
+        <fieldset className="usa-fieldset-inputs usa-sans">
+          <legend>
+            {legend}
+          </legend>
+          
+            <TextInput
+            className="usa-input-tiny"
+            label="Title"
+            id="titleName"
+             />
 
-              <TextInput
-              className="usa-input-tiny"
-              label="Suffix"
-              id="suffixName"
-               />
-          </fieldset>
-    </Form>
-  );
+            <TextInput
+            label="First Name"
+            id="firstName"
+            required />
+
+            <TextInput
+            label="Middle Name"
+            id="middleName"
+             />
+
+            <TextInput
+            label="Last Name"
+            id="lastName"
+            required />
+
+            <TextInput
+            className="usa-input-tiny"
+            label="Suffix"
+            id="suffixName"
+             />
+        </fieldset>
+      </Form>
+    )
+  }
 }
 
-NameForm.propTypes = {
-  legend: PropTypes.string
+NameForm.PropTypes = {
+  formTitle: PropTypes.string
+};
+
+NameForm.defaultProps = {
+  formTitle: "Name",
 };

@@ -53,7 +53,7 @@ export default class PrimaryButton extends React.Component {
     }
 
     return (
-      <button className={className} disabled={disabled} onClick={this._handleClick.bind(this)}>{this.props.text}</button>
+      <button className={className} disabled={disabled} onClick={this._handleCLick}>{this.props.text}</button>
     );
   }
 }
