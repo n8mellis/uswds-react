@@ -1,73 +1,115 @@
 import React from 'react';
+import { DocsPage, DocsSection, DocsExample, DocsPreview } from './Docs.jsx';
+import Highlight from 'react-highlight';
+import { Table, TableRow, TableHeaderCell, TableCell } from '../../lib/components/Tables';
+import Label from '../../lib/components/Label';
 import Alert from '../../lib/components/Alert';
-import BaseContainer from './BaseContainer';
+
+
 
 /**
  * Displays the Styleguide content for Alerts.
+ * @returns {[node]} The rendered DOM node
  */
-export default class AlertsContainer extends React.Component
-{
-  /**
-   * Renders the component.
-   *
-   * @returns {Node|null} The rendered DOM node.
-   */
-  render()
-  {
-    const message = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.';
-    const longMessage = (<div><p>Multi line. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p><p>Not what you expected? <a href="#">Go back.</a></p></div>);
-    
-    return (
-      <BaseContainer {...this.props}>
-        <div className="preview">
-          <Alert
-            type="success"
-            title="Success Status"
-            body={message}/>
-          <Alert
-            type="warning"
-            title="Warning Status"
-            body={message}/>
-          <Alert
-            type="error"
-            title="Error Status"
-            body={message}/>
-          <Alert
-            type="info"
-            title="Information Status"
-            body={message}/>
-          <Alert
-            title="Information Status"
-            body={longMessage}/>
-        </div>
-        
-        <div>
-          <h5>Example usage</h5>
-          <pre><code>
-            {`<Alert type="error" role="alert" title="An error has occured" body="Could not load file from the server"/>`}
-          </code></pre>
-          <h5>Required props</h5>
-          <ul>
-            <li><code>title</code> <em>string</em> — the text for the title.</li>
-            <li><code>body</code> <em>string</em> — the text for the body/description.</li>
-          </ul>
-          
-          <h5>Optional props</h5>
-          <ul>
-            <li>
-              <code>type</code> <em>string, defaults to 'info'</em> — sets the background color and icon. Must be <code>"success"</code>, <code>"warning"</code>, <code>"error"</code>, or <code>"info"</code>.
-            </li>
-            <li>
-              <code>role</code> <em>string</em> — Sets the ARIA <code>role</code> property. If the alert has <code>type="error"</code> and no role is specified, <code>role="alert"</code> is automatically added. Use <code>"alert"</code>to inform of a time-sensitive and important message that is not interactive. If the message is interactive, use <code>"alertdialog"</code> instead. 
-            </li>
-          </ul>
-        </div>
-      </BaseContainer>
-    );
-  }
-}
+export default function AlertsContainer () {
+  const message = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.';
+  const longMessage = (<div><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p><p>Not what you expected? <a href="#">Go back.</a></p></div>);
 
-AlertsContainer.defaultProps = {
-  title: 'Alerts',
-  summary: 'Alerts keep users informed of important and sometimes time-sensitive changes.'
-};
+  return (
+    <DocsPage title="Alerts">
+
+      {/* Importing */}
+      <DocsSection title="Importing">
+        <Highlight language="javascript">
+          {`import Alert from './lib/components/Alert';`}
+        </Highlight>
+      </DocsSection>
+
+      {/* Props */}
+      <DocsSection title="Props">
+        <Table columns={['Prop', 'Type', 'Default', 'Description']}>
+          <TableRow>
+            <TableHeaderCell>title  <Label>Required</Label></TableHeaderCell>
+            <TableCell>string</TableCell>
+            <TableCell>&nbsp;</TableCell>
+            <TableCell>the text for the title</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableHeaderCell>body  <Label>Required</Label></TableHeaderCell>
+            <TableCell>string or node</TableCell>
+            <TableCell>&nbsp;</TableCell>
+            <TableCell>the text for the body/description</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableHeaderCell>type</TableHeaderCell>
+            <TableCell>oneOf ['success', 'warning', 'error', 'info']</TableCell>
+            <TableCell>'info'</TableCell>
+            <TableCell>sets the background color and icon</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableHeaderCell>role</TableHeaderCell>
+            <TableCell>string</TableCell>
+            <TableCell>*see description</TableCell>
+            <TableCell>Sets the ARIA role property. If the alert has type="error" and no role is specified, role="alert" is automatically added. Use "alert"to inform of a time-sensitive and important message that is not interactive. If the message is interactive, use "alertdialog" instead</TableCell>
+          </TableRow>
+        </Table>
+      </DocsSection>
+
+      {/* Accessibility */}
+      <DocsSection title="Accessibility">
+        <p>
+          Because of its intrusive nature, the ARIA alert role (role="alert") must be used sparingly and only in situations where the user's immediate attention is required. It's appropriate for instances such as
+        </p>
+        <ul>
+          <li>An invalid value was entered into a form field</li>
+          <li>The user's login session is about to expire</li>
+          <li>The connection to the server was lost, local changes will not be saved</li>
+        </ul>
+        <p>
+          Read more: <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_alert_role">Mozilla: Using the alert role</a>
+        </p>
+      </DocsSection>
+
+      {/* Usage */}
+      <DocsSection title="Usage">
+        <DocsExample>
+          <h4>The alert body can be a string, or if HTML formatting is needed, a React element</h4>
+          <Highlight className="javascript">
+{`let message = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.';
+
+let longMessage = (
+  <div>
+    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
+    <p>Not what you expected? <a href="#">Go back</a>.</p>
+  </div>
+);`}
+          </Highlight>
+        </DocsExample>
+
+        <DocsExample>
+          <h4>Alert with HTML in the body</h4>
+          <DocsPreview>
+            <Alert title="Info Status" body={longMessage}/>
+          </DocsPreview>
+          <Highlight className="html">
+            {`<Alert title="Info Status" body={longMessage} />`}
+          </Highlight>
+        </DocsExample>
+
+        <DocsExample>
+          <h4>Alerts with the body passed as a string</h4>
+          <DocsPreview>
+            <Alert type="success" title="Success Status" body={message}/>
+            <Alert type="warning" title="Warning Status" body={message}/>
+            <Alert type="error" title="Error Status" body={message}/>
+          </DocsPreview>
+          <Highlight className="html">
+            {`<Alert type="success" title="Success Status" body={message} />
+<Alert type="warning" title="Warning Status" body={message} />
+<Alert type="error" title="Error Status" body={message} />`}
+          </Highlight>
+        </DocsExample>
+      </DocsSection>
+    </DocsPage>
+  );
+}

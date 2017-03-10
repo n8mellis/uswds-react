@@ -1,0 +1,145 @@
+.usa-content.styleguide-content {
+  code,
+  pre {
+    background-color: $color-gray-lightest;
+    font-family: $font-monospace;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  header {
+    > h1 {
+      display: inline-block;
+      margin-top: 0;
+    }
+  }
+
+  section {
+    margin-bottom: 4em;
+    margin-top: 1em;
+
+    h2 {
+      display: inline-block;
+    }
+
+    h3 {
+      font-family: $font-sans;
+      font-size: 24px;
+      margin: 0 0 15px 0;
+    }
+
+    h4 {
+      font-family: $font-sans;
+      font-size: 18px;
+      margin: 1.5em 0 0.5em 0;
+      font-weight: 600;
+      // margin-bottom: 15px;
+    }
+
+    h5 {
+      font-family: $font-sans;
+      font-size: 17px;
+      line-height: 1.4;
+      margin: 2em 0 5px 0;
+      font-weight: normal;
+
+      &:first-of-type {
+        margin-top: 0.5em;
+      }
+    }
+
+    > .tooltip {
+      margin-top: 56px;
+    }
+
+    > p {
+      margin: 0.5em 0;
+      max-width: 100%;
+
+      // &:first-of-type {
+      //   margin-top: 5px;
+      // }
+    }
+
+    > pre {
+      margin: 5px 0;
+      padding: 0.5em;
+      
+      code.hljs {
+        padding: 0
+      }
+    }
+
+    > table {
+      font-size: 16px;
+      margin: 5px 0 20px 0;
+
+      td, th {
+        padding: 1.1rem;
+      }
+
+      td:last-of-type {
+        width: 50%;
+      }
+
+      tbody {
+        th {
+          white-space: nowrap;
+        }
+
+        .usa-label {
+          font-size: 12px;
+          background: $color-secondary-dark;
+          margin-left: 1em;
+        }
+      }
+    }
+  }
+  
+  .docs-component {
+    border-top: solid 1px #aaa;
+    
+    // &:first-of-type {
+    //   border-top: none;
+    // }
+    
+    > h2 {
+      margin: 0.75em 0 2em 0;
+    }
+  }
+
+  .example {
+    margin: 40px 0;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    > p {
+      margin: 5px 0;
+      max-width: 80rem;
+    }
+    > pre {
+      margin-top: 0;
+      padding: 10px;
+      // border: solid 1px $color-gray-lighter;
+      // border-top: none;
+
+      code {
+        
+      }
+    }
+
+    .preview {
+      border: 2px solid $color-gray-lightest; // scss-lint:disable ColorVariable
+
+      > table {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+
+
+
+}

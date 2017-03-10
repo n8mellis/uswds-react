@@ -4,7 +4,8 @@ $color-grid-dark:   #727272;
 $color-grid-light:  #e3e4e5;
 $font-monospace:    Consolas, Monaco, 'Andale Mono', monospace;
 $font-path:         '../assets/fonts';
-$image-path:        '../assets/img';
+$image-path:        '../assets/images';
+$site-max-width: 960px;
 
 $z-nav-secondary: 10;
 
@@ -266,23 +267,7 @@ $z-nav-secondary: 10;
     @include padding(null $site-margins);
   }
 
-  header {
-    > h1 {
-      display: inline-block;
-      margin-top: 0;
-    }
-  }
 
-  section {
-    margin-bottom: 4em;
-    > h2 {
-      display: inline-block;
-    }
-
-    > .tooltip {
-      margin-top: 56px;
-    }
-  }
 }
 
 // Label links
@@ -378,10 +363,10 @@ h2 + .tooltip {
 
 .preview {
   @include clearfix;
-  @include margin(2em null);
+  // @include margin(2em null);
   background-color: $color-white;
   padding: $site-margins;
-  border: 1px solid #eeeeee; // scss-lint:disable ColorVariable
+
 
   .usa-background-dark {
     @include padding(null 1em);
@@ -425,36 +410,14 @@ h2 + .tooltip {
 
 .grid-example {
   .usa-grid {
-    background: $color-grid-light;
+    background: $color-grid-dark;
+    text-align: center;
 
     > * {
       @include margin(.5em null);
-      color: $color-white;
-      padding: 1em;
-      background: $color-grid-dark;
-    }
-  }
-
-  .usa-width-one-twelfth {
-    @include media($medium-screen) {
-      @include padding(null 0);
-    }
-  }
-}
-
-.grid-example-blank {
-  .usa-grid {
-    text-align: center;
-  }
-}
-
-.grid-text {
-  .usa-grid {
-    background: $color-grid-dark;
-
-    > * {
-      background: $color-grid-light;
       color: $color-black;
+      padding: 1em;
+      background: $color-grid-light;
     }
 
     h3 {
@@ -465,7 +428,14 @@ h2 + .tooltip {
       margin-bottom: 0;
     }
   }
+
+  .usa-width-one-twelfth {
+    @include media($medium-screen) {
+      @include padding(null 0);
+    }
+  }
 }
+
 
 h3 + .button_wrapper {
   margin-top: -0.5em;
@@ -846,99 +816,94 @@ h6.usa-heading-alt {
   font-family: $font-monospace;
 }
 
-code,
-pre {
-  background-color: $color-gray-lightest;
-  font-family: $font-monospace;
-  font-size: 1.3rem;
-}
 
-pre {
-  padding: 1.6rem;
 
-  code {
-    padding: 0;
+// pre {
+//   padding: 1.6rem;
+//
+//   code {
+//     padding: 0;
+//
+//     &::before,
+//     &::after {
+//       display: none;
+//     }
+//   }
+// }
 
-    &::before,
-    &::after {
-      display: none;
-    }
-  }
-}
+// code {
+//   // @include padding(0.3em);
+//
+//   &::before,
+//   &::after {
+//     letter-spacing: -0.2em;
+//     content: '\00a0';
+//   }
+// }
 
-code {
-  @include padding(0.2em null);
-
-  &::before,
-  &::after {
-    letter-spacing: -0.2em;
-    content: '\00a0';
-  }
-}
-
-.highlight {
-  pre {
-    max-width: $lead-max-width;
-  }
-}
+// .highlight {
+//   pre {
+//     max-width: $lead-max-width;
+//   }
+// }
 
 // Code snippet boxes
-
-.usa-code-sample {
-  pre,
-  code {
-    background: none;
-    font-size: 1.2rem;
-    margin-top: 0;
-    padding: 0;
-  }
-
-  .usa-unstyled-list {
-    @include unstyled-list;
-  }
-
-  .usa-accordion-content {
-    padding: 0;
-  }
-}
-
-[class*="language-"] {
-  color: $color-base;
+//
+// .usa-code-sample {
+//   pre,
+//   code {
+//     background: none;
+//     font-size: 1.2rem;
+//     margin-top: 0;
+//     padding: 0;
+//   }
+//
+//   .usa-unstyled-list {
+//     @include unstyled-list;
+//   }
+//
+//   .usa-accordion-content {
+//     padding: 0;
+//   }
+// }
+//
+// [class*="language-"] {
+//   color: $color-base;
 
   // Custom code sample colors
-
-  .nt,
-  .token.property,
-  .token.tag,
-  .token.boolean,
-  .token.number,
-  .token.constant,
-  .token.symbol,
-  .token.deleted {
-    color: $color-primary-alt-darkest;
-  }
-
-  .na,
-  .token.selector,
-  .token.attr-name,
-  .token.string,
-  .token.char,
-  .token.builtin,
-  .token.inserted {
-    color: $color-secondary;
-  }
-
-  .s,
-  .token.atrule,
-  .token.attr-value,
-  .token.keyword {
-    color: $color-green;
-  }
-
-  .token.punctuation {
-    color: $color-primary-alt-darkest;
-  }
-}
+//
+//   .nt,
+//   .token.property,
+//   .token.tag,
+//   .token.boolean,
+//   .token.number,
+//   .token.constant,
+//   .token.symbol,
+//   .token.deleted {
+//     color: $color-primary-alt-darkest;
+//   }
+//
+//   .na,
+//   .token.selector,
+//   .token.attr-name,
+//   .token.string,
+//   .token.char,
+//   .token.builtin,
+//   .token.inserted {
+//     color: $color-secondary;
+//   }
+//
+//   .s,
+//   .token.atrule,
+//   .token.attr-value,
+//   .token.keyword {
+//     color: $color-green;
+//   }
+//
+//   .token.punctuation {
+//     color: $color-primary-alt-darkest;
+//   }
+// }
 
 .alignment-example {
   border-left: 2px solid $color-primary-darker;
@@ -1384,5 +1349,5 @@ hr {
   background: $color-gray-lighter;
   border: none;
   height: 1px;
-  margin: 3em 0; 
+  margin: 3em 0;
 }
