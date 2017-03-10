@@ -59,14 +59,14 @@ describe('Radio', () => {
     expect(inputName).toBe(testValue);
   });
 
-  it('has a default checked property', () => {
-    const inputChecked = wrapper.find('input').props().checked;
+  it('has is not checked by default', () => {
+    const inputChecked = wrapper.find('input').props().defaultChecked;
     expect(inputChecked).toBe(false);
   });
 
-  it('accepts the checked property', () => {
-    wrapper = mount(<Radio checked label={label} />);
-    const inputChecked = wrapper.find('input').props().checked;
+  it('accepts the defaultChecked property', () => {
+    wrapper = mount(<Radio defaultChecked label={label} />);
+    const inputChecked = wrapper.find('input').props().defaultChecked;
     expect(inputChecked).toBe(true);
   });
 

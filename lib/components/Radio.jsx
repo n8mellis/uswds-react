@@ -29,11 +29,17 @@ export default class Radio extends Component {
    * @returns {node} div that includes the input and label
    */
   render () {
-    const {label, className, disabled, id = this.id, ...otherProps} = this.props;
+    const {label, className, disabled, id = this.id, value, ...otherProps} = this.props;
 
     return (
       <div className={className}>
-        <input type="radio" disabled={disabled} aria-disabled={disabled} id={id} {...otherProps}/>
+        <input
+          type="radio"
+          disabled={disabled}
+          aria-disabled={disabled}
+          id={id}
+          value={value ? value : id}
+          {...otherProps}/>
         <InputLabel htmlFor={id} label={label} />
       </div>
     );
@@ -54,5 +60,6 @@ Radio.propTypes = {
 
 Radio.defaultProps = {
   name: 'radios',
-  disabled: false
+  disabled: false,
+  defaultChecked: false
 };
