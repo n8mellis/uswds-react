@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 // var AssetsPlugin = require('assets-webpack-plugin');
 
 var DEBUG = !(process.env.NODE_ENV === 'production');
@@ -32,7 +33,8 @@ var config = {
     filename: '[name].js'
   },
   plugins: [
-    new webpack.EnvironmentPlugin(['NODE_ENV', 'API_BASE_URL'])
+    new webpack.EnvironmentPlugin(['NODE_ENV', 'API_BASE_URL']),
+    new ExtractTextPlugin("styles.css")
   ],
   module: {
     rules: [
@@ -53,11 +55,28 @@ var config = {
           // }
         ],
         exclude: /node_modules/
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: 'css-loader'
+        // use: ExtractTextPlugin.extract({
+        //   use: 'css-loader'
+        // })
       }
-      // ,{
-      //   test: /\.css$/,
-      //   use: [ 'style-loader', 'css-loader' ]
-      // }
     ]
   }
 };
