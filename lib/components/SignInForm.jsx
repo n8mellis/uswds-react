@@ -3,6 +3,7 @@ import Form from './Form';
 import TextInput from './TextInput';
 import PasswordField from "./PasswordField";
 import PrimaryButton from "./PrimaryButton";
+import Validator from "../utils/validators";
 
 /**
  * Class representing a generic Address Form
@@ -15,6 +16,7 @@ import PrimaryButton from "./PrimaryButton";
  * Optional props:
  * - legend: string. sets the form legend
  * - id: string. Sets the form's id attribute
+ * - primaryButtonText: string. Sets the form's button text
  */
 export default class SignInForm extends React.Component {  /**
    * Constructor.
@@ -27,17 +29,22 @@ export default class SignInForm extends React.Component {  /**
 
   render() {
 
-    let legend;
+    let legend,
+        primaryButtonText;
 
     if (this.props.formTitle){
       legend = (<legend className="usa-drop_text">{this.props.formTitle}</legend>)
-    } 
+    }
+
+    if (this.props.primaryButtonText) {
+      primaryButtonText = this.props.primaryButtonText;
+    }
 
     return (
       <Form>
         <fieldset className="usa-fieldset-inputs">
           {legend}
-          <span>or <a href="javascript:void(0);">create an account</a></span>
+          <span> or <a href="javascript:void(0);">create an account</a></span>
           <TextInput
           label="Username or email address"
           id="username"
@@ -50,8 +57,7 @@ export default class SignInForm extends React.Component {  /**
             Show password</a>
           </p>        
           <PrimaryButton
-          text="Sign in"
-          onClick="javascript:void(0);"
+          text={primaryButtonText}
            />
            <p><a href="javascript:void(0);" title="Forgot username">
           Forgot username?</a></p>
@@ -66,4 +72,9 @@ export default class SignInForm extends React.Component {  /**
 
 SignInForm.PropTypes = {
   formTitle: PropTypes.string
-}
+};
+
+SignInForm.defaultProps = {
+  formTitle: "Sign in",
+  primaryButtonText: "Sign in"
+};
