@@ -59,14 +59,14 @@ describe('Checkbox', () => {
     expect(inputName).toBe(testValue);
   });
 
-  it('has a default checked property', () => {
-    const inputChecked = wrapper.find('input').props().checked;
+  it('it is not checked by default', () => {
+    const inputChecked = wrapper.find('input').props().defaultChecked;
     expect(inputChecked).toBe(false);
   });
 
-  it('accepts the checked property', () => {
-    wrapper = mount(<Checkbox checked label={checkboxLabel} />);
-    const inputChecked = wrapper.find('input').props().checked;
+  it('accepts the defaultChecked property', () => {
+    wrapper = mount(<Checkbox defaultChecked label={checkboxLabel} />);
+    const inputChecked = wrapper.find('input').props().defaultChecked;
     expect(inputChecked).toBe(true);
   });
 
