@@ -54,7 +54,7 @@ export default function TablesContainer() {
       </DocsSection>
 
       <DocsSection title="Props">
-        <h5>Table</h5>
+        <h4>Table</h4>
         <Table columns={['Prop', 'Type', 'Default', 'Description']}>
           <TableRow>
             <TableHeaderCell>cols  <Label>Required</Label></TableHeaderCell>
@@ -92,7 +92,7 @@ export default function TablesContainer() {
           </TableRow>
         </Table>
 
-        <h5>TableHeaderCell</h5>
+        <h4>TableHeaderCell</h4>
         <Table columns={['Prop', 'Type', 'Default', 'Description']}>
           <TableRow>
             <TableHeaderCell>scope  <Label>Required</Label></TableHeaderCell>
@@ -116,7 +116,7 @@ export default function TablesContainer() {
           </TableRow>
         </Table>
 
-        <h5>TableRow</h5>
+        <h4>TableRow</h4>
         <Table columns={['Prop', 'Type', 'Default', 'Description']}>
           <TableRow>
             <TableHeaderCell>children</TableHeaderCell>
@@ -132,7 +132,7 @@ export default function TablesContainer() {
           </TableRow>
         </Table>
 
-        <h5>TableCell</h5>
+        <h4>TableCell</h4>
         <Table columns={['Prop', 'Type', 'Default', 'Description']}>
           <TableRow>
             <TableHeaderCell>children</TableHeaderCell>

@@ -3,7 +3,8 @@
   pre {
     background-color: $color-gray-lightest;
     font-family: $font-monospace;
-    font-size: 14px;
+    font-size: 13px;
+    line-height: 1.6;
   }
 
   header {
@@ -62,6 +63,11 @@
 
     > pre {
       margin: 5px 0;
+      padding: 0.5em;
+      
+      code.hljs {
+        padding: 0
+      }
     }
 
     > table {
@@ -89,6 +95,18 @@
       }
     }
   }
+  
+  .docs-component {
+    border-top: solid 1px #aaa;
+    
+    // &:first-of-type {
+    //   border-top: none;
+    // }
+    
+    > h2 {
+      margin: 0.75em 0 2em 0;
+    }
+  }
 
   .example {
     margin: 40px 0;
@@ -103,11 +121,12 @@
     }
     > pre {
       margin-top: 0;
+      padding: 10px;
       // border: solid 1px $color-gray-lighter;
       // border-top: none;
 
       code {
-        padding: 10px;
+        
       }
     }
 

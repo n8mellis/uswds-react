@@ -5,16 +5,22 @@ import Highlight from 'react-highlight';
 import { Table, TableRow, TableHeaderCell, TableCell } from '../../lib/components/Tables';
 import PrimaryButton from "../../lib/components/PrimaryButton";
 
-
+/**
+ * Buttons content
+ * @returns {node} node
+ */
 export default function ButtonsContainer () {
   return (
     <DocsPage title="Buttons">
+      
+      {/* Importing */}
       <DocsSection title="Importing">
         <Highlight language="javascript">
           {`import PrimaryButton from "../lib/components/PrimaryButton";`}
         </Highlight>
       </DocsSection>
 
+      {/* Props */}
       <DocsSection title="Props">
         <Table columns={['Prop', 'Type', 'Default', 'Description']}>
           <TableRow>
@@ -50,6 +56,7 @@ export default function ButtonsContainer () {
         </Table>
       </DocsSection>
 
+      {/* Usage */}
       <DocsSection title="Usage">
         <DocsExample>
           <DocsPreview>

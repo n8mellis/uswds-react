@@ -6,17 +6,22 @@ import { Table, TableRow, TableHeaderCell, TableCell } from '../../lib/component
 import { Accordion, AccordionItem } from "../../lib/components/Accordion";
 
 
-
-export default function AccordionsContainer () {
+/**
+ * AccordionsContainer content
+ * @returns {node} the node
+ */
+export default function AccordionsContainer() {
   return (
     <DocsPage title="Accordion">
-
+      
+      {/* Importing */}
       <DocsSection title="Importing">
         <Highlight language="javascript">
           {`import { Accordion, AccordionItem } from "./lib/components/Accordion";`}
         </Highlight>
       </DocsSection>
 
+      {/* Props */}
       <DocsSection title="Props">
         <h4>Accordion</h4>
         <Table columns={['Prop', 'Type', 'Default', 'Description']}>
@@ -75,6 +80,7 @@ export default function AccordionsContainer () {
         </Table>
       </DocsSection>
 
+      {/* Usage */}
       <DocsSection title="Usage">
         <DocsExample>
           <h4>Borderless accordion</h4>

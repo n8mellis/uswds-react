@@ -5,6 +5,10 @@ import Highlight from 'react-highlight';
 import { Table, TableRow, TableHeaderCell, TableCell } from '../../lib/components/Tables';
 import { Grid, Col } from '../../lib/components/Grid';
 
+/**
+ * Grid content
+ * @returns {node} node
+ */
 export default function GridContainer() {
   return (
     <DocsPage title="Grid">
@@ -15,7 +19,7 @@ export default function GridContainer() {
       </DocsSection>
 
       <DocsSection title="Props">
-        <h5>Grid</h5>
+        <h4>Grid</h4>
         <Table columns={['Prop', 'Type', 'Default', 'Description']}>
           <TableRow>
             <TableHeaderCell>full</TableHeaderCell>
@@ -31,7 +35,7 @@ export default function GridContainer() {
           </TableRow>
         </Table>
 
-        <h5>Col</h5>
+        <h4>Col</h4>
         <Table columns={['Prop', 'Type', 'Default', 'Description']}>
           <TableRow>
             <TableHeaderCell>width <Label>Required</Label></TableHeaderCell>

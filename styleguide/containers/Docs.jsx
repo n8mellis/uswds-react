@@ -1,6 +1,10 @@
 import React from "react";
 
-
+/**
+ * This is the wrapper for the page
+ * @param {object} props The props
+ * @returns {node} The node
+ */
 export function DocsPage (props) {
   return (
     <div className="styleguide-content usa-content">
@@ -20,7 +24,11 @@ DocsPage.propTypes = {
 };
 
 
-
+/**
+ * This is the wrapper for a component or component group
+ * @param {object} props The props
+ * @returns {node} The node
+ */
 export function DocsComponent (props) {
   let title = null;
 
@@ -41,6 +49,11 @@ DocsComponent.propTypes = {
 };
 
 
+/**
+ * This is the wrapper for a section
+ * @param {object} props The props
+ * @returns {node} The node
+ */
 export function DocsSection (props) {
   let title = null;
 
@@ -59,6 +72,12 @@ DocsSection.propTypes = {
   children: React.PropTypes.node
 };
 
+
+/**
+ * This is the wrapper for usage examples
+ * @param {object} props The props
+ * @returns {node} The node
+ */
 export function DocsExample (props) {
   return (
     <div className="example">
@@ -70,6 +89,12 @@ DocsExample.propTypes = {
   children: React.PropTypes.node
 };
 
+
+/**
+ * This is the wrapper for a rendered preview inside an example usage
+ * @param {object} props The props
+ * @returns {node} The node
+ */
 export function DocsPreview (props) {
   return (
     <div className={'preview ' + props.className}>
