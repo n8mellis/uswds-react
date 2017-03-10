@@ -73,7 +73,7 @@ PrimaryButton.STATUS_HOVER = 'hover';
 
 PrimaryButton.propTypes = {
   disabled: React.PropTypes.bool,
-  onClick: React.PropTypes.function,
+  onClick: React.PropTypes.func,
   size: React.PropTypes.oneOf(['', PrimaryButton.SIZE_BIG]),
   status: React.PropTypes.oneOf(['', PrimaryButton.STATUS_ACTIVE, PrimaryButton.STATUS_HOVER]),
   text: React.PropTypes.string.isRequired
