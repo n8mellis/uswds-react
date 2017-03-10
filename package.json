@@ -49,7 +49,7 @@
     "immutable": "^3.8.1",
     "isomorphic-fetch": "^2.1.1",
     "lodash": "^3.10.1",
-    "node-sass": "^3.4.2",
+    "node-sass": "^4.0.0",
     "normalize.css": "^3.0.3",
     "normalizr": "^1.0.0",
     "react": "^15.4.2",
