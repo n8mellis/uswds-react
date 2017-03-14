@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import Link from "./Link";
 import Form from './Form';
 import TextInput from './TextInput';
 import PasswordField from "./PasswordField";
@@ -59,10 +60,8 @@ export default class SignInForm extends React.Component {  /**
           <PrimaryButton
           text={primaryButtonText}
            />
-           <p><a href="javascript:void(0);" title="Forgot username">
-          Forgot username?</a></p>
-          <p><a href="javascript:void(0);" title="Forgot password">
-            Forgot password?</a></p>
+           <p><Link to="/form-templates"title="Forgot username">Forgot username?</Link></p>
+           <p><Link to="/form-templates#pwd-form" title="Forgot password">Forgot password?</Link></p>
         </fieldset>
       </Form>
     )

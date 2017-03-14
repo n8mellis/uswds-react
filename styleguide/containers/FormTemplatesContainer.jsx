@@ -255,10 +255,8 @@ import Validator from "../utils/validators";`}
     <PrimaryButton
     text={primaryButtonText}
      />
-     <p><a href="javascript:void(0);" title="Forgot username">
-    Forgot username?</a></p>
-    <p><a href="javascript:void(0);" title="Forgot password">
-      Forgot password?</a></p>
+     <p><Link to="/form-templates"title="Forgot username">Forgot username?</Link></p>
+     <p><Link to="/form-templates#pwd-form" title="Forgot password">Forgot password?</Link></p>
   </fieldset>
 </Form>`}
               </Highlight>
