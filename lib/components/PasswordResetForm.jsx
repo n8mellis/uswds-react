@@ -44,7 +44,7 @@ export default class PasswordResetForm extends React.Component {
 
     return (
       <Form className="usa-form">
-        <fieldset className="usa-fieldset-inputs usa-sans">
+        <fieldset className="usa-fieldset-inputs">
           {legend}
           {this.props.summary} 
           <Alert

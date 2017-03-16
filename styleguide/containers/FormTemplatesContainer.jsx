@@ -66,7 +66,7 @@ import TextInput from './TextInput';`}
               </DocsPreview>
               <Highlight className="html">
                 {`      <Form>
-        <fieldset className="usa-fieldset-inputs usa-sans">
+        <fieldset className="usa-fieldset-inputs">
           <legend>
             {legend}
           </legend>
@@ -142,7 +142,7 @@ import { ZipCodeValidator } from '../../lib/utils/validators';`}
               </DocsPreview>
               <Highlight className="html">
                 {`<Form>
-  <fieldset className="usa-fieldset-inputs usa-sans">
+  <fieldset className="usa-fieldset-inputs">
     <legend>
       {legend}
     </legend>
@@ -318,7 +318,7 @@ import PasswordField from './PasswordField';`}
               </DocsPreview>
               <Highlight className="html">
                 {`<Form className="usa-form">
-  <fieldset className="usa-fieldset-inputs usa-sans">
+  <fieldset className="usa-fieldset-inputs">
     {legend}
     {this.props.summary} 
     <Alert
