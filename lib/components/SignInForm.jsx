@@ -50,13 +50,7 @@ export default class SignInForm extends React.Component {  /**
           label="Username or email address"
           id="username"
           required />
-          <PasswordField />
-          <p className="usa-form-note">
-          <a title="Show password" href="javascript:void(0);"
-              className="usa-show_password"
-              aria-controls="password">
-            Show password</a>
-          </p>        
+          <PasswordField id="sign-in-pwd" hasToggle />
           <PrimaryButton
           text={primaryButtonText}
            />
