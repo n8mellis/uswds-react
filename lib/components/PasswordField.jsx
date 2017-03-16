@@ -49,7 +49,7 @@ export default class PasswordField extends Component { /**
 
   render() {
   const {label, hasToggle, id = this.id} = this.props;
-  let toggleText = (<p className="usa-form-note"><Link title="Show password" className="usa-show_password" onClick={this._handleClick.bind(this)}>Show password</Link></p>);
+  let toggleText = (<p className="usa-form-note"><a title="Show password" className="usa-show_password" onClick={this._handleClick.bind(this)}>Show password</a></p>);
 
     return (
         <div><TextInput
