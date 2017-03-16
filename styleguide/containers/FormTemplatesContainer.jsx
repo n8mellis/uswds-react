@@ -325,8 +325,8 @@ import PasswordField from './PasswordField';`}
       type="info"
       title="Passwords must:"
       body={message}/>  
-      <PasswordField />
-      <PasswordField label="Confirm password" />     
+      <PasswordField hasToggle />
+      <PasswordField label="Confirm password" hasToggle />     
     <PrimaryButton
     text={primaryButtonText}
      />   

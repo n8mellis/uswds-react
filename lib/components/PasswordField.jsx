@@ -37,19 +37,19 @@ export default class PasswordField extends Component { /**
 
   _handleClick() {
     if (this.state.type === 'password') {
-          this.setState({
-            type: 'text'
-          });
-        } else {
-          this.setState({
-            type: 'password'
-          });
-        }    
+      this.setState({
+        type: 'text'
+      });
+    } else {
+      this.setState({
+        type: 'password'
+      });
+    }    
   }
 
   render() {
   const {label, hasToggle, id = this.id} = this.props;
-  let toggleText= (<p className="usa-form-note"><Link title="Show password" className="usa-show_password" onClick={this._handleClick.bind(this)}>Show password</Link></p>);
+  let toggleText = (<p className="usa-form-note"><Link title="Show password" className="usa-show_password" onClick={this._handleClick.bind(this)}>Show password</Link></p>);
 
     return (
         <div><TextInput
@@ -67,7 +67,7 @@ export default class PasswordField extends Component { /**
 
 PasswordField.PropTypes = {
   label: PropTypes.string,
-  hasToggle: PropTypes.bool,
+  hasToggle: PropTypes.bool
 }
 PasswordField.defaultProps = {
   label: 'Password',
